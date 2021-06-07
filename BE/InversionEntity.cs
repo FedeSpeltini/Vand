@@ -9,7 +9,7 @@ namespace BE
     public class InversionEntity
     {
         private decimal vandCoinInvertido;
-        public decimal VandCoinObtenidos
+        public decimal VandCoinInvertido
         {
             get { return vandCoinInvertido; }
             set { vandCoinInvertido = value; }

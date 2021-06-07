@@ -43,9 +43,12 @@
   <ItemGroup>
     <Compile Include="InversionEntity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UsuarioBossEntity.cs" />
     <Compile Include="UsuarioComercialEntity.cs" />
     <Compile Include="UsuarioEntity.cs" />
     <Compile Include="UsuarioLogisticaEntity.cs" />
+    <Compile Include="VandCoinEntity.cs" />
+    <Compile Include="WalletEntity.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
