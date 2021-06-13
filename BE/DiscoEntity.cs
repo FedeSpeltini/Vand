@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BE
 {
-    public  class UsuarioEntity
+    public class DiscoEntity
     {
         private string nombre;
 
@@ -16,22 +16,21 @@ namespace BE
             set { nombre = value; }
         }
 
-        private string password;
+        private DateTime year;
 
-        public string Password
+        public DateTime Year
         {
-            get { return password; }
-            set { password = value; }
+            get { return year; }
+            set { year = value; }
         }
 
-        private WalletEntity wallet = new WalletEntity();
+        private List<string> musicos;
 
-        public WalletEntity Wallet
+        public List<string> Musicos
         {
-            get { return wallet; }
-            set { wallet = value; }
+            get { return musicos; }
+            set { musicos = value; }
         }
-
 
     }
 }

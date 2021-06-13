@@ -17,28 +17,30 @@ namespace BE
         }
 
 
-        private decimal vandCoins;
+        private VandCoinEntity vandCoins;
 
-        public decimal VandCoins
+        public VandCoinEntity VandCoins
         {
             get { return vandCoins; }
             set { vandCoins = value; }
         }
 
-        private decimal dinero;
+        private List<CopiaEntity> discos = new List<CopiaEntity>();
 
-        public decimal Dinero
+        public List<CopiaEntity> Discos
         {
-            get { return dinero; }
-            set { dinero = value; }
+            get { return discos; }
+            set { discos = value; }
         }
 
-        private InversionEntity inversion;
+        private List<VentaEntity> ventas;
 
-        public InversionEntity Inversion
+        public List<VentaEntity> Ventas
         {
-            get { return inversion; }
-            set { inversion = value; }
+            get { return ventas; }
+            set { ventas = value; }
         }
+
+
     }
 }

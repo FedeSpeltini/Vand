@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace DAL
 {
-    public class MpUsuario
+    public class McUsuario
     {
         private Acceso acceso = new Acceso();
 

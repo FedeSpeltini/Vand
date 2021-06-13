@@ -42,7 +42,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Acceso.cs" />
-    <Compile Include="MpUsuario.cs" />
+    <Compile Include="McComision.cs" />
+    <Compile Include="McCompra.cs" />
+    <Compile Include="McUsuario.cs" />
+    <Compile Include="McUsuarioComercial.cs" />
+    <Compile Include="McVenta.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

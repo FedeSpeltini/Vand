@@ -26,7 +26,7 @@ namespace Views
 
             UsuarioEntity u = new UsuarioEntity();
             u.Nombre = txtUserName.Text;
-            u.Password = txtPwd.Text;
+            u.Password = ub.Encriptar(txtPwd.Text);
 
             ub.ValidarUsuario(u);
         }

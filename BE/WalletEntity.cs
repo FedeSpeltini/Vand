@@ -6,7 +6,15 @@ using System.Threading.Tasks;
 
 namespace BE
 {
-    class WalletEntity
+    public class WalletEntity
     {
+        private VandCoinEntity vandCoins = new VandCoinEntity();
+
+        public VandCoinEntity VandCoins 
+        {
+            get { return vandCoins;  }
+            set { vandCoins = value; }
+        }
+
     }
 }

@@ -16,12 +16,12 @@ namespace BE
             set { cantidad = value; }
         }
 
-        private int valor;
+        private decimal valor;
 
-        public int MyProperty
+        public decimal Valor
         {
-            get { return myVar; }
-            set { myVar = value; }
+            get { return valor; }
+            set { valor = value; }
         }
 
 
