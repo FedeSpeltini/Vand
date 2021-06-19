@@ -36,9 +36,10 @@ namespace Views
             // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(390, 207);
+            this.btnLogin.Location = new System.Drawing.Point(97, 134);
+            this.btnLogin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(127, 52);
+            this.btnLogin.Size = new System.Drawing.Size(113, 42);
             this.btnLogin.TabIndex = 0;
             this.btnLogin.Text = "Ingresar";
             this.btnLogin.UseVisualStyleBackColor = true;
@@ -46,26 +47,29 @@ namespace Views
             // 
             // txtUserName
             // 
-            this.txtUserName.Location = new System.Drawing.Point(390, 88);
+            this.txtUserName.Location = new System.Drawing.Point(97, 38);
+            this.txtUserName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtUserName.Name = "txtUserName";
-            this.txtUserName.Size = new System.Drawing.Size(100, 26);
+            this.txtUserName.Size = new System.Drawing.Size(113, 22);
             this.txtUserName.TabIndex = 1;
             // 
             // txtPwd
             // 
-            this.txtPwd.Location = new System.Drawing.Point(390, 150);
+            this.txtPwd.Location = new System.Drawing.Point(97, 88);
+            this.txtPwd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtPwd.Name = "txtPwd";
-            this.txtPwd.Size = new System.Drawing.Size(100, 26);
+            this.txtPwd.Size = new System.Drawing.Size(113, 22);
             this.txtPwd.TabIndex = 2;
             // 
             // FrmLogin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(308, 360);
             this.Controls.Add(this.txtPwd);
             this.Controls.Add(this.txtUserName);
             this.Controls.Add(this.btnLogin);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FrmLogin";
             this.Text = "FrmLogin";
             this.ResumeLayout(false);

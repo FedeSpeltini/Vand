@@ -8,9 +8,9 @@ namespace BE
 {
     public class CopiaEntity: DiscoEntity
     {
-        private VandCoinEntity precio;
+        private decimal precio;
 
-        public VandCoinEntity Precio
+        public decimal Precio
         {
             get { return precio; }
             set { precio = value; }

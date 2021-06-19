@@ -24,13 +24,7 @@ namespace BE
             set { password = value; }
         }
 
-        private WalletEntity wallet = new WalletEntity();
 
-        public WalletEntity Wallet
-        {
-            get { return wallet; }
-            set { wallet = value; }
-        }
 
 
     }

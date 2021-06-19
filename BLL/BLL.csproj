@@ -42,6 +42,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ComisionBusiness.cs" />
+    <Compile Include="CopiaBusiness.cs" />
+    <Compile Include="InversionBusiness.cs" />
     <Compile Include="IUSuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UsuarioBossBusiness.cs" />

@@ -16,14 +16,14 @@ namespace BE
             set { ctaBancaria = value; }
         }
 
+        private WalletEntity wallet = new WalletEntity();
 
-        private VandCoinEntity vandCoins;
-
-        public VandCoinEntity VandCoins
+        public WalletEntity Wallet
         {
-            get { return vandCoins; }
-            set { vandCoins = value; }
+            get { return wallet; }
+            set { wallet = value; }
         }
+
 
         private List<CopiaEntity> discos = new List<CopiaEntity>();
 

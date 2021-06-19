@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BE
+namespace Services
 {
-    public class UsuarioBossEntity : UsuarioEntity
+   public interface IIdiomaObserver
     {
-
+        void UpdateLanguage(Idioma idioma);
     }
 }

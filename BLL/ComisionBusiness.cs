@@ -17,13 +17,13 @@ namespace BLL
         {
 
             comision.Venta = venta;
-            comision.Ganancia = copia.Precio.Cantidad * comision.Porcentaje;
+            comision.Ganancia = copia.Precio * comision.Porcentaje;
 
-            copia.Precio.Cantidad -= copia.Precio.Cantidad * comision.Porcentaje;
+            copia.Precio -= copia.Precio * comision.Porcentaje;
 
             mc.Agregar(comision);
 
-            return copia.Precio.Cantidad;
+            return copia.Precio;
 
         }
     }

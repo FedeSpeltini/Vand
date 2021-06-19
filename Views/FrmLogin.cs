@@ -29,6 +29,16 @@ namespace Views
             u.Password = ub.Encriptar(txtPwd.Text);
 
             ub.ValidarUsuario(u);
+
+
+            FrmPrincipal frmPrincipal = new FrmPrincipal();
+            //FrmTablero frmTablero = new FrmTablero();
+            FrmGaleria frmGaleria = new FrmGaleria();
+
+            //frmTablero.Jugadores = this.Jugadores;
+            //frmTablero.MdiParent = this;
+            frmGaleria.Show();
+            this.Close();
         }
     }
 }

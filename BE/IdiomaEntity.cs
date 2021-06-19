@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace BE
 {
-    public class UsuarioBossEntity : UsuarioEntity
+    public class IdiomaEntity
     {
-
+        public string Nombre { get; set; }
+        public bool Default { get; set; }
     }
 }

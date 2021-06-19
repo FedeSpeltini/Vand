@@ -44,6 +44,8 @@
     <Compile Include="Acceso.cs" />
     <Compile Include="McComision.cs" />
     <Compile Include="McCompra.cs" />
+    <Compile Include="McCopia.cs" />
+    <Compile Include="McIdioma.cs" />
     <Compile Include="McUsuario.cs" />
     <Compile Include="McUsuarioComercial.cs" />
     <Compile Include="McVenta.cs" />

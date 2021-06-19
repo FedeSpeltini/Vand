@@ -1,4 +1,5 @@
 ﻿using BE;
+using DAL;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,6 +16,7 @@ namespace Services
         public UsuarioEntity Usuario { get; set; }
         public DateTime FechaInicio { get; set; }
 
+        McUsuario mc = new McUsuario();
         public static SessionState GetInstance
         {
             get
@@ -43,6 +45,38 @@ namespace Services
                     //throw new Exception("Sesión ya iniciada");
                 }
             }
+        }
+
+
+        public bool Login2(UsuarioEntity usuario) //IDictionary<string, Traduccion> 
+        {
+
+            if (String.IsNullOrEmpty(usuario.Nombre) || String.IsNullOrEmpty(usuario.Password)) throw new Exception("Debe completar todos los campos");
+            try
+            {
+               // UsuarioEntity usuario = mc.ValidarUsuario(usuario);
+                if (!mc.ValidarUsuario(usuario))
+                {
+                    throw new Exception("Usuario o contraseña incorrecta");
+                }
+                else
+                {
+                    return Login(usuario);
+                }
+                
+                //return Traductor.ObtenerTraducciones(usuario.Idioma);
+
+            }
+            catch (Exception e)
+            {
+
+                throw e;
+            }
+            finally
+            {
+
+            }
+
         }
 
         public static void Logout()
