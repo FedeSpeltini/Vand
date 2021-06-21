@@ -16,5 +16,13 @@ namespace BE
             set { vandCoins = value; }
         }
 
+        private decimal cantidad;
+
+        public decimal Cantidad
+        {
+            get { return cantidad; }
+            set { cantidad = value; }
+        }
+
     }
 }

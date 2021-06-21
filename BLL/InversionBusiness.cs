@@ -12,7 +12,7 @@ namespace BLL
 
         public void generarPlazoFijo(WalletEntity wallet, decimal cantidad)
         {
-            wallet.VandCoins.Cantidad -= cantidad;
+            wallet.Cantidad -= cantidad;
             
             
         }

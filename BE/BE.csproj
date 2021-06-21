@@ -45,9 +45,11 @@
     <Compile Include="CompraEntity.cs" />
     <Compile Include="CopiaEntity.cs" />
     <Compile Include="DiscoEntity.cs" />
+    <Compile Include="EtiquetaEntity.cs" />
     <Compile Include="IdiomaEntity.cs" />
     <Compile Include="InversionEntity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TraduccionEntity.cs" />
     <Compile Include="UsuarioBossEntity.cs" />
     <Compile Include="UsuarioClienteEntity.cs" />
     <Compile Include="UsuarioComercialEntity.cs" />

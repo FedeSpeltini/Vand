@@ -41,6 +41,15 @@ namespace BE
             set { ventas = value; }
         }
 
+        private string codigoPostal;
+
+        public string CodigoPostal
+        {
+            get { return codigoPostal; }
+            set { codigoPostal = value; }
+        }
+
+
 
     }
 }

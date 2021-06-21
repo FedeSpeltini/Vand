@@ -16,5 +16,14 @@ namespace BE
             set { precio = value; }
         }
 
+        private UsuarioComercialEntity propietario;
+
+        public UsuarioComercialEntity Propetario
+        {
+            get { return propietario; }
+            set { propietario = value; }
+        }
+
+
     }
 }

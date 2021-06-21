@@ -8,13 +8,7 @@ namespace BE
 {
     public class VandCoinEntity
     {
-        private decimal cantidad;
 
-        public decimal Cantidad
-        {
-            get { return cantidad; }
-            set { cantidad = value; }
-        }
 
         private decimal valor;
 

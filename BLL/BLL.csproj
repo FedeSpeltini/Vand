@@ -33,6 +33,8 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -42,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ComisionBusiness.cs" />
+    <Compile Include="CompraBusiness.cs" />
     <Compile Include="CopiaBusiness.cs" />
     <Compile Include="InversionBusiness.cs" />
     <Compile Include="IUSuario.cs" />

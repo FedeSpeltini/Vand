@@ -39,7 +39,7 @@ namespace BLL
 
         public WalletEntity DescontarVandCoins(CopiaEntity copia, WalletEntity walletUsuario)
         {
-            walletUsuario.VandCoins.Cantidad -= copia.Precio;
+            walletUsuario.Cantidad -= copia.Precio;
 
             return walletUsuario;
         }

@@ -46,9 +46,11 @@
     <Compile Include="McCompra.cs" />
     <Compile Include="McCopia.cs" />
     <Compile Include="McIdioma.cs" />
+    <Compile Include="McTraductor.cs" />
     <Compile Include="McUsuario.cs" />
     <Compile Include="McUsuarioComercial.cs" />
     <Compile Include="McVenta.cs" />
+    <Compile Include="McWallet.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

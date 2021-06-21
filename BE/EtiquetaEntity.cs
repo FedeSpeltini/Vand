@@ -6,10 +6,9 @@ using System.Threading.Tasks;
 
 namespace BE
 {
-    public class IdiomaEntity
+    public class EtiquetaEntity
     {
         public Guid Id { get; set; }
         public string Nombre { get; set; }
-        public bool Default { get; set; }
     }
 }

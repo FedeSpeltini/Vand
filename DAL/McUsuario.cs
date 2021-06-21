@@ -12,6 +12,8 @@ namespace DAL
     {
         private Acceso acceso = new Acceso();
 
+        McWallet mcWallet = new McWallet();
+
         public bool ValidarUsuario(UsuarioEntity usuario)
         {
             acceso.Abrir();
@@ -31,6 +33,47 @@ namespace DAL
             {
                 return false;
             }
+        }
+
+        public void Agregar(string nombre, string clave)
+        {
+            int id = ProxId();
+
+
+            acceso.Abrir();
+
+            List<IDbDataParameter> parameters = new List<IDbDataParameter>();
+
+            parameters.Add(acceso.CrearParametro("@Id", id));
+            parameters.Add(acceso.CrearParametro("@Nombre", nombre));
+            parameters.Add(acceso.CrearParametro("@Clave", clave));
+            parameters.Add(acceso.CrearParametro("@Rol", clave));
+
+            acceso.Escribir("spCrearJugador", parameters);
+
+            acceso.Cerrar();
+
+            mcWallet.Agregar(id);
+
+        }
+
+
+        public int ProxId()
+        {
+            acceso.Abrir();
+
+
+            List<IDbDataParameter> parameters = new List<IDbDataParameter>();
+            parameters.Add(acceso.CrearParametro("@Tabla", "tUsuario"));
+            DataTable tabla = acceso.Leer("spObtenerUltimoId");
+            acceso.Cerrar();
+            int proxLegajo = 1;
+            foreach (DataRow registro in tabla.Rows)
+            {
+                proxLegajo = int.Parse(registro["IdConcepto"].ToString());
+            }
+
+            return proxLegajo;
         }
 
     }

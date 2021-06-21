@@ -52,6 +52,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmCompra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCompra.Designer.cs">
+      <DependentUpon>FrmCompra.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmDisco.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,6 +96,9 @@
     <Compile Include="UcVistaProducto.Designer.cs">
       <DependentUpon>UcVistaProducto.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="FrmCompra.resx">
+      <DependentUpon>FrmCompra.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmDisco.resx">
       <DependentUpon>FrmDisco.cs</DependentUpon>
     </EmbeddedResource>
@@ -138,6 +147,10 @@
     <ProjectReference Include="..\BLL\BLL.csproj">
       <Project>{dec3b384-b214-4860-98ed-e48d5c4de30f}</Project>
       <Name>BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Services\Services.csproj">
+      <Project>{1C04A200-C72B-4C59-AA00-4FCF20F9D600}</Project>
+      <Name>Services</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

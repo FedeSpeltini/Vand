@@ -1,5 +1,6 @@
 ﻿using BE;
 using BLL;
+using Services;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -38,6 +39,24 @@ namespace Views
         private void FrmGaleria_Load(object sender, EventArgs e)
         {
             CargarDatos();
+
+        }
+
+
+        private void Traducir(Idioma idioma = null)
+        {
+            var traducciones = Traductor.ObtenerTraducciones(idioma);
+
+            //if (this.Tag != null && traducciones.ContainsKey(this.Tag.ToString()))
+            //    this.Text = traducciones[this.Tag.ToString()].Texto;
+
+            if (btnIngresar.Tag != null && traducciones.ContainsKey(btnIngresar.Tag.ToString()))
+                btnIngresar.Text = traducciones[btnIngresar.Tag.ToString()].Texto;
+
+        }
+        public void UpdateLanguage(Idioma idioma)
+        {
+            Traducir(idioma);
         }
     }
 }
