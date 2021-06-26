@@ -15,17 +15,19 @@ namespace DAL
         {
             List<CopiaEntity> tablaCopia = new List<CopiaEntity>();
 
-            acceso.Abrir();
-            DataTable tabla = acceso.Leer("spObtenerHistorial");
-            acceso.Cerrar();
+            Acceso.Abrir();
+            DataTable tabla = Acceso.Leer("spListarCopias");
+            Acceso.Cerrar();
 
             foreach (DataRow registro in tabla.Rows)
             {
                 CopiaEntity copia = new CopiaEntity();
-                copia.Nombre = registro["NombreJugador"].ToString();
-                copia.Precio = decimal.Parse(registro["PartidasGanadas"].ToString());
-                copia.Year = Convert.ToDateTime(registro["PartidasEmpatadas"].ToString());
-                //copia.Musicos = int.Parse(registro["PartidasPerdidas"].ToString());
+                copia.Nombre = registro["NombreCopia"].ToString();
+                copia.Precio = decimal.Parse(registro["Precio"].ToString());
+                copia.Year = Convert.ToDateTime(registro["Year"].ToString());
+                UsuarioComercialEntity usuario = new UsuarioComercialEntity();
+                usuario.Nombre = registro["NombrePropietario"].ToString();
+                copia.Propetario = usuario;
                 tablaCopia.Add(copia);
             }
 

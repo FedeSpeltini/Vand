@@ -25,9 +25,9 @@ namespace DAL
         public  List<IdiomaEntity> ObtenerIdiomas()
         {
             List<IdiomaEntity> _idiomas = new List<IdiomaEntity>();
-            acceso.Abrir();
-            DataTable tabla = acceso.Leer("spObtenerHistorial");
-            acceso.Cerrar();
+            Acceso.Abrir();
+            DataTable tabla = Acceso.Leer("spObtenerIdiomas");
+            Acceso.Cerrar();
 
             foreach (DataRow registro in tabla.Rows)
             {
@@ -46,13 +46,17 @@ namespace DAL
 
 
 
-        public IDictionary<string, TraduccionEntity> ObtenerTraducciones()
+        public static IDictionary<string, TraduccionEntity> ObtenerTraducciones()
         {
             //List<IdiomaEntity> tablaTraduccion = new List<IdiomaEntity>();
             IDictionary<string, TraduccionEntity> _traducciones = new Dictionary<string, TraduccionEntity>();
-            acceso.Abrir();
-            DataTable tabla = acceso.Leer("spObtenerHistorial");
-            acceso.Cerrar();
+            Acceso.Abrir();
+
+            List<IDbDataParameter> parameters = new List<IDbDataParameter>();
+
+            parameters.Add(Acceso.CrearParametro("@id_idioma", 1));
+            DataTable tabla = Acceso.Leer("spObtenerTraducciones", parameters);
+            Acceso.Cerrar();
 
             foreach (DataRow registro in tabla.Rows)
             {
@@ -65,7 +69,7 @@ namespace DAL
 
                         Etiqueta = new EtiquetaEntity()
                         {
-                            Id = Guid.Parse(registro["id_etiqueta"].ToString()),
+                            Id = int.Parse(registro["id_etiqueta"].ToString()),
                             Nombre = etiquetaAux
                         }
 

@@ -12,24 +12,24 @@ namespace BLL
     {
 
         McCompra mcCompra = new McCompra();
-        public void Comprar(UsuarioComercialEntity vendedor, CopiaEntity copia, UsuarioClienteEntity comprador)
+        public void Comprar(CopiaEntity copia, UsuarioClienteEntity comprador)
         {
 
             CompraEntity compra = new CompraEntity();
 
             compra.Comprador = comprador;
 
-            compra.Vendedor = vendedor;
+            compra.Vendedor = copia.Propetario;
 
             compra.Producto = copia;
 
-            UsuarioComercialBusiness ucb = new UsuarioComercialBusiness();
+           // UsuarioComercialBusiness ucb = new UsuarioComercialBusiness();
 
-            comprador.Wallet = DescontarVandCoins(copia, comprador.Wallet);
+            //comprador.Wallet = DescontarVandCoins(copia, comprador.Wallet);
 
-            ucb.CargarVenta(copia, comprador, vendedor);
+            //ucb.CargarVenta(copia, comprador, vendedor);
 
-            ucb.DesprenderCopia(vendedor, copia);
+            //ucb.DesprenderCopia(vendedor, copia);
 
             mcCompra.Agregar(compra);
 
@@ -37,11 +37,15 @@ namespace BLL
 
         }
 
-        public WalletEntity DescontarVandCoins(CopiaEntity copia, WalletEntity walletUsuario)
-        {
-            walletUsuario.Cantidad -= copia.Precio;
 
-            return walletUsuario;
+
+
+        public override void CrearUsuario(UsuarioEntity usuario)
+        {
+           // base.CrearUsuario(usuario);
+            McUsuario mc = new McUsuario();
+
+            mc.Agregar(usuario, "Cliente");
         }
     }
 }

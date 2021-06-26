@@ -13,17 +13,17 @@ namespace DAL
         private Acceso acceso = new Acceso();
         public void Agregar(ComisionEntity comision)
         {
-            acceso.Abrir();
+            Acceso.Abrir();
             List<IDbDataParameter> parameters = new List<IDbDataParameter>();
 
-            parameters.Add(acceso.CrearParametro("@Porcentaje", comision.Porcentaje));
-            parameters.Add(acceso.CrearParametro("@Ganancia", comision.Ganancia));
+            parameters.Add(Acceso.CrearParametro("@Porcentaje", comision.Porcentaje));
+            parameters.Add(Acceso.CrearParametro("@Ganancia", comision.Ganancia));
             //parameters.Add(acceso.CrearParametro("@Empatada", comision.Venta.));
             //parameters.Add(acceso.CrearParametro("@Derrota", 0));
             //parameters.Add(acceso.CrearParametro("@Puntos", ganador.Puntos));
-            acceso.Escribir("spGuardarHistorial", parameters);
+            Acceso.Escribir("spGuardarHistorial", parameters);
 
-            acceso.Cerrar();
+            Acceso.Cerrar();
         }
     }
 }

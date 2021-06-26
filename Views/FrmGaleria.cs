@@ -15,6 +15,9 @@ namespace Views
 {
     public partial class FrmGaleria : Form
     {
+        internal IDictionary<string, TraduccionEntity> Traducciones;
+
+        internal FrmPrincipal frmPrincipal = new FrmPrincipal();
         public FrmGaleria()
         {
             InitializeComponent();
@@ -24,6 +27,12 @@ namespace Views
         CopiaBusiness copiaBc = new CopiaBusiness();
         private void btnIngresar_Click(object sender, EventArgs e)
         {
+            FrmDisco frmDisco = new FrmDisco();
+            frmDisco.MdiParent = frmPrincipal;
+            frmDisco.Copia = (CopiaEntity)lstDiscos.SelectedItem;
+            frmDisco.frmPrincipal = frmPrincipal;
+            frmDisco.Show();
+            this.Close();
 
         }
 

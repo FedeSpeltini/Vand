@@ -16,6 +16,14 @@ namespace BE
             set { nombre = value; }
         }
 
+        private string banda;
+
+        public string Banda
+        {
+            get { return banda; }
+            set { banda = value; }
+        }
+
         private DateTime year;
 
         public DateTime Year

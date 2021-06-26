@@ -11,7 +11,7 @@ namespace BLL
     {
          void ValidarUsuario(UsuarioEntity usuario);
 
-         void CrearUsuario(string username, string pwd);
+         void CrearUsuario(UsuarioEntity usuario);
 
          
 

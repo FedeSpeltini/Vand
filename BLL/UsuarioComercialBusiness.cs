@@ -33,5 +33,14 @@ namespace BLL
             mcVenta.Agregar(venta);
             return venta;
         }
+
+
+        public override void CrearUsuario(UsuarioEntity usuario)
+        {
+            base.CrearUsuario(usuario);
+            McUsuario mc = new McUsuario();
+
+            mc.Agregar(usuario, "Empresa");
+        }
     }
 }

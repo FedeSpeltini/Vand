@@ -39,7 +39,7 @@ namespace Views
             this.btnIngresar.Name = "btnIngresar";
             this.btnIngresar.Size = new System.Drawing.Size(130, 48);
             this.btnIngresar.TabIndex = 0;
-            this.btnIngresar.Text = "Ingresar";
+            this.btnIngresar.Tag = "Detail";
             this.btnIngresar.UseVisualStyleBackColor = true;
             this.btnIngresar.Click += new System.EventHandler(this.btnIngresar_Click);
             // 

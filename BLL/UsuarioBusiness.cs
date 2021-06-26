@@ -1,4 +1,5 @@
 ﻿using BE;
+using DAL;
 using Services;
 using System;
 using System.Collections.Generic;
@@ -11,9 +12,63 @@ namespace BLL
     public class UsuarioBusiness : IUSuario
     {
 
-        public virtual void CrearUsuario(string username, string pwd)
+        public virtual  void CrearUsuario(UsuarioEntity usuario)
         {
 
+        }
+
+        //McUsuario mc = new McUsuario();
+        McTraductor mcTraductor = new McTraductor();
+        public static UsuarioEntity Login(UsuarioEntity usuario)
+        {
+
+            if (String.IsNullOrEmpty(usuario.Nombre) || String.IsNullOrEmpty(usuario.Password)) throw new Exception("Debe completar todos los campos");
+            try
+            {
+                string rol = McUsuario.ValidarUsuario(usuario);
+                if (rol != "")
+                {
+                    usuario.Rol = rol;
+                    SessionState.Login(usuario);
+                    
+                    return usuario;
+                }
+                else
+                {
+                    throw new Exception("Usuario o contraseña incorrecta");
+                }
+
+            }
+            catch (Exception e)
+            {
+
+                throw e;
+            }
+            finally
+            {
+
+            }
+
+        }
+
+        public static UsuarioEntity GestionarTipoUsuario(UsuarioEntity usuario)
+        {
+            if(usuario.Rol == "Cliente")
+            {
+                return (UsuarioClienteEntity)usuario;
+            }
+            if (usuario.Rol == "Empresa")
+            {
+                return (UsuarioComercialEntity)usuario;
+            }
+            if (usuario.Rol == "Logistica")
+            {
+                return (UsuarioLogisticaEntity)usuario;
+            }
+            else
+            {
+                throw new Exception("El usuario no matchea con ningún rol");
+            }
         }
 
         public void ValidarUsuario(UsuarioEntity usuario)

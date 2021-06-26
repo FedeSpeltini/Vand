@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BE;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -12,12 +13,24 @@ namespace DAL
         private Acceso acceso = new Acceso();
         public int Agregar(int id)
         {
-            acceso.Abrir();
+            Acceso.Abrir();
 
             List<IDbDataParameter> parameters = new List<IDbDataParameter>();
 
-            parameters.Add(acceso.CrearParametro("@Id", id));
-            return acceso.Escribir("spCrearWallet", parameters);
+            parameters.Add(Acceso.CrearParametro("@Id", id));
+            return Acceso.Escribir("spCrearWallet", parameters);
+
+        }
+
+        public int Descontar(UsuarioEntity usuario, decimal cantidad)
+        {
+            Acceso.Abrir();
+
+            List<IDbDataParameter> parameters = new List<IDbDataParameter>();
+
+            parameters.Add(Acceso.CrearParametro("@Nombre", usuario.Nombre));
+            parameters.Add(Acceso.CrearParametro("@Cantidad", cantidad));
+            return Acceso.Escribir("spDescontarVandCoin", parameters);
 
         }
 

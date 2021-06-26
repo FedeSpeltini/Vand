@@ -14,59 +14,61 @@ namespace DAL
 
         McWallet mcWallet = new McWallet();
 
-        public bool ValidarUsuario(UsuarioEntity usuario)
+        public static  string ValidarUsuario(UsuarioEntity usuario)
         {
-            acceso.Abrir();
+            Acceso.Abrir();
             List<IDbDataParameter> parameters = new List<IDbDataParameter>();
 
-            parameters.Add(acceso.CrearParametro("@Username", usuario.Nombre));
-            parameters.Add(acceso.CrearParametro("@Clave", usuario.Password));
+            parameters.Add(Acceso.CrearParametro("@Username", usuario.Nombre));
+            parameters.Add(Acceso.CrearParametro("@Clave", usuario.Password));
 
-            DataTable tabla = acceso.Leer("spValidarUsuario", parameters);
-            acceso.Cerrar();
+            DataTable tabla = Acceso.Leer("spValidarUsuario", parameters);
+            Acceso.Cerrar();
 
             if (tabla.Rows.Count == 1)
             {
-                return true;
+                return tabla.Rows[0]["Rol"].ToString();
+
+                //return true;
             }
             else
             {
-                return false;
+                return "";
             }
         }
 
-        public void Agregar(string nombre, string clave)
+        public  void Agregar(UsuarioEntity usuario, string rol)
         {
-            int id = ProxId();
+            //int id = ProxId();
 
 
-            acceso.Abrir();
+            Acceso.Abrir();
 
             List<IDbDataParameter> parameters = new List<IDbDataParameter>();
 
-            parameters.Add(acceso.CrearParametro("@Id", id));
-            parameters.Add(acceso.CrearParametro("@Nombre", nombre));
-            parameters.Add(acceso.CrearParametro("@Clave", clave));
-            parameters.Add(acceso.CrearParametro("@Rol", clave));
+            //parameters.Add(Acceso.CrearParametro("@Id", id));
+            parameters.Add(Acceso.CrearParametro("@Nombre", usuario.Nombre));
+            parameters.Add(Acceso.CrearParametro("@Clave", usuario.Password));
+            parameters.Add(Acceso.CrearParametro("@Rol", rol));
 
-            acceso.Escribir("spCrearJugador", parameters);
+            Acceso.Escribir("spCrearUsuario", parameters);
 
-            acceso.Cerrar();
+            Acceso.Cerrar();
 
-            mcWallet.Agregar(id);
+            //mcWallet.Agregar(id);
 
         }
 
 
-        public int ProxId()
+        public static int ProxId()
         {
-            acceso.Abrir();
+            Acceso.Abrir();
 
 
             List<IDbDataParameter> parameters = new List<IDbDataParameter>();
-            parameters.Add(acceso.CrearParametro("@Tabla", "tUsuario"));
-            DataTable tabla = acceso.Leer("spObtenerUltimoId");
-            acceso.Cerrar();
+            parameters.Add(Acceso.CrearParametro("@Tabla", "tUsuario"));
+            DataTable tabla = Acceso.Leer("spObtenerUltimoId");
+            Acceso.Cerrar();
             int proxLegajo = 1;
             foreach (DataRow registro in tabla.Rows)
             {
@@ -75,6 +77,25 @@ namespace DAL
 
             return proxLegajo;
         }
+
+
+        //public static int ObtenerId()
+        //{
+        //    Acceso.Abrir();
+
+
+        //    List<IDbDataParameter> parameters = new List<IDbDataParameter>();
+        //    parameters.Add(Acceso.CrearParametro("@Tabla", "tUsuario"));
+            
+        //    Acceso.Cerrar();
+        //    int proxLegajo = 1;
+        //    foreach (DataRow registro in tabla.Rows)
+        //    {
+        //        proxLegajo = int.Parse(registro["IdConcepto"].ToString());
+        //    }
+
+        //    return proxLegajo;
+        //}
 
     }
 }

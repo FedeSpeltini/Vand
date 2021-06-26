@@ -27,7 +27,7 @@ namespace Services
             }
         }
 
-        public static bool Login(UsuarioEntity usuario)
+        public static bool Connect(UsuarioEntity usuario)
         {
 
             lock (_lock)
@@ -48,20 +48,20 @@ namespace Services
         }
 
 
-        public bool Login2(UsuarioEntity usuario) //IDictionary<string, Traduccion> 
+        public static bool Login(UsuarioEntity usuario) //IDictionary<string, Traduccion> 
         {
 
             if (String.IsNullOrEmpty(usuario.Nombre) || String.IsNullOrEmpty(usuario.Password)) throw new Exception("Debe completar todos los campos");
             try
             {
                // UsuarioEntity usuario = mc.ValidarUsuario(usuario);
-                if (!mc.ValidarUsuario(usuario))
+                if (McUsuario.ValidarUsuario(usuario) == "")
                 {
                     throw new Exception("Usuario o contraseña incorrecta");
                 }
                 else
                 {
-                    return Login(usuario);
+                    return Connect(usuario);
                 }
                 
                 //return Traductor.ObtenerTraducciones(usuario.Idioma);

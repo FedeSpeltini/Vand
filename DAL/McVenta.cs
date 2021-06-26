@@ -13,7 +13,7 @@ namespace DAL
         private Acceso acceso = new Acceso();
         public void Agregar(VentaEntity ganador)
         {
-            acceso.Abrir();
+            Acceso.Abrir();
             List<IDbDataParameter> parameters = new List<IDbDataParameter>();
 
             //parameters.Add(acceso.CrearParametro("@Nombre", ganador.Jugador.Usuario));
@@ -21,9 +21,9 @@ namespace DAL
             //parameters.Add(acceso.CrearParametro("@Empatada", 0));
             //parameters.Add(acceso.CrearParametro("@Derrota", 0));
             //parameters.Add(acceso.CrearParametro("@Puntos", ganador.Puntos));
-            acceso.Escribir("spGuardarHistorial", parameters);
+            Acceso.Escribir("spGuardarHistorial", parameters);
 
-            acceso.Cerrar();
+            Acceso.Cerrar();
         }
     }
 }

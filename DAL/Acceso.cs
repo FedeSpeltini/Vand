@@ -11,15 +11,15 @@ namespace DAL
     internal class Acceso
     {
         private SqlTransaction tx;
-        private SqlConnection cn;
+        private static SqlConnection cn;
 
-        public void Abrir()
+        public static void Abrir()
         {
-            cn = new SqlConnection("Initial Catalog=Vand; Data Source=DESKTOP-VUD3NBA; Integrated Security=SSPI");
+            cn = new SqlConnection("Initial Catalog=Vand2; Data Source=DESKTOP-VUD3NBA; Integrated Security=SSPI");
             cn.Open();
         }
 
-        public void Cerrar()
+        public static void Cerrar()
         {
             cn.Close();
             cn = null;
@@ -32,7 +32,7 @@ namespace DAL
         }
 
 
-        private SqlCommand CrearComando(string Sql, List<IDbDataParameter> parametros = null, CommandType tipo = CommandType.StoredProcedure)
+        private static SqlCommand CrearComando(string Sql, List<IDbDataParameter> parametros = null, CommandType tipo = CommandType.StoredProcedure)
         {
             SqlCommand comando = new SqlCommand(Sql, cn);
             comando.CommandType = tipo;
@@ -43,7 +43,7 @@ namespace DAL
             return comando;
         }
 
-        public int Escribir(string Sql, List<IDbDataParameter> parametros = null)
+        public static int Escribir(string Sql, List<IDbDataParameter> parametros = null)
         {
             SqlCommand cmd = CrearComando(Sql, parametros);
             int resultado;
@@ -60,7 +60,7 @@ namespace DAL
             return resultado;
         }
 
-        public DataTable Leer(string Sql, List<IDbDataParameter> parametros = null)
+        public static DataTable Leer(string Sql, List<IDbDataParameter> parametros = null)
         {
             SqlDataAdapter ad = new SqlDataAdapter();
             ad.SelectCommand = CrearComando(Sql, parametros);
@@ -70,28 +70,28 @@ namespace DAL
             return tabla;
         }
 
-        public IDbDataParameter CrearParametro(string nom, string valor)
+        public static IDbDataParameter CrearParametro(string nom, string valor)
         {
             SqlParameter par = new SqlParameter(nom, valor);
             par.DbType = DbType.String;
             return par;
         }
 
-        public IDbDataParameter CrearParametro(string nom, decimal valor)
+        public static IDbDataParameter CrearParametro(string nom, decimal valor)
         {
             SqlParameter par = new SqlParameter(nom, valor);
             par.DbType = DbType.Decimal;
             return par;
         }
 
-        public IDbDataParameter CrearParametro(string nom, int valor)
+        public static IDbDataParameter CrearParametro(string nom, int valor)
         {
             SqlParameter par = new SqlParameter(nom, valor);
             par.DbType = DbType.Int32;
             return par;
         }
 
-        public IDbDataParameter CrearParametro(string nom, DateTime valor)
+        public static IDbDataParameter CrearParametro(string nom, DateTime valor)
         {
             SqlParameter par = new SqlParameter(nom, valor);
             par.DbType = DbType.DateTime;

@@ -24,6 +24,14 @@ namespace BE
             set { password = value; }
         }
 
+        private string rol;
+
+        public string Rol
+        {
+            get { return rol; }
+            set { rol = value; }
+        }
+
 
 
 
