@@ -54,7 +54,9 @@ namespace DAL
 
             List<IDbDataParameter> parameters = new List<IDbDataParameter>();
 
-            parameters.Add(Acceso.CrearParametro("@id_idioma", 1));
+            parameters.Add(Acceso.CrearParametro("@id_idioma", 2));
+            //ARREGLAR
+            //Cambiar Hardcode de multilenguaje
             DataTable tabla = Acceso.Leer("spObtenerTraducciones", parameters);
             Acceso.Cerrar();
 

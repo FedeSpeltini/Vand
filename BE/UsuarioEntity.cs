@@ -33,6 +33,24 @@ namespace BE
         }
 
 
+        //private List<PermisoEntity> permisos = new List<PermisoEntity>();
+
+        //public List<PermisoEntity> Permisos
+        //{
+        //    get { return permisos; }
+
+        //}
+
+        private List<PermisoEntity> permisos = new List<PermisoEntity>();
+
+        public List<PermisoEntity> Permisos
+        {
+            get { return permisos; }
+            set { permisos = value; }
+        }
+
+
+
 
 
     }

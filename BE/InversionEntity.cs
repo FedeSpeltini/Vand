@@ -8,18 +8,45 @@ namespace BE
 {
     public class InversionEntity
     {
-        private decimal vandCoinInvertido;
-        public decimal VandCoinInvertido
+        private decimal montoInicial;
+        public decimal MontoInicial
         {
-            get { return vandCoinInvertido; }
-            set { vandCoinInvertido = value; }
+            get { return montoInicial; }
+            set { montoInicial = value; }
         }
 
-        private decimal vandCoinGenerado;
-        public decimal VandCoinGenerado
+        private decimal montoFinal;
+        public decimal MontoFinal
         {
-            get { return vandCoinGenerado; }
-            set { vandCoinGenerado = value; }
+            get { return montoFinal; }
+            set { montoFinal = value; }
         }
+
+        private UsuarioComercialEntity usuario;
+
+        public UsuarioComercialEntity Usuario
+        {
+            get { return usuario; }
+            set { usuario = value; }
+        }
+
+        private DateTime fecInicio;
+
+        public DateTime FecInicio
+        {
+            get { return fecInicio; }
+            set { fecInicio = value; }
+        }
+
+        private DateTime fecFin;
+
+        public DateTime FecFin
+        {
+            get { return fecFin; }
+            set { fecFin = value; }
+        }
+
+
+
     }
 }

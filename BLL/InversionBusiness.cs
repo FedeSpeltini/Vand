@@ -16,5 +16,10 @@ namespace BLL
             
             
         }
+
+        public void RevisarPlazosFijos()
+        {
+            
+        }
     }
 }

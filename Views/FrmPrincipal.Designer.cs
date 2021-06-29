@@ -37,6 +37,9 @@ namespace Views
             this.registroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.vinilosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.galeriaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.inversiónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.plazoFijoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.publicarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -51,7 +54,8 @@ namespace Views
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.usuarioToolStripMenuItem,
-            this.vinilosToolStripMenuItem});
+            this.vinilosToolStripMenuItem,
+            this.inversiónToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(800, 28);
@@ -70,21 +74,22 @@ namespace Views
             // loginToolStripMenuItem
             // 
             this.loginToolStripMenuItem.Name = "loginToolStripMenuItem";
-            this.loginToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.loginToolStripMenuItem.Size = new System.Drawing.Size(83, 26);
             this.loginToolStripMenuItem.Tag = "Login";
             this.loginToolStripMenuItem.Click += new System.EventHandler(this.loginToolStripMenuItem_Click);
             // 
             // registroToolStripMenuItem
             // 
             this.registroToolStripMenuItem.Name = "registroToolStripMenuItem";
-            this.registroToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.registroToolStripMenuItem.Size = new System.Drawing.Size(83, 26);
             this.registroToolStripMenuItem.Tag = "Register";
             this.registroToolStripMenuItem.Click += new System.EventHandler(this.registroToolStripMenuItem_Click);
             // 
             // vinilosToolStripMenuItem
             // 
             this.vinilosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.galeriaToolStripMenuItem});
+            this.galeriaToolStripMenuItem,
+            this.publicarToolStripMenuItem});
             this.vinilosToolStripMenuItem.Name = "vinilosToolStripMenuItem";
             this.vinilosToolStripMenuItem.Size = new System.Drawing.Size(67, 24);
             this.vinilosToolStripMenuItem.Text = "Vinilos";
@@ -92,9 +97,29 @@ namespace Views
             // galeriaToolStripMenuItem
             // 
             this.galeriaToolStripMenuItem.Name = "galeriaToolStripMenuItem";
-            this.galeriaToolStripMenuItem.Size = new System.Drawing.Size(139, 26);
+            this.galeriaToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.galeriaToolStripMenuItem.Text = "Galeria";
             this.galeriaToolStripMenuItem.Click += new System.EventHandler(this.galeriaToolStripMenuItem_Click);
+            // 
+            // inversiónToolStripMenuItem
+            // 
+            this.inversiónToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.plazoFijoToolStripMenuItem});
+            this.inversiónToolStripMenuItem.Name = "inversiónToolStripMenuItem";
+            this.inversiónToolStripMenuItem.Size = new System.Drawing.Size(82, 24);
+            this.inversiónToolStripMenuItem.Text = "Inversión";
+            // 
+            // plazoFijoToolStripMenuItem
+            // 
+            this.plazoFijoToolStripMenuItem.Name = "plazoFijoToolStripMenuItem";
+            this.plazoFijoToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.plazoFijoToolStripMenuItem.Text = "Plazo Fijo";
+            // 
+            // publicarToolStripMenuItem
+            // 
+            this.publicarToolStripMenuItem.Name = "publicarToolStripMenuItem";
+            this.publicarToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.publicarToolStripMenuItem.Text = "Publicar";
             // 
             // FrmPrincipal
             // 
@@ -123,5 +148,8 @@ namespace Views
         private System.Windows.Forms.ToolStripMenuItem registroToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem vinilosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem galeriaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem inversiónToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem plazoFijoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem publicarToolStripMenuItem;
     }
 }

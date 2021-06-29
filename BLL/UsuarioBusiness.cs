@@ -19,6 +19,7 @@ namespace BLL
 
         //McUsuario mc = new McUsuario();
         McTraductor mcTraductor = new McTraductor();
+        McPermiso mcPermiso = new McPermiso();
         public static UsuarioEntity Login(UsuarioEntity usuario)
         {
 
@@ -30,8 +31,11 @@ namespace BLL
                 {
                     usuario.Rol = rol;
                     SessionState.Login(usuario);
-                    
+                    usuario.Permisos = McPermiso.Listar(usuario);
                     return usuario;
+                   // return GestionarTipoUsuario(usuario);
+                    //PREGUNTAR
+                    //No puedo convertir superclase en subclase
                 }
                 else
                 {
@@ -55,7 +59,8 @@ namespace BLL
         {
             if(usuario.Rol == "Cliente")
             {
-                return (UsuarioClienteEntity)usuario;
+                //return (UsuarioClienteEntity)usuario;
+                return new UsuarioClienteEntity();
             }
             if (usuario.Rol == "Empresa")
             {

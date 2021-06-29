@@ -27,8 +27,8 @@ namespace DAL
 
             if (tabla.Rows.Count == 1)
             {
-                return tabla.Rows[0]["Rol"].ToString();
-
+                //return tabla.Rows[0]["Rol"].ToString();
+                return "Cliente";
                 //return true;
             }
             else
@@ -79,6 +79,8 @@ namespace DAL
         }
 
 
+
+
         //public static int ObtenerId()
         //{
         //    Acceso.Abrir();
@@ -86,7 +88,7 @@ namespace DAL
 
         //    List<IDbDataParameter> parameters = new List<IDbDataParameter>();
         //    parameters.Add(Acceso.CrearParametro("@Tabla", "tUsuario"));
-            
+
         //    Acceso.Cerrar();
         //    int proxLegajo = 1;
         //    foreach (DataRow registro in tabla.Rows)

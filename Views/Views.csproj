@@ -70,6 +70,12 @@
     <Compile Include="FrmGaleria.Designer.cs">
       <DependentUpon>FrmGaleria.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmInversion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmInversion.Designer.cs">
+      <DependentUpon>FrmInversion.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -110,6 +116,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmGaleria.resx">
       <DependentUpon>FrmGaleria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmInversion.resx">
+      <DependentUpon>FrmInversion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>

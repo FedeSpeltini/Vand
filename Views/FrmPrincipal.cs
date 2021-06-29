@@ -37,6 +37,15 @@ namespace Views
 
         private void FrmPrincipal_Load(object sender, EventArgs e)
         {
+
+            foreach(PermisoEntity permiso in Usuario.Permisos)
+            {
+                if(permiso.Descripcion == "Cliente")
+                {
+                    publicarToolStripMenuItem.Enabled = false;
+                }
+            }
+
             if (loginToolStripMenuItem.Tag != null && Traducciones.ContainsKey(loginToolStripMenuItem.Tag.ToString()))
                 loginToolStripMenuItem.Text = Traducciones[loginToolStripMenuItem.Tag.ToString()].Texto;
 

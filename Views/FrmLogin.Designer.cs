@@ -65,7 +65,7 @@ namespace Views
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(308, 360);
+            this.ClientSize = new System.Drawing.Size(308, 222);
             this.Controls.Add(this.txtPwd);
             this.Controls.Add(this.txtUserName);
             this.Controls.Add(this.btnLogin);

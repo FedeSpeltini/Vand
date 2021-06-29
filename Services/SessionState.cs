@@ -34,15 +34,16 @@ namespace Services
             {
                 if (_sessionState == null)
                 {
+
+                    _sessionState = new SessionState();
+                    _sessionState.Usuario = usuario;
+                    _sessionState.FechaInicio = DateTime.Now;
                     return true;
-                    //_sessionState = new SessionState();
-                    //_sessionState.Usuario = usuario;
-                    //_sessionState.FechaInicio = DateTime.Now;
                 }
                 else
                 {
-                    return false;
-                    //throw new Exception("Sesión ya iniciada");
+                    
+                    throw new Exception("Sesión ya iniciada");
                 }
             }
         }
