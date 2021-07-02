@@ -20,19 +20,19 @@ namespace BLL
             return vendedor.Discos;
 
         }
-        public virtual VentaEntity CargarVenta(CopiaEntity copia, UsuarioClienteEntity comprador, UsuarioComercialEntity vendedor)
-        {
-            ComisionBusiness comision = new ComisionBusiness();
-            VentaEntity venta = new VentaEntity();
+        //public virtual VentaEntity CargarVenta(CompraEntity compra)
+        //{
+        //    ComisionBusiness comision = new ComisionBusiness();
+        //    VentaEntity venta = new VentaEntity();
 
-            venta.Comprador = comprador;
-            venta.Vendedor = vendedor;
-            venta.Producto = copia;
-            venta.Honorarios = comision.AplicarComision(copia, venta);
+        //    venta.Comprador = compra.Comprador;
+        //    venta.Vendedor = compra.Vendedor;
+        //    venta.Producto = compra.Producto;
+        //    venta.Honorarios = comision.AplicarComision(copia, venta);
 
-            mcVenta.Agregar(venta);
-            return venta;
-        }
+        //    mcVenta.Agregar(venta);
+        //    return venta;
+        //}
 
 
         public override void CrearUsuario(UsuarioEntity usuario)

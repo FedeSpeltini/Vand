@@ -60,5 +60,15 @@ namespace Views
             frmGaleria.frmPrincipal = this;
             frmGaleria.Show();
         }
+
+        private void controlToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void publicarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

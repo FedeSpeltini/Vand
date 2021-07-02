@@ -45,6 +45,7 @@
     <Compile Include="CompraEntity.cs" />
     <Compile Include="CopiaEntity.cs" />
     <Compile Include="DiscoEntity.cs" />
+    <Compile Include="EnvioEntity.cs" />
     <Compile Include="EtiquetaEntity.cs" />
     <Compile Include="GrupoEntity.cs" />
     <Compile Include="IdiomaEntity.cs" />

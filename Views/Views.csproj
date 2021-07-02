@@ -52,6 +52,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmAltaCopia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAltaCopia.Designer.cs">
+      <DependentUpon>FrmAltaCopia.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmCompra.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -82,6 +88,12 @@
     <Compile Include="FrmLogin.Designer.cs">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmLogistica.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLogistica.Designer.cs">
+      <DependentUpon>FrmLogistica.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -108,6 +120,9 @@
     <Compile Include="UcVistaProducto.Designer.cs">
       <DependentUpon>UcVistaProducto.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="FrmAltaCopia.resx">
+      <DependentUpon>FrmAltaCopia.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmCompra.resx">
       <DependentUpon>FrmCompra.cs</DependentUpon>
     </EmbeddedResource>
@@ -122,6 +137,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmLogistica.resx">
+      <DependentUpon>FrmLogistica.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmPrincipal.resx">
       <DependentUpon>FrmPrincipal.cs</DependentUpon>

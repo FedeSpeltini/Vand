@@ -37,9 +37,11 @@ namespace Views
             this.registroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.vinilosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.galeriaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.publicarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.inversiónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.plazoFijoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.publicarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.logísticaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.controlToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,7 +57,8 @@ namespace Views
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.usuarioToolStripMenuItem,
             this.vinilosToolStripMenuItem,
-            this.inversiónToolStripMenuItem});
+            this.inversiónToolStripMenuItem,
+            this.logísticaToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(800, 28);
@@ -101,6 +104,13 @@ namespace Views
             this.galeriaToolStripMenuItem.Text = "Galeria";
             this.galeriaToolStripMenuItem.Click += new System.EventHandler(this.galeriaToolStripMenuItem_Click);
             // 
+            // publicarToolStripMenuItem
+            // 
+            this.publicarToolStripMenuItem.Name = "publicarToolStripMenuItem";
+            this.publicarToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.publicarToolStripMenuItem.Text = "Publicar";
+            this.publicarToolStripMenuItem.Click += new System.EventHandler(this.publicarToolStripMenuItem_Click);
+            // 
             // inversiónToolStripMenuItem
             // 
             this.inversiónToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -112,14 +122,23 @@ namespace Views
             // plazoFijoToolStripMenuItem
             // 
             this.plazoFijoToolStripMenuItem.Name = "plazoFijoToolStripMenuItem";
-            this.plazoFijoToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.plazoFijoToolStripMenuItem.Size = new System.Drawing.Size(156, 26);
             this.plazoFijoToolStripMenuItem.Text = "Plazo Fijo";
             // 
-            // publicarToolStripMenuItem
+            // logísticaToolStripMenuItem
             // 
-            this.publicarToolStripMenuItem.Name = "publicarToolStripMenuItem";
-            this.publicarToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.publicarToolStripMenuItem.Text = "Publicar";
+            this.logísticaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.controlToolStripMenuItem});
+            this.logísticaToolStripMenuItem.Name = "logísticaToolStripMenuItem";
+            this.logísticaToolStripMenuItem.Size = new System.Drawing.Size(82, 24);
+            this.logísticaToolStripMenuItem.Text = "Logística";
+            // 
+            // controlToolStripMenuItem
+            // 
+            this.controlToolStripMenuItem.Name = "controlToolStripMenuItem";
+            this.controlToolStripMenuItem.Size = new System.Drawing.Size(141, 26);
+            this.controlToolStripMenuItem.Text = "Control";
+            this.controlToolStripMenuItem.Click += new System.EventHandler(this.controlToolStripMenuItem_Click);
             // 
             // FrmPrincipal
             // 
@@ -151,5 +170,7 @@ namespace Views
         private System.Windows.Forms.ToolStripMenuItem inversiónToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem plazoFijoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem publicarToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem logísticaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem controlToolStripMenuItem;
     }
 }

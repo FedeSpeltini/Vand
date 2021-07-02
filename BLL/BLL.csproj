@@ -46,6 +46,7 @@
     <Compile Include="ComisionBusiness.cs" />
     <Compile Include="CompraBusiness.cs" />
     <Compile Include="CopiaBusiness.cs" />
+    <Compile Include="EnvioBusiness.cs" />
     <Compile Include="InversionBusiness.cs" />
     <Compile Include="IUSuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
