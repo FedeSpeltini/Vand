@@ -24,13 +24,7 @@ namespace BE
             set { ganancia = value; }
         }
 
-        private VentaEntity venta;
 
-        public VentaEntity Venta
-        {
-            get { return venta; }
-            set { venta = value; }
-        }
 
 
 

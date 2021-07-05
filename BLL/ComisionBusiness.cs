@@ -16,7 +16,7 @@ namespace BLL
         public decimal AplicarComision(CopiaEntity copia, VentaEntity venta)
         {
 
-            comision.Venta = venta;
+            //comision.Venta = venta;
             comision.Ganancia = copia.Precio * comision.Porcentaje;
 
             copia.Precio -= copia.Precio * comision.Porcentaje;

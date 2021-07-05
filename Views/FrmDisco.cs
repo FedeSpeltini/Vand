@@ -33,8 +33,12 @@ namespace Views
         {
             UsuarioClienteBusiness user = new UsuarioClienteBusiness();
             //frmPrincipal.Usuario
+            UsuarioEntity usuario = (UsuarioEntity)frmPrincipal.Usuario;
 
-            user.Comprar(Copia, (UsuarioClienteEntity)frmPrincipal.Usuario);
+            UsuarioClienteEntity cliente = new UsuarioClienteEntity();
+            cliente.Nombre = usuario.Nombre;
+            
+            user.Comprar(Copia, cliente);
         }
     }
 }

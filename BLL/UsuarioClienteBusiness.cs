@@ -12,17 +12,18 @@ namespace BLL
     {
 
         McCompra mcCompra = new McCompra();
+        ComisionEntity comision = new ComisionEntity();
         public void Comprar(CopiaEntity copia, UsuarioClienteEntity comprador)
-        {
-
+        {   
             CompraEntity compra = new CompraEntity();
 
             compra.Comprador = comprador;
 
             compra.Vendedor = copia.Propetario;
-
+            comision.Ganancia = copia.Precio * comision.Porcentaje;
+            compra.ValorFinal = copia.Precio - (copia.Precio * comision.Porcentaje);
             compra.Producto = copia;
-
+            compra.Comision = comision;
            // UsuarioComercialBusiness ucb = new UsuarioComercialBusiness();
 
             //comprador.Wallet = DescontarVandCoins(copia, comprador.Wallet);

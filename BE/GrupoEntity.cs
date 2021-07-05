@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BE
 {
-    public class GrupoEntity
+    public class GrupoEntity : PermisoEntity
     {
         private List<PermisoEntity> permisos = new List<PermisoEntity>();
 
@@ -15,21 +15,7 @@ namespace BE
             get { return permisos; }
         }
 
-        private int id;
 
-        public int Id
-        {
-            get { return id; }
-            set { id = value; }
-        }
-
-        private string descripcion;
-
-        public string Descripcion
-        {
-            get { return descripcion; }
-            set { descripcion = value; }
-        }
         //public class GrupoEntity : PermisoEntity
 
     }
