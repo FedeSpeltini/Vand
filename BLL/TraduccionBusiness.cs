@@ -11,9 +11,9 @@ namespace BLL
     public class TraduccionBusiness
     {
 
-        public static IDictionary<string, TraduccionEntity> ObtenerTraducciones()
+        public static IDictionary<string, TraduccionEntity> ObtenerTraducciones(int idioma)
         {
-            return McTraductor.ObtenerTraducciones();
+            return McTraductor.ObtenerTraducciones(idioma);
         }
 
         public static List<IdiomaEntity> ObtenerIdiomas()

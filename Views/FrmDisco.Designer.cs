@@ -35,7 +35,6 @@ namespace Views
             this.lblYear = new System.Windows.Forms.Label();
             this.lblPrecio = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
@@ -96,15 +95,6 @@ namespace Views
             this.label1.TabIndex = 5;
             this.label1.Text = "Nombre Disco";
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(40, 117);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(103, 17);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "Nombre Banda";
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -130,7 +120,6 @@ namespace Views
             this.ClientSize = new System.Drawing.Size(412, 450);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblPrecio);
             this.Controls.Add(this.lblYear);
@@ -153,7 +142,6 @@ namespace Views
         private System.Windows.Forms.Label lblYear;
         private System.Windows.Forms.Label lblPrecio;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
     }

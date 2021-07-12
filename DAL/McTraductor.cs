@@ -43,7 +43,7 @@ namespace DAL
 
 
 
-        public static IDictionary<string, TraduccionEntity> ObtenerTraducciones()
+        public static IDictionary<string, TraduccionEntity> ObtenerTraducciones(int idiomaAux)
         {
             //List<IdiomaEntity> tablaTraduccion = new List<IdiomaEntity>();
             IDictionary<string, TraduccionEntity> _traducciones = new Dictionary<string, TraduccionEntity>();
@@ -51,7 +51,7 @@ namespace DAL
 
             List<IDbDataParameter> parameters = new List<IDbDataParameter>();
 
-            parameters.Add(Acceso.CrearParametro("@id_idioma", 2));
+            parameters.Add(Acceso.CrearParametro("@id_idioma", idiomaAux));
             //ARREGLAR
             //Cambiar Hardcode de multilenguaje
             DataTable tabla = Acceso.Leer("spObtenerTraducciones", parameters);

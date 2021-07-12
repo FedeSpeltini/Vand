@@ -40,9 +40,10 @@ namespace Views
         }
         private void btnSeleccionar_Click(object sender, EventArgs e)
         {
-            frmPrincipal.Traducciones = TraduccionBusiness.ObtenerTraducciones();
+            frmPrincipal.Traducciones = TraduccionBusiness.ObtenerTraducciones(2);
             this.MdiParent = frmPrincipal;
-            Traducir();
+            //this.MdiParent.Refresh();
+            //Traducir();
         }
     }
 }

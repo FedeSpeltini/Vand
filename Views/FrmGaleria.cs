@@ -41,6 +41,8 @@ namespace Views
         {
             foreach(CopiaEntity copia in copiaBc.ObtenerDiscos(frmPrincipal.Usuario))
             {
+                lstDiscos.DisplayMember = nameof(copia.Nombre);
+                lstDiscos.ValueMember = nameof(copia);
                 lstDiscos.Items.Add(copia);
             }
         }
