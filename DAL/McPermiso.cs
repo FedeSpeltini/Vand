@@ -64,14 +64,18 @@ namespace DAL
             DataTable tabla = Acceso.Leer("USUARIO_PERMISO_LISTAR", parameters);
             foreach (DataRow registro in tabla.Rows)
             {
-                usuario.Permisos.Add((from PermisoEntity p in lista
-                                      where p.Id == int.Parse(registro["ID_PERMISO"].ToString())
-                                      select p).FirstOrDefault());
+                PermisoEntity permisoAux = new PermisoEntity();
+                permisoAux.Id = int.Parse(registro["ID_PERMISO"].ToString());
+                permisoAux.Descripcion = registro["PERMISO"].ToString();
+                //usuario.Permisos.Add((from PermisoEntity p in lista
+                //                      where p.Id == int.Parse(registro["ID_PERMISO"].ToString())
+                //                      select p).FirstOrDefault());
+                usuario.Permisos.Add(permisoAux);
 
             }
             Acceso.Cerrar();
 
-            return lista;
+            return usuario.Permisos;
         }
     }
 }

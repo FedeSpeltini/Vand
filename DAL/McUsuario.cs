@@ -10,9 +10,7 @@ namespace DAL
 {
     public class McUsuario
     {
-        private Acceso acceso = new Acceso();
 
-        McWallet mcWallet = new McWallet();
 
         public static  string ValidarUsuario(UsuarioEntity usuario)
         {
@@ -27,9 +25,7 @@ namespace DAL
 
             if (tabla.Rows.Count == 1)
             {
-                //return tabla.Rows[0]["Rol"].ToString();
-                return "Cliente";
-                //return true;
+                return tabla.Rows[0]["PERMISO"].ToString();
             }
             else
             {
@@ -37,7 +33,7 @@ namespace DAL
             }
         }
 
-        public  void Agregar(UsuarioEntity usuario, string rol)
+        public  void Agregar(UsuarioEntity usuario, int rol)
         {
             //int id = ProxId();
 

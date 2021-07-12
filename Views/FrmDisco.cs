@@ -31,14 +31,23 @@ namespace Views
 
         private void btnComprar_Click(object sender, EventArgs e)
         {
-            UsuarioClienteBusiness user = new UsuarioClienteBusiness();
-            //frmPrincipal.Usuario
-            UsuarioEntity usuario = (UsuarioEntity)frmPrincipal.Usuario;
+            DialogResult dialogResult = MessageBox.Show("¿Esta seguro que desea comprar este disco?", "Compra", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                UsuarioClienteBusiness user = new UsuarioClienteBusiness();
+                //frmPrincipal.Usuario
+                UsuarioEntity usuario = (UsuarioEntity)frmPrincipal.Usuario;
 
-            UsuarioClienteEntity cliente = new UsuarioClienteEntity();
-            cliente.Nombre = usuario.Nombre;
-            
-            user.Comprar(Copia, cliente);
+                UsuarioClienteEntity cliente = new UsuarioClienteEntity();
+                cliente.Nombre = usuario.Nombre;
+
+                user.Comprar(Copia, cliente);
+            }
+            else if (dialogResult == DialogResult.No)
+            {
+                MessageBox.Show("No seas trolo man", "iiiii");
+            }
+
         }
     }
 }

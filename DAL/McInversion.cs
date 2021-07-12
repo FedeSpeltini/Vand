@@ -11,9 +11,6 @@ namespace DAL
 {
     public class McInversion
     {
-        private Acceso acceso = new Acceso();
-
-
         public void Agregar(InversionEntity inversion)
         {
             //int id = ProxId();

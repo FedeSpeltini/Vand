@@ -10,7 +10,7 @@ namespace DAL
 {
     public class McVenta
     {
-        private Acceso acceso = new Acceso();
+
         public void Agregar(VentaEntity ganador)
         {
             Acceso.Abrir();

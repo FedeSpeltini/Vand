@@ -10,7 +10,7 @@ namespace DAL
 {
     public class McWallet
     {
-        private Acceso acceso = new Acceso();
+
         public int Agregar(int id)
         {
             Acceso.Abrir();

@@ -13,13 +13,13 @@ namespace BLL
         McVenta mcVenta = new McVenta();
 
         McUsuarioComercial mcUsuarioComercial = new McUsuarioComercial();
-        public List<CopiaEntity> DesprenderCopia(UsuarioComercialEntity vendedor, CopiaEntity copia)
-        {
-            vendedor.Discos.Remove(copia);
-            mcUsuarioComercial.QuitarCopia(vendedor, copia);
-            return vendedor.Discos;
+        //public List<CopiaEntity> DesprenderCopia(UsuarioComercialEntity vendedor, CopiaEntity copia)
+        //{
+        //    vendedor.Discos.Remove(copia);
+        //    mcUsuarioComercial.QuitarCopia(vendedor, copia);
+        //    return vendedor.Discos;
 
-        }
+        //}
         //public virtual VentaEntity CargarVenta(CompraEntity compra)
         //{
         //    ComisionBusiness comision = new ComisionBusiness();
@@ -40,7 +40,7 @@ namespace BLL
             base.CrearUsuario(usuario);
             McUsuario mc = new McUsuario();
 
-            mc.Agregar(usuario, "Empresa");
+            mc.Agregar(usuario, 102);
         }
     }
 }

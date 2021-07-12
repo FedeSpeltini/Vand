@@ -13,7 +13,7 @@ namespace Views
 {
     public partial class FrmPrincipal : Form
     {
-        internal IDictionary<string, TraduccionEntity> Traducciones;
+        public IDictionary<string, TraduccionEntity> Traducciones;
 
         internal UsuarioEntity Usuario = new UsuarioEntity();
         public FrmPrincipal()
@@ -43,6 +43,12 @@ namespace Views
                 if(permiso.Descripcion == "Cliente")
                 {
                     publicarToolStripMenuItem.Enabled = false;
+                    controlToolStripMenuItem.Enabled = false;
+                }
+                if (permiso.Descripcion == "Empresa")
+                {
+                    galeriaToolStripMenuItem.Enabled = false;
+                    controlToolStripMenuItem.Enabled = false;
                 }
             }
 
@@ -69,6 +75,14 @@ namespace Views
         private void publicarToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void idiomaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmIdioma frmIdioma = new FrmIdioma();
+            frmIdioma.MdiParent = this;
+            frmIdioma.frmPrincipal = this;
+            frmIdioma.Show();
         }
     }
 }

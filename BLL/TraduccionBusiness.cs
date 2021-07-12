@@ -15,5 +15,10 @@ namespace BLL
         {
             return McTraductor.ObtenerTraducciones();
         }
+
+        public static List<IdiomaEntity> ObtenerIdiomas()
+        {
+            return McTraductor.ObtenerIdiomas();
+        }
     }
 }

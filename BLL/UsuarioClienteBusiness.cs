@@ -13,6 +13,7 @@ namespace BLL
 
         McCompra mcCompra = new McCompra();
         ComisionEntity comision = new ComisionEntity();
+        McUsuarioCliente mcUsuario = new McUsuarioCliente();
         public void Comprar(CopiaEntity copia, UsuarioClienteEntity comprador)
         {   
             CompraEntity compra = new CompraEntity();
@@ -38,6 +39,19 @@ namespace BLL
 
         }
 
+        public bool SaldoSuficiente(UsuarioClienteEntity usuario, decimal costo)
+        {
+           if(costo > mcUsuario.ObtenerSaldoActual(usuario))
+           {
+                return true;
+           }
+           else
+            {
+                return false;
+            }
+            
+
+        }
 
 
 
@@ -46,7 +60,7 @@ namespace BLL
            // base.CrearUsuario(usuario);
             McUsuario mc = new McUsuario();
 
-            mc.Agregar(usuario, "Cliente");
+            mc.Agregar(usuario, 101);
         }
     }
 }

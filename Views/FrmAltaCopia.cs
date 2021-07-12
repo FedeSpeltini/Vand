@@ -16,5 +16,10 @@ namespace Views
         {
             InitializeComponent();
         }
+
+        private void btnAgregarCopia_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -10,13 +10,15 @@ namespace DAL
 {
     public class McCopia
     {
-        private Acceso acceso = new Acceso();
-        public List<CopiaEntity> Listar()
+        
+        public List<CopiaEntity> Listar(UsuarioEntity cliente)
         {
             List<CopiaEntity> tablaCopia = new List<CopiaEntity>();
+            List<IDbDataParameter> parameters = new List<IDbDataParameter>();
 
+            parameters.Add(Acceso.CrearParametro("@NombreUsuario", cliente.Nombre));
             Acceso.Abrir();
-            DataTable tabla = Acceso.Leer("spListarCopias");
+            DataTable tabla = Acceso.Leer("spListarCopias", parameters);
             Acceso.Cerrar();
 
             foreach (DataRow registro in tabla.Rows)
@@ -32,6 +34,28 @@ namespace DAL
             }
 
             return tablaCopia;
+        }
+
+        public void Agregar(CopiaEntity copia)
+        {
+            //int id = ProxId();
+
+
+            Acceso.Abrir();
+
+            List<IDbDataParameter> parameters = new List<IDbDataParameter>();
+
+            //parameters.Add(Acceso.CrearParametro("@Id", id));
+            parameters.Add(Acceso.CrearParametro("@Nombre", copia.Nombre));
+            parameters.Add(Acceso.CrearParametro("@Precio", copia.Precio));
+            parameters.Add(Acceso.CrearParametro("@Propietario", copia.Propetario.Nombre));
+
+            Acceso.Escribir("spCrearCopia", parameters);
+
+            Acceso.Cerrar();
+
+            //mcWallet.Agregar(id);
+
         }
 
 

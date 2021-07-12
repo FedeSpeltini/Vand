@@ -46,12 +46,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
     <Compile Include="FrmAltaCopia.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -75,6 +69,12 @@
     </Compile>
     <Compile Include="FrmGaleria.Designer.cs">
       <DependentUpon>FrmGaleria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmIdioma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmIdioma.Designer.cs">
+      <DependentUpon>FrmIdioma.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmInversion.cs">
       <SubType>Form</SubType>
@@ -131,6 +131,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmGaleria.resx">
       <DependentUpon>FrmGaleria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmIdioma.resx">
+      <DependentUpon>FrmIdioma.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmInversion.resx">
       <DependentUpon>FrmInversion.cs</DependentUpon>

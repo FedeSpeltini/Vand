@@ -42,15 +42,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Acceso.cs" />
-    <Compile Include="McComision.cs" />
     <Compile Include="McCompra.cs" />
     <Compile Include="McCopia.cs" />
     <Compile Include="McEnvio.cs" />
-    <Compile Include="McIdioma.cs" />
     <Compile Include="McInversion.cs" />
     <Compile Include="McPermiso.cs" />
     <Compile Include="McTraductor.cs" />
     <Compile Include="McUsuario.cs" />
+    <Compile Include="McUsuarioCliente.cs" />
     <Compile Include="McUsuarioComercial.cs" />
     <Compile Include="McVenta.cs" />
     <Compile Include="McWallet.cs" />

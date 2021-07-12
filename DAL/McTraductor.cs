@@ -11,9 +11,6 @@ namespace DAL
     public class McTraductor
     {
 
-        private Acceso acceso = new Acceso();
-
-
 
         public  IdiomaEntity ObtenerIdiomaDefault()
         {
@@ -22,7 +19,7 @@ namespace DAL
 
 
 
-        public  List<IdiomaEntity> ObtenerIdiomas()
+        public  static List<IdiomaEntity> ObtenerIdiomas()
         {
             List<IdiomaEntity> _idiomas = new List<IdiomaEntity>();
             Acceso.Abrir();
@@ -34,7 +31,7 @@ namespace DAL
                 _idiomas.Add(
                  new IdiomaEntity()
                  {
-                     Id = Guid.Parse(registro["id_idioma"].ToString()),
+                     Id = int.Parse(registro["id_idioma"].ToString()),
                      Nombre = registro["nombre"].ToString(),
                      Default = bool.Parse(registro["idioma_default"].ToString())
 

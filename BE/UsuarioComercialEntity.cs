@@ -25,13 +25,13 @@ namespace BE
         }
 
 
-        private List<CopiaEntity> discos = new List<CopiaEntity>();
+        //private List<CopiaEntity> discos = new List<CopiaEntity>();
 
-        public List<CopiaEntity> Discos
-        {
-            get { return discos; }
-            set { discos = value; }
-        }
+        //public List<CopiaEntity> Discos
+        //{
+        //    get { return discos; }
+        //    set { discos = value; }
+        //}
 
         private List<VentaEntity> ventas;
 

@@ -15,9 +15,9 @@ namespace Views
 {
     public partial class FrmGaleria : Form
     {
-        internal IDictionary<string, TraduccionEntity> Traducciones;
+        //internal IDictionary<string, TraduccionEntity> Traducciones;
 
-        internal FrmPrincipal frmPrincipal = new FrmPrincipal();
+        internal FrmPrincipal frmPrincipal;
         public FrmGaleria()
         {
             InitializeComponent();
@@ -39,7 +39,7 @@ namespace Views
 
         public void CargarDatos()
         {
-            foreach(CopiaEntity copia in copiaBc.ObtenerDiscos())
+            foreach(CopiaEntity copia in copiaBc.ObtenerDiscos(frmPrincipal.Usuario))
             {
                 lstDiscos.Items.Add(copia);
             }
@@ -47,25 +47,18 @@ namespace Views
 
         private void FrmGaleria_Load(object sender, EventArgs e)
         {
+            Traducir();
             CargarDatos();
 
         }
 
 
-        private void Traducir(Idioma idioma = null)
+        private void Traducir()
         {
-            var traducciones = Traductor.ObtenerTraducciones(idioma);
-
-            //if (this.Tag != null && traducciones.ContainsKey(this.Tag.ToString()))
-            //    this.Text = traducciones[this.Tag.ToString()].Texto;
-
-            if (btnIngresar.Tag != null && traducciones.ContainsKey(btnIngresar.Tag.ToString()))
-                btnIngresar.Text = traducciones[btnIngresar.Tag.ToString()].Texto;
+            if (btnIngresar.Tag != null && frmPrincipal.Traducciones.ContainsKey(btnIngresar.Tag.ToString()))
+                btnIngresar.Text = frmPrincipal.Traducciones[btnIngresar.Tag.ToString()].Texto;
 
         }
-        public void UpdateLanguage(Idioma idioma)
-        {
-            Traducir(idioma);
-        }
+
     }
 }

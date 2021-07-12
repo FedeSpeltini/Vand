@@ -10,7 +10,7 @@ namespace DAL
 {
     public class McUsuarioComercial
     {
-        private Acceso acceso = new Acceso();
+
         public void QuitarCopia(UsuarioComercialEntity vendedor, CopiaEntity copia)
         {
             Acceso.Abrir();

@@ -13,32 +13,16 @@ namespace BLL
     {
         McCopia mc = new McCopia();
 
-        CompraBusiness compraBs = new CompraBusiness();
-
-        static void Main()
-        {
-            //CopiaEntity copia = new CopiaEntity();
-            //CompraBusiness compraBs = new CompraBusiness();
-            //compraBs.CompraRealizada += c_ThresholdReached;
-            //compraBs.CompraRealizada += new EventHandler((sender, e) => PlayMusicEvent(sender, e, copia));
-            // provide remaining implementation for the class
-        }
         
-        public List<CopiaEntity> ObtenerDiscos()
+        public List<CopiaEntity> ObtenerDiscos(UsuarioEntity usuario)
         {
-            return mc.Listar();
+            return mc.Listar(usuario);
         }
 
-        static void c_ThresholdReached(object sender, EventArgs e)
+        public void AgregarCopia()
         {
-            Console.WriteLine("The threshold was reached.");
+
         }
 
-        public void PlayMusicEvent(object sender, EventArgs e, CopiaEntity music)
-        {
-            //music.player.Stop();
-            //System.Timers.Timer myTimer = (System.Timers.Timer)sender;
-            //myTimer.Stop();
-        }
     }
 }
