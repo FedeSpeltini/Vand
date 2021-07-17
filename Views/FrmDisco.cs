@@ -45,7 +45,7 @@ namespace Views
             }
             else if (dialogResult == DialogResult.No)
             {
-                MessageBox.Show("No seas trolo man", "iiiii");
+                MessageBox.Show("Compra Cancelada", "Cancelada");
             }
 
         }

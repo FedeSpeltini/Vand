@@ -42,11 +42,11 @@ namespace DAL
                 foreach (DataRow registro in tabla.Rows)
                 {
                     GrupoEntity grupo = (from GrupoEntity g in lista
-                                          where g.Id == int.Parse(registro["ID_GRUPO"].ToString())
-                                          select g).FirstOrDefault();
+                                         where g.Id == int.Parse(registro["ID_GRUPO"].ToString())
+                                         select g).FirstOrDefault();
                     PermisoEntity permiso = (from PermisoEntity p in lista
-                                              where p.Id == int.Parse(registro["ID_PERMISO"].ToString())
-                                              select p).FirstOrDefault();
+                                             where p.Id == int.Parse(registro["ID_PERMISO"].ToString())
+                                             select p).FirstOrDefault();
                     grupo.Permisos.Add(permiso);
                 }
             }
@@ -76,6 +76,60 @@ namespace DAL
             Acceso.Cerrar();
 
             return usuario.Permisos;
+        }
+      
+        public static List<PermisoEntity> ListarSubPermisos()
+        {
+            List<PermisoEntity> lista = new List<PermisoEntity>();
+            Acceso.Abrir();
+            DataTable tabla = Acceso.Leer("spListarSubPermisos");
+            foreach (DataRow registro in tabla.Rows)
+            {
+                PermisoEntity permisoAux = new PermisoEntity();
+                permisoAux.Id = int.Parse(registro["ID_PERMISO"].ToString());
+                permisoAux.Descripcion = registro["PERMISO"].ToString();
+                lista.Add(permisoAux);
+            }
+            Acceso.Cerrar();
+
+            return lista;
+        }
+
+
+        public static List<PermisoEntity> ListarPermisosPadre()
+        {
+            List<PermisoEntity> lista = new List<PermisoEntity>();
+            Acceso.Abrir();
+            DataTable tabla = Acceso.Leer("spListarPermisosPadre");
+            foreach (DataRow registro in tabla.Rows)
+            {
+                PermisoEntity permisoAux = new PermisoEntity();
+                permisoAux.Id = int.Parse(registro["ID_PERMISO"].ToString());
+                permisoAux.Descripcion = registro["PERMISO"].ToString();
+                lista.Add(permisoAux);
+            }
+            Acceso.Cerrar();
+
+            return lista;
+        }
+
+        public static List<PermisoEntity> ListarPermisosHijo(PermisoEntity permiso)
+        {
+            List<PermisoEntity> lista = new List<PermisoEntity>();
+            List<IDbDataParameter> parameters = new List<IDbDataParameter>();
+            parameters.Add(Acceso.CrearParametro("@ID", permiso.Id));
+            Acceso.Abrir();
+            DataTable tabla = Acceso.Leer("spListarPermisosHijo", parameters);
+            foreach (DataRow registro in tabla.Rows)
+            {
+                PermisoEntity permisoAux = new PermisoEntity();
+                permisoAux.Id = int.Parse(registro["ID_PERMISO"].ToString());
+                permisoAux.Descripcion = registro["PERMISO"].ToString();
+                lista.Add(permisoAux);
+            }
+            Acceso.Cerrar();
+
+            return lista;
         }
     }
 }

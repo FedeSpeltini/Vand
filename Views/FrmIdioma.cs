@@ -9,10 +9,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Services;
+using EjemploArquitectura.Services;
 
 namespace Views
 {
-    public partial class FrmIdioma : Form
+    public partial class FrmIdioma : Form, IIdiomaObserver
     {
         internal FrmPrincipal frmPrincipal;
         public FrmIdioma()
@@ -22,28 +24,36 @@ namespace Views
 
         private void FrmIdioma_Load(object sender, EventArgs e)
         {
-            foreach(IdiomaEntity idioma in TraduccionBusiness.ObtenerIdiomas())
+            ManejadorDeSesion.SuscribirObservador(this);
+            foreach (IdiomaEntity idioma in TraduccionBusiness.ObtenerIdiomas())
             {
-             
                 lstIdioma.DisplayMember = nameof(idioma.Nombre);
                 lstIdioma.ValueMember = nameof(idioma);
                 lstIdioma.Items.Add(idioma);
-
             }
             Traducir();
         }
 
         public void Traducir()
         {
-            if (btnSeleccionar.Tag != null && frmPrincipal.Traducciones.ContainsKey(btnSeleccionar.Tag.ToString()))
-                btnSeleccionar.Text = frmPrincipal.Traducciones[btnSeleccionar.Tag.ToString()].Texto;
+            IdiomaEntity idioma = null;
+            if (ManejadorDeSesion.IsLogged())
+                idioma = ManejadorDeSesion.Session.Idioma;
+
+
+            var traducciones = TraduccionBusiness.ObtenerTraducciones(idioma);
+            if (btnSeleccionar.Tag != null && traducciones.ContainsKey(btnSeleccionar.Tag.ToString()))
+                btnSeleccionar.Text = traducciones[btnSeleccionar.Tag.ToString()].Texto;
         }
         private void btnSeleccionar_Click(object sender, EventArgs e)
         {
-            frmPrincipal.Traducciones = TraduccionBusiness.ObtenerTraducciones(2);
-            this.MdiParent = frmPrincipal;
-            //this.MdiParent.Refresh();
-            //Traducir();
+            //frmPrincipal.Traducciones = TraduccionBusiness.ObtenerTraducciones(2);
+            ManejadorDeSesion.CambiarIdioma((IdiomaEntity)lstIdioma.SelectedItem);
+        }
+
+        public void UpdateLanguage(IdiomaEntity idioma)
+        {
+            Traducir();
         }
     }
 }

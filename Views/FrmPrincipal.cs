@@ -1,4 +1,7 @@
 ﻿using BE;
+using BLL;
+using EjemploArquitectura.Services;
+using Services;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,9 +14,9 @@ using System.Windows.Forms;
 
 namespace Views
 {
-    public partial class FrmPrincipal : Form
+    public partial class FrmPrincipal : Form, IIdiomaObserver
     {
-        public IDictionary<string, TraduccionEntity> Traducciones;
+        
 
         internal UsuarioEntity Usuario = new UsuarioEntity();
         public FrmPrincipal()
@@ -37,8 +40,9 @@ namespace Views
 
         private void FrmPrincipal_Load(object sender, EventArgs e)
         {
-
-            foreach(PermisoEntity permiso in Usuario.Permisos)
+            ManejadorDeSesion.SuscribirObservador(this);
+            //SessionState.Usuario.Permisos = new List<PermisoEntity>();
+            foreach (PermisoEntity permiso in Usuario.Permisos)
             {
                 if(permiso.Descripcion == "Cliente")
                 {
@@ -51,12 +55,12 @@ namespace Views
                     controlToolStripMenuItem.Enabled = false;
                 }
             }
+            Traducir();
+            //if (loginToolStripMenuItem.Tag != null && Traducciones.ContainsKey(loginToolStripMenuItem.Tag.ToString()))
+            //    loginToolStripMenuItem.Text = Traducciones[loginToolStripMenuItem.Tag.ToString()].Texto;
 
-            if (loginToolStripMenuItem.Tag != null && Traducciones.ContainsKey(loginToolStripMenuItem.Tag.ToString()))
-                loginToolStripMenuItem.Text = Traducciones[loginToolStripMenuItem.Tag.ToString()].Texto;
-
-            if (registroToolStripMenuItem.Tag != null && Traducciones.ContainsKey(registroToolStripMenuItem.Tag.ToString()))
-                registroToolStripMenuItem.Text = Traducciones[registroToolStripMenuItem.Tag.ToString()].Texto;
+            //if (registroToolStripMenuItem.Tag != null && Traducciones.ContainsKey(registroToolStripMenuItem.Tag.ToString()))
+            //    registroToolStripMenuItem.Text = Traducciones[registroToolStripMenuItem.Tag.ToString()].Texto;
         }
 
         private void galeriaToolStripMenuItem_Click(object sender, EventArgs e)
@@ -74,8 +78,8 @@ namespace Views
 
         private void publicarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
         }
+
 
         private void idiomaToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -83,6 +87,40 @@ namespace Views
             frmIdioma.MdiParent = this;
             frmIdioma.frmPrincipal = this;
             frmIdioma.Show();
+        }
+
+
+
+        private void Traducir()
+        {
+            IdiomaEntity idioma = null;
+            if (ManejadorDeSesion.IsLogged())
+                idioma = ManejadorDeSesion.Session.Idioma;
+
+
+            var traducciones = TraduccionBusiness.ObtenerTraducciones(idioma);
+
+            if (loginToolStripMenuItem.Tag != null && traducciones.ContainsKey(loginToolStripMenuItem.Tag.ToString()))
+                loginToolStripMenuItem.Text = traducciones[loginToolStripMenuItem.Tag.ToString()].Texto;
+
+            if (registroToolStripMenuItem.Tag != null && traducciones.ContainsKey(registroToolStripMenuItem.Tag.ToString()))
+                registroToolStripMenuItem.Text = traducciones[registroToolStripMenuItem.Tag.ToString()].Texto;
+
+
+
+        }
+
+        public void UpdateLanguage(IdiomaEntity idioma)
+        {
+            Traducir();
+        }
+
+        private void aBMToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmPermiso frmPermiso = new FrmPermiso();
+            frmPermiso.MdiParent = this;
+            
+            frmPermiso.Show();
         }
     }
 }

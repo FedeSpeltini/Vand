@@ -49,6 +49,15 @@ namespace BE
             set { permisos = value; }
         }
 
+        private IdiomaEntity idioma;
+
+        public IdiomaEntity Idioma
+        {
+            get { return idioma; }
+            set { idioma = value; }
+        }
+
+
 
 
 

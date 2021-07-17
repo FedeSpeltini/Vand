@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BE;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -15,12 +16,12 @@ namespace Services
 
 
 
-        public static Idioma ObtenerIdiomaDefault()
+        public static IdiomaEntity ObtenerIdiomaDefault()
         {
             return ObtenerIdiomas().Where(i => i.Default).FirstOrDefault();
         }
 
-        public static IList<Idioma> ObtenerIdiomas()
+        public static IList<IdiomaEntity> ObtenerIdiomas()
         {
             SqlConnectionStringBuilder cs = new SqlConnectionStringBuilder();
             cs.InitialCatalog = "Vand";
@@ -30,7 +31,7 @@ namespace Services
             SqlConnection sql = new SqlConnection();
             sql.ConnectionString = cs.ConnectionString;
             IDataReader reader = null;
-            IList<Idioma> _idiomas = new List<Idioma>();
+            IList<IdiomaEntity> _idiomas = new List<IdiomaEntity>();
             try
             {
                 sql.Open();
@@ -45,9 +46,9 @@ namespace Services
                 {
 
                     _idiomas.Add(
-                     new Idioma()
+                     new IdiomaEntity()
                      {
-                         Id= Guid.Parse(reader["id_idioma"].ToString()),
+                         Id= int.Parse(reader["id_idioma"].ToString()),
                          Nombre = reader["nombre"].ToString(),
                          Default= bool.Parse(reader["idioma_default"].ToString())
                        
@@ -72,7 +73,7 @@ namespace Services
             }
         }
 
-        public static IDictionary<string,Traduccion> ObtenerTraducciones(Idioma idioma=null)
+        public static IDictionary<string,Traduccion> ObtenerTraducciones(IdiomaEntity idioma =null)
         {
             //si no hay idioma definido, traigo el idioma por default
             if (idioma==null)

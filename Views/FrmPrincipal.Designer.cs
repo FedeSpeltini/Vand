@@ -35,6 +35,7 @@ namespace Views
             this.usuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.loginToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.idiomaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.vinilosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.galeriaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.publicarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -42,7 +43,8 @@ namespace Views
             this.plazoFijoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logísticaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.controlToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.idiomaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.permisosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aBMToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -59,7 +61,8 @@ namespace Views
             this.usuarioToolStripMenuItem,
             this.vinilosToolStripMenuItem,
             this.inversiónToolStripMenuItem,
-            this.logísticaToolStripMenuItem});
+            this.logísticaToolStripMenuItem,
+            this.permisosToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(800, 28);
@@ -79,16 +82,23 @@ namespace Views
             // loginToolStripMenuItem
             // 
             this.loginToolStripMenuItem.Name = "loginToolStripMenuItem";
-            this.loginToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.loginToolStripMenuItem.Size = new System.Drawing.Size(139, 26);
             this.loginToolStripMenuItem.Tag = "Login";
             this.loginToolStripMenuItem.Click += new System.EventHandler(this.loginToolStripMenuItem_Click);
             // 
             // registroToolStripMenuItem
             // 
             this.registroToolStripMenuItem.Name = "registroToolStripMenuItem";
-            this.registroToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.registroToolStripMenuItem.Size = new System.Drawing.Size(139, 26);
             this.registroToolStripMenuItem.Tag = "Register";
             this.registroToolStripMenuItem.Click += new System.EventHandler(this.registroToolStripMenuItem_Click);
+            // 
+            // idiomaToolStripMenuItem
+            // 
+            this.idiomaToolStripMenuItem.Name = "idiomaToolStripMenuItem";
+            this.idiomaToolStripMenuItem.Size = new System.Drawing.Size(139, 26);
+            this.idiomaToolStripMenuItem.Text = "Idioma";
+            this.idiomaToolStripMenuItem.Click += new System.EventHandler(this.idiomaToolStripMenuItem_Click);
             // 
             // vinilosToolStripMenuItem
             // 
@@ -102,14 +112,14 @@ namespace Views
             // galeriaToolStripMenuItem
             // 
             this.galeriaToolStripMenuItem.Name = "galeriaToolStripMenuItem";
-            this.galeriaToolStripMenuItem.Size = new System.Drawing.Size(145, 26);
+            this.galeriaToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.galeriaToolStripMenuItem.Text = "Galeria";
             this.galeriaToolStripMenuItem.Click += new System.EventHandler(this.galeriaToolStripMenuItem_Click);
             // 
             // publicarToolStripMenuItem
             // 
             this.publicarToolStripMenuItem.Name = "publicarToolStripMenuItem";
-            this.publicarToolStripMenuItem.Size = new System.Drawing.Size(145, 26);
+            this.publicarToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.publicarToolStripMenuItem.Text = "Publicar";
             this.publicarToolStripMenuItem.Click += new System.EventHandler(this.publicarToolStripMenuItem_Click);
             // 
@@ -124,7 +134,7 @@ namespace Views
             // plazoFijoToolStripMenuItem
             // 
             this.plazoFijoToolStripMenuItem.Name = "plazoFijoToolStripMenuItem";
-            this.plazoFijoToolStripMenuItem.Size = new System.Drawing.Size(156, 26);
+            this.plazoFijoToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.plazoFijoToolStripMenuItem.Text = "Plazo Fijo";
             // 
             // logísticaToolStripMenuItem
@@ -142,12 +152,20 @@ namespace Views
             this.controlToolStripMenuItem.Text = "Control";
             this.controlToolStripMenuItem.Click += new System.EventHandler(this.controlToolStripMenuItem_Click);
             // 
-            // idiomaToolStripMenuItem
+            // permisosToolStripMenuItem
             // 
-            this.idiomaToolStripMenuItem.Name = "idiomaToolStripMenuItem";
-            this.idiomaToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.idiomaToolStripMenuItem.Text = "Idioma";
-            this.idiomaToolStripMenuItem.Click += new System.EventHandler(this.idiomaToolStripMenuItem_Click);
+            this.permisosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.aBMToolStripMenuItem});
+            this.permisosToolStripMenuItem.Name = "permisosToolStripMenuItem";
+            this.permisosToolStripMenuItem.Size = new System.Drawing.Size(81, 24);
+            this.permisosToolStripMenuItem.Text = "Permisos";
+            // 
+            // aBMToolStripMenuItem
+            // 
+            this.aBMToolStripMenuItem.Name = "aBMToolStripMenuItem";
+            this.aBMToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.aBMToolStripMenuItem.Text = "ABM";
+            this.aBMToolStripMenuItem.Click += new System.EventHandler(this.aBMToolStripMenuItem_Click);
             // 
             // FrmPrincipal
             // 
@@ -182,5 +200,7 @@ namespace Views
         private System.Windows.Forms.ToolStripMenuItem logísticaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem controlToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem idiomaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem permisosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem aBMToolStripMenuItem;
     }
 }

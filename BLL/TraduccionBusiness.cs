@@ -8,10 +8,10 @@ using System.Threading.Tasks;
 
 namespace BLL
 {
-    public class TraduccionBusiness
+    public static class TraduccionBusiness
     {
 
-        public static IDictionary<string, TraduccionEntity> ObtenerTraducciones(int idioma)
+        public static IDictionary<string, TraduccionEntity> ObtenerTraducciones(IdiomaEntity idioma = null)
         {
             return McTraductor.ObtenerTraducciones(idioma);
         }

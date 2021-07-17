@@ -12,7 +12,7 @@ namespace DAL
     {
 
 
-        public  IdiomaEntity ObtenerIdiomaDefault()
+        public static IdiomaEntity ObtenerIdiomaDefault()
         {
             return ObtenerIdiomas().Where(i => i.Default).FirstOrDefault();
         }
@@ -43,15 +43,19 @@ namespace DAL
 
 
 
-        public static IDictionary<string, TraduccionEntity> ObtenerTraducciones(int idiomaAux)
+        public static IDictionary<string, TraduccionEntity> ObtenerTraducciones(IdiomaEntity idioma = null)
         {
+            if (idioma == null)
+            {
+                idioma = ObtenerIdiomaDefault();
+            }
             //List<IdiomaEntity> tablaTraduccion = new List<IdiomaEntity>();
             IDictionary<string, TraduccionEntity> _traducciones = new Dictionary<string, TraduccionEntity>();
             Acceso.Abrir();
 
             List<IDbDataParameter> parameters = new List<IDbDataParameter>();
-
-            parameters.Add(Acceso.CrearParametro("@id_idioma", idiomaAux));
+            
+            parameters.Add(Acceso.CrearParametro("@id_idioma", idioma.Id));
             //ARREGLAR
             //Cambiar Hardcode de multilenguaje
             DataTable tabla = Acceso.Leer("spObtenerTraducciones", parameters);

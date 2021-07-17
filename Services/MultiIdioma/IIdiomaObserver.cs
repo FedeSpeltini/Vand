@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BE;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +9,6 @@ namespace Services
 {
    public interface IIdiomaObserver
     {
-        void UpdateLanguage(Idioma idioma);
+        void UpdateLanguage(IdiomaEntity idioma);
     }
 }

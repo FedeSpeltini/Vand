@@ -1,5 +1,6 @@
 ﻿using BE;
 using DAL;
+using EjemploArquitectura.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Services
 {
-    public class SessionState
+    public  class SessionState
     {
         private static object _lock = new Object();
         private static SessionState _sessionState;
@@ -38,12 +39,14 @@ namespace Services
                     _sessionState = new SessionState();
                     _sessionState.Usuario = usuario;
                     _sessionState.FechaInicio = DateTime.Now;
+                    ManejadorDeSesion.Login(usuario);
                     return true;
                 }
                 else
                 {
                     
                     throw new Exception("Sesión ya iniciada");
+
                 }
             }
         }

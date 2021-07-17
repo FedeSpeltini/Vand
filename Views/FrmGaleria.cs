@@ -1,5 +1,6 @@
 ﻿using BE;
 using BLL;
+using EjemploArquitectura.Services;
 using Services;
 using System;
 using System.Collections.Generic;
@@ -13,7 +14,7 @@ using System.Windows.Forms;
 
 namespace Views
 {
-    public partial class FrmGaleria : Form
+    public partial class FrmGaleria : Form, IIdiomaObserver
     {
         //internal IDictionary<string, TraduccionEntity> Traducciones;
 
@@ -57,10 +58,20 @@ namespace Views
 
         private void Traducir()
         {
-            if (btnIngresar.Tag != null && frmPrincipal.Traducciones.ContainsKey(btnIngresar.Tag.ToString()))
-                btnIngresar.Text = frmPrincipal.Traducciones[btnIngresar.Tag.ToString()].Texto;
+            IdiomaEntity idioma = null;
+            if (ManejadorDeSesion.IsLogged())
+                idioma = ManejadorDeSesion.Session.Idioma;
+
+
+            var traducciones = TraduccionBusiness.ObtenerTraducciones(idioma);
+            if (btnIngresar.Tag != null && traducciones.ContainsKey(btnIngresar.Tag.ToString()))
+                btnIngresar.Text = traducciones[btnIngresar.Tag.ToString()].Texto;
 
         }
 
+        public void UpdateLanguage(IdiomaEntity idioma)
+        {
+            Traducir();
+        }
     }
 }

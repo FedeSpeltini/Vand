@@ -48,6 +48,7 @@
     <Compile Include="EnvioBusiness.cs" />
     <Compile Include="InversionBusiness.cs" />
     <Compile Include="IUSuario.cs" />
+    <Compile Include="PermisoBusiness.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TraduccionBusiness.cs" />
     <Compile Include="UsuarioBossBusiness.cs" />

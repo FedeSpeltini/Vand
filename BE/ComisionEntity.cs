@@ -8,7 +8,8 @@ namespace BE
 {
     public class ComisionEntity
     {
-        private decimal porcentaje;
+
+        private decimal porcentaje = 0.1m;
 
         public decimal Porcentaje
         {
