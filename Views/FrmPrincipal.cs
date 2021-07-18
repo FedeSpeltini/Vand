@@ -18,7 +18,7 @@ namespace Views
     {
         
 
-        internal UsuarioEntity Usuario = new UsuarioEntity();
+        
         public FrmPrincipal()
         {
             InitializeComponent();
@@ -41,26 +41,25 @@ namespace Views
         private void FrmPrincipal_Load(object sender, EventArgs e)
         {
             ManejadorDeSesion.SuscribirObservador(this);
+
+            //SessionState.PermisosUsuario()
+            //Usuario.Permisos
             //SessionState.Usuario.Permisos = new List<PermisoEntity>();
-            foreach (PermisoEntity permiso in Usuario.Permisos)
+            //inversiónToolStripMenuItem.Enabled = false;
+            controlToolStripMenuItem.Enabled = false;
+            //aBMToolStripMenuItem.Enabled = false;
+            foreach (PermisoEntity permiso in SessionState.PermisosUsuario())
             {
-                if(permiso.Descripcion == "Cliente")
+                if(permiso.Descripcion == "Compra")
                 {
-                    publicarToolStripMenuItem.Enabled = false;
-                    controlToolStripMenuItem.Enabled = false;
-                }
-                if (permiso.Descripcion == "Empresa")
-                {
-                    galeriaToolStripMenuItem.Enabled = false;
-                    controlToolStripMenuItem.Enabled = false;
+                    publicarToolStripMenuItem.Enabled = true;
+                    controlToolStripMenuItem.Enabled = true;
+                    inversiónToolStripMenuItem.Enabled = true;
+
                 }
             }
             Traducir();
-            //if (loginToolStripMenuItem.Tag != null && Traducciones.ContainsKey(loginToolStripMenuItem.Tag.ToString()))
-            //    loginToolStripMenuItem.Text = Traducciones[loginToolStripMenuItem.Tag.ToString()].Texto;
 
-            //if (registroToolStripMenuItem.Tag != null && Traducciones.ContainsKey(registroToolStripMenuItem.Tag.ToString()))
-            //    registroToolStripMenuItem.Text = Traducciones[registroToolStripMenuItem.Tag.ToString()].Texto;
         }
 
         private void galeriaToolStripMenuItem_Click(object sender, EventArgs e)

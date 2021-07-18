@@ -40,7 +40,7 @@ namespace Views
 
         public void CargarDatos()
         {
-            foreach(CopiaEntity copia in copiaBc.ObtenerDiscos(frmPrincipal.Usuario))
+            foreach(CopiaEntity copia in copiaBc.ObtenerDiscos(SessionState.RetornarUsuario()))
             {
                 lstDiscos.DisplayMember = nameof(copia.Nombre);
                 lstDiscos.ValueMember = nameof(copia);

@@ -50,43 +50,45 @@ namespace Views
             // 
             this.lstHijo.FormattingEnabled = true;
             this.lstHijo.ItemHeight = 16;
-            this.lstHijo.Location = new System.Drawing.Point(568, 71);
+            this.lstHijo.Location = new System.Drawing.Point(434, 71);
             this.lstHijo.Name = "lstHijo";
             this.lstHijo.Size = new System.Drawing.Size(250, 164);
             this.lstHijo.TabIndex = 1;
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(210, 71);
+            this.btnAgregar.Location = new System.Drawing.Point(280, 71);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(75, 23);
             this.btnAgregar.TabIndex = 2;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // btnSacar
             // 
-            this.btnSacar.Location = new System.Drawing.Point(210, 153);
+            this.btnSacar.Location = new System.Drawing.Point(280, 153);
             this.btnSacar.Name = "btnSacar";
             this.btnSacar.Size = new System.Drawing.Size(75, 23);
             this.btnSacar.TabIndex = 3;
             this.btnSacar.Text = "Quitar";
             this.btnSacar.UseVisualStyleBackColor = true;
+            this.btnSacar.Click += new System.EventHandler(this.btnSacar_Click);
             // 
             // lstSubPermisos
             // 
             this.lstSubPermisos.FormattingEnabled = true;
             this.lstSubPermisos.ItemHeight = 16;
-            this.lstSubPermisos.Location = new System.Drawing.Point(232, 274);
+            this.lstSubPermisos.Location = new System.Drawing.Point(198, 271);
             this.lstSubPermisos.Name = "lstSubPermisos";
-            this.lstSubPermisos.Size = new System.Drawing.Size(309, 196);
+            this.lstSubPermisos.Size = new System.Drawing.Size(253, 196);
             this.lstSubPermisos.TabIndex = 4;
             // 
             // FrmPermiso
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1070, 534);
+            this.ClientSize = new System.Drawing.Size(705, 534);
             this.Controls.Add(this.lstSubPermisos);
             this.Controls.Add(this.btnSacar);
             this.Controls.Add(this.btnAgregar);

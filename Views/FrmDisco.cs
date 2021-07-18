@@ -1,5 +1,6 @@
 ﻿using BE;
 using BLL;
+using Services;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -36,8 +37,9 @@ namespace Views
             {
                 UsuarioClienteBusiness user = new UsuarioClienteBusiness();
                 //frmPrincipal.Usuario
-                UsuarioEntity usuario = (UsuarioEntity)frmPrincipal.Usuario;
+                UsuarioEntity usuario = SessionState.RetornarUsuario();
 
+                //(UsuarioEntity)frmPrincipal.Usuario
                 UsuarioClienteEntity cliente = new UsuarioClienteEntity();
                 cliente.Nombre = usuario.Nombre;
 

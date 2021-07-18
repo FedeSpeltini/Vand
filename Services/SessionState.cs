@@ -100,6 +100,15 @@ namespace Services
 
         }
 
+        public static List<PermisoEntity> PermisosUsuario()
+        {
+            return _sessionState.Usuario.Permisos;
+        }
+
+        public static UsuarioEntity RetornarUsuario()
+        {
+            return _sessionState.Usuario;
+        }
         private SessionState()
         {
 

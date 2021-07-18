@@ -28,7 +28,7 @@ namespace Views
                 lstPadre.Items.Add(permiso);
             }
 
-            foreach (PermisoEntity permiso in PermisoBusiness.ListarPermisosPadre())
+            foreach (PermisoEntity permiso in PermisoBusiness.ListarSubPermisos())
             {
                 lstSubPermisos.DisplayMember = nameof(permiso.Descripcion);
                 lstSubPermisos.ValueMember = nameof(permiso);
@@ -38,6 +38,11 @@ namespace Views
 
         private void lstPadre_SelectedIndexChanged(object sender, EventArgs e)
         {
+            ActualizarTablaHijo();
+        }
+
+        public void ActualizarTablaHijo()
+        {
             lstHijo.Items.Clear();
             foreach (PermisoEntity permiso in PermisoBusiness.ListarPermisosHijo((PermisoEntity)lstPadre.SelectedItem))
             {
@@ -45,6 +50,18 @@ namespace Views
                 lstHijo.ValueMember = nameof(permiso);
                 lstHijo.Items.Add(permiso);
             }
+        }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            PermisoBusiness.AgregarHijo((PermisoEntity)lstPadre.SelectedItem, (PermisoEntity)lstSubPermisos.SelectedItem);
+            ActualizarTablaHijo();
+        }
+
+        private void btnSacar_Click(object sender, EventArgs e)
+        {
+            PermisoBusiness.SacarHijo((PermisoEntity)lstPadre.SelectedItem, (PermisoEntity)lstHijo.SelectedItem);
+            ActualizarTablaHijo();
         }
     }
 }

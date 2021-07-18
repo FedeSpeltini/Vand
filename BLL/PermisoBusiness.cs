@@ -21,6 +21,8 @@ namespace BLL
         {
             return McPermiso.ListarPermisosPadre();
         }
+
+
         public static List<PermisoEntity> ListarPermisosHijo(PermisoEntity permiso)
         {
             return McPermiso.ListarPermisosHijo(permiso);
@@ -29,6 +31,16 @@ namespace BLL
         public static List<PermisoEntity> ListarSubPermisos()
         {
             return McPermiso.ListarSubPermisos();
+        }
+
+        public static void AgregarHijo(PermisoEntity permisoPadre, PermisoEntity permisoHijo)
+        {
+             McPermiso.AgregarHijo(permisoPadre, permisoHijo);
+        }
+
+        public static void SacarHijo(PermisoEntity permisoPadre, PermisoEntity permisoHijo)
+        {
+            McPermiso.SacarHijo(permisoPadre, permisoHijo);
         }
     }
 }

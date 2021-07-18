@@ -34,10 +34,15 @@ namespace Views
             var traducciones = TraduccionBusiness.ObtenerTraducciones();
 
             FrmPrincipal frmPrincipal = new FrmPrincipal();
-            frmPrincipal.Usuario = usuarioLogueado;
+            
             frmPrincipal.Show();
             //this.Close();
 
+
+        }
+
+        private void FrmLogin_Load(object sender, EventArgs e)
+        {
 
         }
     }

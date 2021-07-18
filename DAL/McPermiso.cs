@@ -113,6 +113,8 @@ namespace DAL
             return lista;
         }
 
+
+
         public static List<PermisoEntity> ListarPermisosHijo(PermisoEntity permiso)
         {
             List<PermisoEntity> lista = new List<PermisoEntity>();
@@ -130,6 +132,28 @@ namespace DAL
             Acceso.Cerrar();
 
             return lista;
+        }
+
+        public static void AgregarHijo(PermisoEntity permisoPadre, PermisoEntity permisoHijo)
+        {
+            List<PermisoEntity> lista = new List<PermisoEntity>();
+            List<IDbDataParameter> parameters = new List<IDbDataParameter>();
+            parameters.Add(Acceso.CrearParametro("@IdPadre", permisoPadre.Id));
+            parameters.Add(Acceso.CrearParametro("@IdHijo", permisoHijo.Id));
+            Acceso.Abrir();
+            DataTable tabla = Acceso.Leer("spAgregarPermiso", parameters);
+            Acceso.Cerrar();
+        }
+
+        public static void SacarHijo(PermisoEntity permisoPadre, PermisoEntity permisoHijo)
+        {
+            List<PermisoEntity> lista = new List<PermisoEntity>();
+            List<IDbDataParameter> parameters = new List<IDbDataParameter>();
+            parameters.Add(Acceso.CrearParametro("@IdPadre", permisoPadre.Id));
+            parameters.Add(Acceso.CrearParametro("@IdHijo", permisoHijo.Id));
+            Acceso.Abrir();
+            DataTable tabla = Acceso.Leer("spSacarPermiso", parameters);
+            Acceso.Cerrar();
         }
     }
 }
