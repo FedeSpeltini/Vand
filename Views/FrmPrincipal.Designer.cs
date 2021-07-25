@@ -45,6 +45,7 @@ namespace Views
             this.controlToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.permisosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aBMToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.permisosUsuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -112,14 +113,14 @@ namespace Views
             // galeriaToolStripMenuItem
             // 
             this.galeriaToolStripMenuItem.Name = "galeriaToolStripMenuItem";
-            this.galeriaToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.galeriaToolStripMenuItem.Size = new System.Drawing.Size(145, 26);
             this.galeriaToolStripMenuItem.Text = "Galeria";
             this.galeriaToolStripMenuItem.Click += new System.EventHandler(this.galeriaToolStripMenuItem_Click);
             // 
             // publicarToolStripMenuItem
             // 
             this.publicarToolStripMenuItem.Name = "publicarToolStripMenuItem";
-            this.publicarToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.publicarToolStripMenuItem.Size = new System.Drawing.Size(145, 26);
             this.publicarToolStripMenuItem.Text = "Publicar";
             this.publicarToolStripMenuItem.Click += new System.EventHandler(this.publicarToolStripMenuItem_Click);
             // 
@@ -134,7 +135,7 @@ namespace Views
             // plazoFijoToolStripMenuItem
             // 
             this.plazoFijoToolStripMenuItem.Name = "plazoFijoToolStripMenuItem";
-            this.plazoFijoToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.plazoFijoToolStripMenuItem.Size = new System.Drawing.Size(156, 26);
             this.plazoFijoToolStripMenuItem.Text = "Plazo Fijo";
             // 
             // logísticaToolStripMenuItem
@@ -155,7 +156,8 @@ namespace Views
             // permisosToolStripMenuItem
             // 
             this.permisosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.aBMToolStripMenuItem});
+            this.aBMToolStripMenuItem,
+            this.permisosUsuarioToolStripMenuItem});
             this.permisosToolStripMenuItem.Name = "permisosToolStripMenuItem";
             this.permisosToolStripMenuItem.Size = new System.Drawing.Size(81, 24);
             this.permisosToolStripMenuItem.Text = "Permisos";
@@ -166,6 +168,13 @@ namespace Views
             this.aBMToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.aBMToolStripMenuItem.Text = "ABM";
             this.aBMToolStripMenuItem.Click += new System.EventHandler(this.aBMToolStripMenuItem_Click);
+            // 
+            // permisosUsuarioToolStripMenuItem
+            // 
+            this.permisosUsuarioToolStripMenuItem.Name = "permisosUsuarioToolStripMenuItem";
+            this.permisosUsuarioToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.permisosUsuarioToolStripMenuItem.Text = "PermisosUsuario";
+            this.permisosUsuarioToolStripMenuItem.Click += new System.EventHandler(this.permisosUsuarioToolStripMenuItem_Click);
             // 
             // FrmPrincipal
             // 
@@ -202,5 +211,6 @@ namespace Views
         private System.Windows.Forms.ToolStripMenuItem idiomaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem permisosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aBMToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem permisosUsuarioToolStripMenuItem;
     }
 }

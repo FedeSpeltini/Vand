@@ -64,13 +64,13 @@ namespace DAL
             DataTable tabla = Acceso.Leer("USUARIO_PERMISO_LISTAR", parameters);
             foreach (DataRow registro in tabla.Rows)
             {
-                PermisoEntity permisoAux = new PermisoEntity();
-                permisoAux.Id = int.Parse(registro["ID_PERMISO"].ToString());
-                permisoAux.Descripcion = registro["PERMISO"].ToString();
-                //usuario.Permisos.Add((from PermisoEntity p in lista
-                //                      where p.Id == int.Parse(registro["ID_PERMISO"].ToString())
-                //                      select p).FirstOrDefault());
-                usuario.Permisos.Add(permisoAux);
+                //PermisoEntity permisoAux = new PermisoEntity();
+                //permisoAux.Id = int.Parse(registro["ID_PERMISO"].ToString());
+                //permisoAux.Descripcion = registro["PERMISO"].ToString();
+                usuario.Permisos.Add((from PermisoEntity p in lista
+                                      where p.Id == int.Parse(registro["ID_PERMISO"].ToString())
+                                      select p).FirstOrDefault());
+                //usuario.Permisos.Add(permisoAux);
 
             }
             Acceso.Cerrar();

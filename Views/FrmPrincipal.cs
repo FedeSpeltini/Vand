@@ -121,5 +121,13 @@ namespace Views
             
             frmPermiso.Show();
         }
+
+        private void permisosUsuarioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmPermisoUsuario frmPermisoUsuario = new FrmPermisoUsuario();
+            frmPermisoUsuario.MdiParent = this;
+
+            frmPermisoUsuario.Show();
+        }
     }
 }

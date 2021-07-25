@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace BLL
 {
@@ -22,10 +23,10 @@ namespace BLL
         McPermiso mcPermiso = new McPermiso();
         public static UsuarioEntity Login(UsuarioEntity usuario)
         {
-
-            if (String.IsNullOrEmpty(usuario.Nombre) || String.IsNullOrEmpty(usuario.Password)) throw new Exception("Debe completar todos los campos");
             try
             {
+                if (String.IsNullOrEmpty(usuario.Nombre) || String.IsNullOrEmpty(usuario.Password)) throw new Exception("Debe completar todos los campos");
+
                 string rol = McUsuario.ValidarUsuario(usuario);
                 if (rol != "")
                 {
@@ -45,8 +46,8 @@ namespace BLL
             }
             catch (Exception e)
             {
-
-                throw e;
+                MessageBox.Show(e.Message);
+                throw;
             }
             finally
             {
@@ -88,7 +89,10 @@ namespace BLL
             }
         }
 
-
+        public List<UsuarioEntity> ListarNoBoss()
+        {
+            return McUsuario.ListarUsuariosNoBoss();    
+        }
         public string Encriptar(string clave)
         {
             // Use input string to calculate MD5 hash

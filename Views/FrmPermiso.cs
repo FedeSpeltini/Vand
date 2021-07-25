@@ -21,47 +21,27 @@ namespace Views
 
         private void FrmPermiso_Load(object sender, EventArgs e)
         {
-            foreach(PermisoEntity permiso in PermisoBusiness.ListarPermisosPadre())
-            {
-                lstPadre.DisplayMember = nameof(permiso.Descripcion);
-                lstPadre.ValueMember = nameof(permiso);
-                lstPadre.Items.Add(permiso);
-            }
-
-            foreach (PermisoEntity permiso in PermisoBusiness.ListarSubPermisos())
-            {
-                lstSubPermisos.DisplayMember = nameof(permiso.Descripcion);
-                lstSubPermisos.ValueMember = nameof(permiso);
-                lstSubPermisos.Items.Add(permiso);
-            }
+            CargarGrillas();
         }
 
-        private void lstPadre_SelectedIndexChanged(object sender, EventArgs e)
+
+        public void CargarGrillas()
         {
-            ActualizarTablaHijo();
+            dtGrupos.DataSource = null;
+            dtGrupos.DataSource = PermisoBusiness.ListarPermisosPadre();
+
+            dtPermisos.DataSource = null;
+            dtPermisos.DataSource = PermisoBusiness.ListarSubPermisos();
         }
 
-        public void ActualizarTablaHijo()
+        private void dtGrupos_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            lstHijo.Items.Clear();
-            foreach (PermisoEntity permiso in PermisoBusiness.ListarPermisosHijo((PermisoEntity)lstPadre.SelectedItem))
-            {
-                lstHijo.DisplayMember = nameof(permiso.Descripcion);
-                lstHijo.ValueMember = nameof(permiso);
-                lstHijo.Items.Add(permiso);
-            }
+            txtNombreGrupo.Text = dtGrupos.CurrentRow.Cells["Descripcion"].Value.ToString();
         }
 
-        private void btnAgregar_Click(object sender, EventArgs e)
+        private void btnSacarGrupo_Click(object sender, EventArgs e)
         {
-            PermisoBusiness.AgregarHijo((PermisoEntity)lstPadre.SelectedItem, (PermisoEntity)lstSubPermisos.SelectedItem);
-            ActualizarTablaHijo();
-        }
 
-        private void btnSacar_Click(object sender, EventArgs e)
-        {
-            PermisoBusiness.SacarHijo((PermisoEntity)lstPadre.SelectedItem, (PermisoEntity)lstHijo.SelectedItem);
-            ActualizarTablaHijo();
         }
     }
 }

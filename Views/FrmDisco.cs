@@ -44,6 +44,12 @@ namespace Views
                 cliente.Nombre = usuario.Nombre;
 
                 user.Comprar(Copia, cliente);
+
+                FrmGaleria frmGaleria = new FrmGaleria();
+                frmGaleria.MdiParent = frmPrincipal;
+                frmGaleria.frmPrincipal = frmPrincipal;
+                frmGaleria.Show();
+                this.Close();
             }
             else if (dialogResult == DialogResult.No)
             {

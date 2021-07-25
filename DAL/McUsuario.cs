@@ -32,6 +32,23 @@ namespace DAL
                 return "";
             }
         }
+        public static List<UsuarioEntity> ListarUsuariosNoBoss()
+        {
+            List<UsuarioEntity> usuarios = new List<UsuarioEntity>();
+            Acceso.Abrir();
+            DataTable tabla = Acceso.Leer("spListarUsuariosNoBoss");
+            Acceso.Cerrar();
+
+            foreach (DataRow registro in tabla.Rows)
+            {
+                UsuarioEntity usuario = new UsuarioEntity();
+                usuario.Nombre = registro["nombre"].ToString();
+                usuario.Permisos = McPermiso.Listar(usuario);
+                usuarios.Add(usuario);
+            }
+            return usuarios;
+        }
+
 
         public  void Agregar(UsuarioEntity usuario, int rol)
         {
