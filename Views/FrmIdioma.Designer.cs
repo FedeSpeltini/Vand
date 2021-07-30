@@ -56,7 +56,7 @@ namespace Views
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(251, 338);
+            this.ClientSize = new System.Drawing.Size(243, 338);
             this.Controls.Add(this.btnSeleccionar);
             this.Controls.Add(this.lstIdioma);
             this.Name = "FrmIdioma";

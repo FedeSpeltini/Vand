@@ -46,6 +46,8 @@
     <Compile Include="CompraBusiness.cs" />
     <Compile Include="CopiaBusiness.cs" />
     <Compile Include="EnvioBusiness.cs" />
+    <Compile Include="EtiquetaBusiness.cs" />
+    <Compile Include="IdiomaBusiness.cs" />
     <Compile Include="InversionBusiness.cs" />
     <Compile Include="IUSuario.cs" />
     <Compile Include="PermisoBusiness.cs" />

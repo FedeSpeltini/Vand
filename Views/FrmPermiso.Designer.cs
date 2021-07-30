@@ -48,7 +48,7 @@ namespace Views
             this.dtGrupos = new System.Windows.Forms.DataGridView();
             this.PermisosLbl = new System.Windows.Forms.Label();
             this.RolesLbl = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtAgregar = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.rdGrupo = new System.Windows.Forms.RadioButton();
             this.rdPermiso = new System.Windows.Forms.RadioButton();
@@ -111,6 +111,7 @@ namespace Views
             this.btnAgregar.Tag = "23";
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // textBoxDescPermiso
             // 
@@ -254,13 +255,13 @@ namespace Views
             this.RolesLbl.Tag = "38";
             this.RolesLbl.Text = "Roles";
             // 
-            // textBox2
+            // txtAgregar
             // 
-            this.textBox2.Location = new System.Drawing.Point(246, 541);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(440, 22);
-            this.textBox2.TabIndex = 44;
+            this.txtAgregar.Location = new System.Drawing.Point(246, 541);
+            this.txtAgregar.Margin = new System.Windows.Forms.Padding(4);
+            this.txtAgregar.Name = "txtAgregar";
+            this.txtAgregar.Size = new System.Drawing.Size(440, 22);
+            this.txtAgregar.TabIndex = 44;
             // 
             // label2
             // 
@@ -302,7 +303,7 @@ namespace Views
             this.ClientSize = new System.Drawing.Size(1172, 679);
             this.Controls.Add(this.rdPermiso);
             this.Controls.Add(this.rdGrupo);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txtAgregar);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnModificarPermiso);
             this.Controls.Add(this.btnSacarPermiso);
@@ -353,7 +354,7 @@ namespace Views
         private System.Windows.Forms.DataGridView dtGrupos;
         private System.Windows.Forms.Label PermisosLbl;
         private System.Windows.Forms.Label RolesLbl;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtAgregar;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.RadioButton rdGrupo;
         private System.Windows.Forms.RadioButton rdPermiso;

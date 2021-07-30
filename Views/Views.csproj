@@ -118,6 +118,12 @@
     <Compile Include="FrmRegistro.Designer.cs">
       <DependentUpon>FrmRegistro.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmTraducciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTraducciones.Designer.cs">
+      <DependentUpon>FrmTraducciones.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UcVistaDisco.cs">
@@ -167,6 +173,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmRegistro.resx">
       <DependentUpon>FrmRegistro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmTraducciones.resx">
+      <DependentUpon>FrmTraducciones.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

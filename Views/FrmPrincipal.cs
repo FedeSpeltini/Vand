@@ -129,5 +129,13 @@ namespace Views
 
             frmPermisoUsuario.Show();
         }
+
+        private void aBMToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            FrmTraducciones frmTraducciones = new FrmTraducciones();
+
+            frmTraducciones.MdiParent = this;
+            frmTraducciones.Show();
+        }
     }
 }

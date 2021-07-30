@@ -42,5 +42,15 @@ namespace BLL
         {
             McPermiso.SacarHijo(permisoPadre, permisoHijo);
         }
+
+        public static void CrearPermisoPadre(string nombre)
+        {
+            McPermiso.CrearPermisoPadre(nombre);
+        }
+
+        public static void CrearPermisoHijo(string nombre)
+        {
+            McPermiso.CrearPermisoHijo(nombre);
+        }
     }
 }

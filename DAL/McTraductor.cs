@@ -56,8 +56,7 @@ namespace DAL
             List<IDbDataParameter> parameters = new List<IDbDataParameter>();
             
             parameters.Add(Acceso.CrearParametro("@id_idioma", idioma.Id));
-            //ARREGLAR
-            //Cambiar Hardcode de multilenguaje
+
             DataTable tabla = Acceso.Leer("spObtenerTraducciones", parameters);
             Acceso.Cerrar();
 
@@ -74,6 +73,7 @@ namespace DAL
                         {
                             Id = int.Parse(registro["id_etiqueta"].ToString()),
                             Nombre = etiquetaAux
+                            
                         }
 
                     });
@@ -81,5 +81,52 @@ namespace DAL
 
             return _traducciones;
         }
+
+
+        public static List<TraduccionEntity> ListarTraducciones(IdiomaEntity idioma)
+        {
+            List<TraduccionEntity> traducciones = new List<TraduccionEntity>();
+            Acceso.Abrir();
+            List<IDbDataParameter> parameters = new List<IDbDataParameter>();
+
+            parameters.Add(Acceso.CrearParametro("@idioma", idioma.Nombre));
+            DataTable tabla = Acceso.Leer("spListarTraducciones", parameters);
+            Acceso.Cerrar();
+
+            foreach (DataRow registro in tabla.Rows)
+            {
+                EtiquetaEntity etiqueta = new EtiquetaEntity()
+                {
+                    Nombre = registro["Etiqueta"].ToString(),
+                };
+                
+                traducciones.Add(
+                 new TraduccionEntity()
+                 {
+                     Etiqueta = etiqueta,
+                     Texto = registro["Traduccion"].ToString()
+                 }); 
+                
+
+            }
+
+            return traducciones;
+        }
+
+
+        public static void AgregarTraduccion(IdiomaEntity idioma,EtiquetaEntity etiqueta, TraduccionEntity traduccion)
+        {
+            Acceso.Abrir();
+
+            List<IDbDataParameter> parameters = new List<IDbDataParameter>();
+            parameters.Add(Acceso.CrearParametro("@Idioma", idioma.Nombre));
+            parameters.Add(Acceso.CrearParametro("@Etiqueta", etiqueta.Nombre));
+            parameters.Add(Acceso.CrearParametro("@Traduccion", traduccion.Texto));
+            Acceso.Escribir("spCrearTraduccion", parameters);
+
+            Acceso.Cerrar();
+        }
+
+
     }
 }

@@ -46,6 +46,8 @@ namespace Views
             this.permisosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aBMToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.permisosUsuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.idiomaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.aBMToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -63,7 +65,8 @@ namespace Views
             this.vinilosToolStripMenuItem,
             this.inversiónToolStripMenuItem,
             this.logísticaToolStripMenuItem,
-            this.permisosToolStripMenuItem});
+            this.permisosToolStripMenuItem,
+            this.idiomaToolStripMenuItem1});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(800, 28);
@@ -176,6 +179,21 @@ namespace Views
             this.permisosUsuarioToolStripMenuItem.Text = "PermisosUsuario";
             this.permisosUsuarioToolStripMenuItem.Click += new System.EventHandler(this.permisosUsuarioToolStripMenuItem_Click);
             // 
+            // idiomaToolStripMenuItem1
+            // 
+            this.idiomaToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.aBMToolStripMenuItem1});
+            this.idiomaToolStripMenuItem1.Name = "idiomaToolStripMenuItem1";
+            this.idiomaToolStripMenuItem1.Size = new System.Drawing.Size(70, 24);
+            this.idiomaToolStripMenuItem1.Text = "Idioma";
+            // 
+            // aBMToolStripMenuItem1
+            // 
+            this.aBMToolStripMenuItem1.Name = "aBMToolStripMenuItem1";
+            this.aBMToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
+            this.aBMToolStripMenuItem1.Text = "ABM";
+            this.aBMToolStripMenuItem1.Click += new System.EventHandler(this.aBMToolStripMenuItem1_Click);
+            // 
             // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -212,5 +230,7 @@ namespace Views
         private System.Windows.Forms.ToolStripMenuItem permisosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aBMToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem permisosUsuarioToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem idiomaToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem aBMToolStripMenuItem1;
     }
 }

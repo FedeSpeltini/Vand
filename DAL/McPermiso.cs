@@ -155,5 +155,26 @@ namespace DAL
             DataTable tabla = Acceso.Leer("spSacarPermiso", parameters);
             Acceso.Cerrar();
         }
+        public static void CrearPermisoHijo(string nombre)
+        {
+            Acceso.Abrir();
+
+            List<IDbDataParameter> parameters = new List<IDbDataParameter>();
+            parameters.Add(Acceso.CrearParametro("@Permiso", nombre));
+            Acceso.Escribir("spCrearPermisoHijo", parameters);
+
+            Acceso.Cerrar();
+        }
+
+        public static void CrearPermisoPadre(string nombre)
+        {
+            Acceso.Abrir();
+
+            List<IDbDataParameter> parameters = new List<IDbDataParameter>();
+            parameters.Add(Acceso.CrearParametro("@Permiso", nombre));
+            Acceso.Escribir("spCrearPermisoPadre", parameters);
+
+            Acceso.Cerrar();
+        }
     }
 }

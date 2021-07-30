@@ -43,5 +43,20 @@ namespace Views
         {
 
         }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            if(rdGrupo.Checked)
+            {
+                PermisoBusiness.CrearPermisoPadre(txtAgregar.Text);
+                CargarGrillas();
+            }
+            if(rdPermiso.Checked)
+            {
+                PermisoBusiness.CrearPermisoHijo(txtAgregar.Text);
+                CargarGrillas();
+            }
+
+        }
     }
 }
