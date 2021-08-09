@@ -60,7 +60,7 @@ namespace Views
             this.Controls.Add(this.btnSeleccionar);
             this.Controls.Add(this.lstIdioma);
             this.Name = "FrmIdioma";
-            this.Text = "FrmIdioma";
+            this.Tag = "Idiom";
             this.Load += new System.EventHandler(this.FrmIdioma_Load);
             this.ResumeLayout(false);
 

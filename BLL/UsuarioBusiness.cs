@@ -33,7 +33,7 @@ namespace BLL
                     usuario.Rol = rol;
                     SessionState.Login(usuario);
                     usuario.Permisos = McPermiso.Listar(usuario);
-                    return usuario;
+
                    // return GestionarTipoUsuario(usuario);
                     //PREGUNTAR
                     //No puedo convertir superclase en subclase
@@ -47,12 +47,10 @@ namespace BLL
             catch (Exception e)
             {
                 MessageBox.Show(e.Message);
-                throw;
-            }
-            finally
-            {
+                usuario.Nombre = "error";
 
             }
+            return usuario;
 
         }
 
@@ -110,6 +108,7 @@ namespace BLL
                 return sb.ToString();
             }
         }
+
 
 
     }

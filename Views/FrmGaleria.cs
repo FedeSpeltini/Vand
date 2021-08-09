@@ -28,13 +28,19 @@ namespace Views
         CopiaBusiness copiaBc = new CopiaBusiness();
         private void btnIngresar_Click(object sender, EventArgs e)
         {
-            FrmDisco frmDisco = new FrmDisco();
-            frmDisco.MdiParent = frmPrincipal;
-            frmDisco.Copia = (CopiaEntity)lstDiscos.SelectedItem;
-            frmDisco.frmPrincipal = frmPrincipal;
-            frmDisco.Show();
-            this.Close();
-
+            if(lstDiscos.Items.Count > 0)
+            {
+                FrmDisco frmDisco = new FrmDisco();
+                frmDisco.MdiParent = frmPrincipal;
+                frmDisco.Copia = (CopiaEntity)lstDiscos.SelectedItem;
+                frmDisco.frmPrincipal = frmPrincipal;
+                frmDisco.Show();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("No hay discos disponibles por el momento");
+            }
         }
 
 
@@ -66,6 +72,9 @@ namespace Views
             var traducciones = TraduccionBusiness.ObtenerTraducciones(idioma);
             if (btnIngresar.Tag != null && traducciones.ContainsKey(btnIngresar.Tag.ToString()))
                 btnIngresar.Text = traducciones[btnIngresar.Tag.ToString()].Texto;
+
+            if (this.Tag != null && traducciones.ContainsKey(this.Tag.ToString()))
+                this.Text = traducciones[this.Tag.ToString()].Texto;
 
         }
 

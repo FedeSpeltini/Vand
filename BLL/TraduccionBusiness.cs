@@ -31,5 +31,18 @@ namespace BLL
         {
             McTraductor.AgregarTraduccion(idioma, etiqueta, traduccion);
         }
+
+        public static void ModificarTraduccion(TraduccionEntity traduccion, string nuevoValor)
+        {
+            McTraductor.ModificarTraduccion(traduccion, nuevoValor);
+        }
+
+        public static void EliminarTraduccion(TraduccionEntity traduccion)
+        {
+            McTraductor.EliminarTraduccion(traduccion);
+        }
+
+        public static Func<int, int, int> Multiplicar = (x, y) => x * y;
+        static Func<int, int> square = x => x * x;
     }
 }

@@ -1,5 +1,6 @@
 ﻿using BE;
 using BLL;
+using EjemploArquitectura.Services;
 using Services;
 using System;
 using System.Collections.Generic;
@@ -13,7 +14,7 @@ using System.Windows.Forms;
 
 namespace Views
 {
-    public partial class FrmDisco : Form
+    public partial class FrmDisco : Form, IIdiomaObserver
     {
         internal CopiaEntity Copia = new CopiaEntity();
         internal FrmPrincipal frmPrincipal = new FrmPrincipal();
@@ -28,6 +29,8 @@ namespace Views
             lblNombreDisco.Text = Copia.Nombre;
             lblYear.Text = Copia.Year.ToString();
             lblPrecio.Text = Copia.Precio.ToString();
+
+            Traducir();
         }
 
         private void btnComprar_Click(object sender, EventArgs e)
@@ -48,6 +51,7 @@ namespace Views
                 FrmGaleria frmGaleria = new FrmGaleria();
                 frmGaleria.MdiParent = frmPrincipal;
                 frmGaleria.frmPrincipal = frmPrincipal;
+                MessageBox.Show("Compra Realizada exitosamente", "Compra");
                 frmGaleria.Show();
                 this.Close();
             }
@@ -56,6 +60,27 @@ namespace Views
                 MessageBox.Show("Compra Cancelada", "Cancelada");
             }
 
+        }
+
+        private void Traducir()
+        {
+            IdiomaEntity idioma = null;
+            if (ManejadorDeSesion.IsLogged())
+                idioma = ManejadorDeSesion.Session.Idioma;
+
+
+            var traducciones = TraduccionBusiness.ObtenerTraducciones(idioma);
+            if (btnComprar.Tag != null && traducciones.ContainsKey(btnComprar.Tag.ToString()))
+                btnComprar.Text = traducciones[btnComprar.Tag.ToString()].Texto;
+
+            if (this.Tag != null && traducciones.ContainsKey(this.Tag.ToString()))
+                this.Text = traducciones[this.Tag.ToString()].Texto;
+
+        }
+
+        public void UpdateLanguage(IdiomaEntity idioma)
+        {
+            Traducir();
         }
     }
 }

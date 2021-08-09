@@ -66,6 +66,7 @@ namespace Views
             this.btnModificarPermiso.Tag = "28";
             this.btnModificarPermiso.Text = "Modificar";
             this.btnModificarPermiso.UseVisualStyleBackColor = true;
+            this.btnModificarPermiso.Click += new System.EventHandler(this.btnModificarPermiso_Click);
             // 
             // btnSacarPermiso
             // 
@@ -77,6 +78,7 @@ namespace Views
             this.btnSacarPermiso.Tag = "27";
             this.btnSacarPermiso.Text = "Sacar";
             this.btnSacarPermiso.UseVisualStyleBackColor = true;
+            this.btnSacarPermiso.Click += new System.EventHandler(this.btnSacarPermiso_Click);
             // 
             // btnModificarGrupo
             // 
@@ -88,6 +90,7 @@ namespace Views
             this.btnModificarGrupo.Tag = "25";
             this.btnModificarGrupo.Text = "Modificar";
             this.btnModificarGrupo.UseVisualStyleBackColor = true;
+            this.btnModificarGrupo.Click += new System.EventHandler(this.btnModificarGrupo_Click);
             // 
             // btnSacarGrupo
             // 

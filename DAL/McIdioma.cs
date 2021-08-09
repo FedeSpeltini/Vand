@@ -21,5 +21,16 @@ namespace DAL
 
             Acceso.Cerrar();
         }
+
+        public static void BorrarIdioma(IdiomaEntity idioma)
+        {
+            Acceso.Abrir();
+
+            List<IDbDataParameter> parameters = new List<IDbDataParameter>();
+            parameters.Add(Acceso.CrearParametro("@Idioma", idioma.Nombre));
+            Acceso.Escribir("spBorrarIdioma", parameters);
+
+            Acceso.Cerrar();
+        }
     }
 }

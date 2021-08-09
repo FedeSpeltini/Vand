@@ -41,5 +41,28 @@ namespace DAL
             Acceso.Cerrar();
         }
 
+        public static void ModificarEtiqueta(EtiquetaEntity etiqueta, string nuevoValor)
+        {
+            Acceso.Abrir();
+
+            List<IDbDataParameter> parameters = new List<IDbDataParameter>();
+            parameters.Add(Acceso.CrearParametro("@Etiqueta", etiqueta.Nombre));
+            parameters.Add(Acceso.CrearParametro("@NuevoValor", nuevoValor));
+            Acceso.Escribir("spModificarEtiqueta", parameters);
+
+            Acceso.Cerrar();
+        }
+
+        public static void EliminarEtiqueta(EtiquetaEntity etiqueta)
+        {
+            Acceso.Abrir();
+
+            List<IDbDataParameter> parameters = new List<IDbDataParameter>();
+            parameters.Add(Acceso.CrearParametro("@Etiqueta", etiqueta.Nombre));
+            Acceso.Escribir("spEliminarEtiqueta", parameters);
+
+            Acceso.Cerrar();
+        }
+
     }
 }

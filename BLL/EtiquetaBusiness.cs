@@ -20,5 +20,14 @@ namespace BLL
         {
             McEtiqueta.CrearEtiqueta(etiqueta);
         }
+        public static void ModificarEtiqueta(EtiquetaEntity etiqueta, string nuevoValor)
+        {
+            McEtiqueta.ModificarEtiqueta(etiqueta, nuevoValor);
+        }
+
+        public static void EliminarEtiqueta(EtiquetaEntity etiqueta)
+        {
+            McEtiqueta.EliminarEtiqueta(etiqueta);
+        }
     }
 }

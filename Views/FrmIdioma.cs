@@ -44,6 +44,9 @@ namespace Views
             var traducciones = TraduccionBusiness.ObtenerTraducciones(idioma);
             if (btnSeleccionar.Tag != null && traducciones.ContainsKey(btnSeleccionar.Tag.ToString()))
                 btnSeleccionar.Text = traducciones[btnSeleccionar.Tag.ToString()].Texto;
+
+            if (this.Tag != null && traducciones.ContainsKey(this.Tag.ToString()))
+                this.Text = traducciones[this.Tag.ToString()].Texto;
         }
         private void btnSeleccionar_Click(object sender, EventArgs e)
         {

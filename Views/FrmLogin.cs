@@ -30,13 +30,20 @@ namespace Views
             u.Password = ub.Encriptar(txtPwd.Text);
 
             var usuarioLogueado = UsuarioBusiness.Login(u);
+            if(usuarioLogueado.Nombre != "error")
+            {
+                var traducciones = TraduccionBusiness.ObtenerTraducciones();
 
-            var traducciones = TraduccionBusiness.ObtenerTraducciones();
+                FrmPrincipal frmPrincipal = new FrmPrincipal();
 
-            FrmPrincipal frmPrincipal = new FrmPrincipal();
-            
-            frmPrincipal.Show();
-            //this.Close();
+                frmPrincipal.Show();
+                //this.Close();
+            }
+            else
+            {
+                txtUserName.Text = "";
+                txtPwd.Text = "";
+            }
 
 
         }

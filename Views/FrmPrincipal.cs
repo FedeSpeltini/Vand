@@ -105,6 +105,8 @@ namespace Views
             if (registroToolStripMenuItem.Tag != null && traducciones.ContainsKey(registroToolStripMenuItem.Tag.ToString()))
                 registroToolStripMenuItem.Text = traducciones[registroToolStripMenuItem.Tag.ToString()].Texto;
 
+            if (idiomaToolStripMenuItem.Tag != null && traducciones.ContainsKey(idiomaToolStripMenuItem.Tag.ToString()))
+                idiomaToolStripMenuItem.Text = traducciones[idiomaToolStripMenuItem.Tag.ToString()].Texto;
 
 
         }

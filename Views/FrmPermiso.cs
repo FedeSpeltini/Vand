@@ -58,5 +58,20 @@ namespace Views
             }
 
         }
+
+        private void btnModificarGrupo_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSacarPermiso_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnModificarPermiso_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -46,7 +46,6 @@ namespace Views
             this.btnComprar.Size = new System.Drawing.Size(75, 23);
             this.btnComprar.TabIndex = 0;
             this.btnComprar.Tag = "Buy";
-            this.btnComprar.Text = "Comprar";
             this.btnComprar.UseVisualStyleBackColor = true;
             this.btnComprar.Click += new System.EventHandler(this.btnComprar_Click);
             // 
@@ -127,7 +126,7 @@ namespace Views
             this.Controls.Add(this.lblNombreDisco);
             this.Controls.Add(this.btnComprar);
             this.Name = "FrmDisco";
-            this.Text = "FrmDisco";
+            this.Tag = "Disc";
             this.Load += new System.EventHandler(this.FrmDisco_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

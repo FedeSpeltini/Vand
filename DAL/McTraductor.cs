@@ -127,6 +127,27 @@ namespace DAL
             Acceso.Cerrar();
         }
 
+        public static void ModificarTraduccion(TraduccionEntity traduccion, string nuevoValor)
+        {
+            Acceso.Abrir();
 
+            List<IDbDataParameter> parameters = new List<IDbDataParameter>();
+            parameters.Add(Acceso.CrearParametro("@Traduccion", traduccion.Texto));
+            parameters.Add(Acceso.CrearParametro("@NuevoValor", nuevoValor));
+            Acceso.Escribir("spModificarTraduccion", parameters);
+
+            Acceso.Cerrar();
+        }
+
+        public static void EliminarTraduccion(TraduccionEntity traduccion)
+        {
+            Acceso.Abrir();
+
+            List<IDbDataParameter> parameters = new List<IDbDataParameter>();
+            parameters.Add(Acceso.CrearParametro("@Traduccion", traduccion.Texto));
+            Acceso.Escribir("spEliminarTraduccion", parameters);
+
+            Acceso.Cerrar();
+        }
     }
 }

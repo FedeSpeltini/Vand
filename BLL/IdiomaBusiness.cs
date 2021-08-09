@@ -14,5 +14,10 @@ namespace BLL
         {
             McIdioma.CrearIdioma(idioma);
         }
+
+        public static void BorrarIdioma(IdiomaEntity idioma)
+        {
+            McIdioma.BorrarIdioma(idioma);
+        }
     }
 }

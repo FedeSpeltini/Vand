@@ -71,7 +71,8 @@ namespace Views
             this.Controls.Add(this.btnLogin);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FrmLogin";
-            this.Text = "FrmLogin";
+            this.Tag = "Login";
+            this.Text = "VAND";
             this.Load += new System.EventHandler(this.FrmLogin_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -60,7 +60,7 @@ namespace Views
             this.Controls.Add(this.lstDiscos);
             this.Controls.Add(this.btnIngresar);
             this.Name = "FrmGaleria";
-            this.Text = "FrmGaleria";
+            this.Tag = "Gallery";
             this.Load += new System.EventHandler(this.FrmGaleria_Load);
             this.ResumeLayout(false);
 
