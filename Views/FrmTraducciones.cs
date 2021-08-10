@@ -374,6 +374,16 @@ namespace Views
             if (rdModificar.Tag != null && traducciones.ContainsKey(rdModificar.Tag.ToString()))
                 rdModificar.Text = traducciones[rdModificar.Tag.ToString()].Texto;
 
+            if (lblIdioma.Tag != null && traducciones.ContainsKey(lblIdioma.Tag.ToString()))
+                lblIdioma.Text = traducciones[lblIdioma.Tag.ToString()].Texto;
+
+            if (rdModificar.Tag != null && traducciones.ContainsKey(rdModificar.Tag.ToString()))
+                rdModificar.Text = traducciones[rdModificar.Tag.ToString()].Texto;
+
+            if (rdModificar.Tag != null && traducciones.ContainsKey(rdModificar.Tag.ToString()))
+                rdModificar.Text = traducciones[rdModificar.Tag.ToString()].Texto;
+
+            
 
 
 

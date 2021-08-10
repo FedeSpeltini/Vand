@@ -50,7 +50,7 @@ namespace Views
             this.rdElminar = new System.Windows.Forms.RadioButton();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblIdioma = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dtEtiquetas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtTraducciones)).BeginInit();
             this.SuspendLayout();
@@ -265,21 +265,22 @@ namespace Views
             this.label2.TabIndex = 40;
             this.label2.Text = "Traducción";
             // 
-            // label3
+            // lblIdioma
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(89, 274);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(49, 17);
-            this.label3.TabIndex = 41;
-            this.label3.Text = "Idioma";
+            this.lblIdioma.AutoSize = true;
+            this.lblIdioma.Location = new System.Drawing.Point(89, 274);
+            this.lblIdioma.Name = "lblIdioma";
+            this.lblIdioma.Size = new System.Drawing.Size(49, 17);
+            this.lblIdioma.TabIndex = 41;
+            this.lblIdioma.Tag = "Idiom";
+            this.lblIdioma.Text = "Idioma";
             // 
             // FrmTraducciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1158, 450);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.lblIdioma);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.rdElminar);
@@ -332,6 +333,6 @@ namespace Views
         private System.Windows.Forms.RadioButton rdElminar;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblIdioma;
     }
 }
