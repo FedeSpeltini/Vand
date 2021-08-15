@@ -41,16 +41,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ManejadorDeSesion.cs" />
+    <Compile Include="Factory\Creator.cs" />
+    <Compile Include="Factory\CreatorCassette.cs" />
+    <Compile Include="Factory\CreatorVinyl.cs" />
+    <Compile Include="Session\ManejadorDeSesion.cs" />
     <Compile Include="MultiIdioma\Etiqueta.cs" />
     <Compile Include="MultiIdioma\Idioma.cs" />
     <Compile Include="MultiIdioma\IIdiomaObserver.cs" />
     <Compile Include="MultiIdioma\Traduccion.cs" />
     <Compile Include="MultiIdioma\Traductor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SessionState.cs" />
+    <Compile Include="Session\SessionState.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Abstractions\Abstractions.csproj">
+      <Project>{ca0472f0-7863-4d54-ac57-dcdce98f0d75}</Project>
+      <Name>Abstractions</Name>
+    </ProjectReference>
     <ProjectReference Include="..\BE\BE.csproj">
       <Project>{e524e27c-2bf1-4f72-a3c0-dd0238466298}</Project>
       <Name>BE</Name>

@@ -1,4 +1,5 @@
-﻿using BE;
+﻿using Abstractions;
+using BE;
 using BLL;
 using EjemploArquitectura.Services;
 using Services;
@@ -32,7 +33,7 @@ namespace Views
             {
                 FrmDisco frmDisco = new FrmDisco();
                 frmDisco.MdiParent = frmPrincipal;
-                frmDisco.Copia = (CopiaEntity)lstDiscos.SelectedItem;
+                frmDisco.Copia = (ICopia)lstDiscos.SelectedItem;
                 frmDisco.frmPrincipal = frmPrincipal;
                 frmDisco.Show();
                 this.Close();
@@ -46,7 +47,7 @@ namespace Views
 
         public void CargarDatos()
         {
-            foreach(CopiaEntity copia in copiaBc.ObtenerDiscos(SessionState.RetornarUsuario()))
+            foreach(ICopia copia in copiaBc.ObtenerDiscos(SessionState.RetornarUsuario()))
             {
                 lstDiscos.DisplayMember = nameof(copia.Nombre);
                 lstDiscos.ValueMember = nameof(copia);
@@ -64,7 +65,7 @@ namespace Views
 
         private void Traducir()
         {
-            IdiomaEntity idioma = null;
+            IIdioma idioma = null;
             if (ManejadorDeSesion.IsLogged())
                 idioma = ManejadorDeSesion.Session.Idioma;
 
@@ -78,7 +79,8 @@ namespace Views
 
         }
 
-        public void UpdateLanguage(IdiomaEntity idioma)
+
+        public void UpdateLanguage(IIdioma idioma)
         {
             Traducir();
         }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Abstractions;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace BE
 {
-    public  class UsuarioEntity
+    public  class UsuarioEntity: IEntity, IUsuario
     {
         private string nombre;
 
@@ -33,14 +34,6 @@ namespace BE
         }
 
 
-        //private List<PermisoEntity> permisos = new List<PermisoEntity>();
-
-        //public List<PermisoEntity> Permisos
-        //{
-        //    get { return permisos; }
-
-        //}
-
         private List<PermisoEntity> permisos = new List<PermisoEntity>();
 
         public List<PermisoEntity> Permisos
@@ -49,18 +42,15 @@ namespace BE
             set { permisos = value; }
         }
 
-        private IdiomaEntity idioma;
+        private IdiomaEntity idioma2;
 
-        public IdiomaEntity Idioma
+        public IdiomaEntity Idioma2
         {
-            get { return idioma; }
-            set { idioma = value; }
+            get { return idioma2; }
+            set { idioma2 = value; }
         }
 
-
-
-
-
-
+        public int Id { get; set; }
+        IIdioma IUsuario.Idioma { get; set; }
     }
 }

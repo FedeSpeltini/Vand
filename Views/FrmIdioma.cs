@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Services;
 using EjemploArquitectura.Services;
+using Abstractions;
 
 namespace Views
 {
@@ -36,7 +37,7 @@ namespace Views
 
         public void Traducir()
         {
-            IdiomaEntity idioma = null;
+            IIdioma idioma = null;
             if (ManejadorDeSesion.IsLogged())
                 idioma = ManejadorDeSesion.Session.Idioma;
 
@@ -54,7 +55,9 @@ namespace Views
             ManejadorDeSesion.CambiarIdioma((IdiomaEntity)lstIdioma.SelectedItem);
         }
 
-        public void UpdateLanguage(IdiomaEntity idioma)
+
+
+        public void UpdateLanguage(IIdioma idioma)
         {
             Traducir();
         }

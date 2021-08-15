@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Abstractions;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,21 @@ namespace Views
         public UcVistaDisco()
         {
             InitializeComponent();
+        }
+        
+
+        private void UcVistaDisco_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        public void CargarDatos(ICopia copia)
+        {
+            pbPortada.Load(copia.UrlPortada);
+            lblBanda.Text = copia.Banda;
+            lblDisco.Text = copia.Nombre;
+            lblYear.Text = copia.Year.ToString();
+            lblPrecio.Text = $"{copia.Precio.ToString()} VandCoins";
         }
     }
 }

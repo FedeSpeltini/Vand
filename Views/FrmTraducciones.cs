@@ -1,4 +1,5 @@
-﻿using BE;
+﻿using Abstractions;
+using BE;
 using BLL;
 using EjemploArquitectura.Services;
 using Services;
@@ -328,14 +329,11 @@ namespace Views
             }
         }
 
-        public void UpdateLanguage(IdiomaEntity idioma)
-        {
-            Traducir();
-        }
+
 
         private void Traducir()
         {
-            IdiomaEntity idioma = null;
+            IIdioma idioma = null;
             if (ManejadorDeSesion.IsLogged())
                 idioma = ManejadorDeSesion.Session.Idioma;
 
@@ -393,6 +391,11 @@ namespace Views
             if (this.Tag != null && traducciones.ContainsKey(this.Tag.ToString()))
                 this.Text = traducciones[this.Tag.ToString()].Texto;
 
+        }
+
+        public void UpdateLanguage(IIdioma idioma)
+        {
+            Traducir();
         }
     }
 }

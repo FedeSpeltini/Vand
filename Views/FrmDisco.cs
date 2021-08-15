@@ -1,4 +1,5 @@
-﻿using BE;
+﻿using Abstractions;
+using BE;
 using BLL;
 using EjemploArquitectura.Services;
 using Services;
@@ -16,7 +17,7 @@ namespace Views
 {
     public partial class FrmDisco : Form, IIdiomaObserver
     {
-        internal CopiaEntity Copia = new CopiaEntity();
+        internal ICopia Copia;
         internal FrmPrincipal frmPrincipal = new FrmPrincipal();
         public FrmDisco()
         {
@@ -25,11 +26,7 @@ namespace Views
 
         private void FrmDisco_Load(object sender, EventArgs e)
         {
-            lblNombreBanda.Text = Copia.Banda;
-            lblNombreDisco.Text = Copia.Nombre;
-            lblYear.Text = Copia.Year.ToString();
-            lblPrecio.Text = Copia.Precio.ToString();
-
+            ucVistaDisco1.CargarDatos(Copia);
             Traducir();
         }
 
@@ -64,7 +61,7 @@ namespace Views
 
         private void Traducir()
         {
-            IdiomaEntity idioma = null;
+            IIdioma idioma = null;
             if (ManejadorDeSesion.IsLogged())
                 idioma = ManejadorDeSesion.Session.Idioma;
 
@@ -78,7 +75,9 @@ namespace Views
 
         }
 
-        public void UpdateLanguage(IdiomaEntity idioma)
+
+
+        public void UpdateLanguage(IIdioma idioma)
         {
             Traducir();
         }

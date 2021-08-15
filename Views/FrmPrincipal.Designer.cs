@@ -48,6 +48,7 @@ namespace Views
             this.permisosUsuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.idiomaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.aBMToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.misComprasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -86,21 +87,21 @@ namespace Views
             // loginToolStripMenuItem
             // 
             this.loginToolStripMenuItem.Name = "loginToolStripMenuItem";
-            this.loginToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.loginToolStripMenuItem.Size = new System.Drawing.Size(83, 26);
             this.loginToolStripMenuItem.Tag = "Login";
             this.loginToolStripMenuItem.Click += new System.EventHandler(this.loginToolStripMenuItem_Click);
             // 
             // registroToolStripMenuItem
             // 
             this.registroToolStripMenuItem.Name = "registroToolStripMenuItem";
-            this.registroToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.registroToolStripMenuItem.Size = new System.Drawing.Size(83, 26);
             this.registroToolStripMenuItem.Tag = "Register";
             this.registroToolStripMenuItem.Click += new System.EventHandler(this.registroToolStripMenuItem_Click);
             // 
             // idiomaToolStripMenuItem
             // 
             this.idiomaToolStripMenuItem.Name = "idiomaToolStripMenuItem";
-            this.idiomaToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.idiomaToolStripMenuItem.Size = new System.Drawing.Size(83, 26);
             this.idiomaToolStripMenuItem.Tag = "Idiom";
             this.idiomaToolStripMenuItem.Click += new System.EventHandler(this.idiomaToolStripMenuItem_Click);
             // 
@@ -108,7 +109,8 @@ namespace Views
             // 
             this.vinilosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.galeriaToolStripMenuItem,
-            this.publicarToolStripMenuItem});
+            this.publicarToolStripMenuItem,
+            this.misComprasToolStripMenuItem});
             this.vinilosToolStripMenuItem.Name = "vinilosToolStripMenuItem";
             this.vinilosToolStripMenuItem.Size = new System.Drawing.Size(67, 24);
             this.vinilosToolStripMenuItem.Text = "Vinilos";
@@ -116,14 +118,14 @@ namespace Views
             // galeriaToolStripMenuItem
             // 
             this.galeriaToolStripMenuItem.Name = "galeriaToolStripMenuItem";
-            this.galeriaToolStripMenuItem.Size = new System.Drawing.Size(145, 26);
+            this.galeriaToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.galeriaToolStripMenuItem.Text = "Galeria";
             this.galeriaToolStripMenuItem.Click += new System.EventHandler(this.galeriaToolStripMenuItem_Click);
             // 
             // publicarToolStripMenuItem
             // 
             this.publicarToolStripMenuItem.Name = "publicarToolStripMenuItem";
-            this.publicarToolStripMenuItem.Size = new System.Drawing.Size(145, 26);
+            this.publicarToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.publicarToolStripMenuItem.Text = "Publicar";
             this.publicarToolStripMenuItem.Click += new System.EventHandler(this.publicarToolStripMenuItem_Click);
             // 
@@ -194,6 +196,13 @@ namespace Views
             this.aBMToolStripMenuItem1.Text = "ABM";
             this.aBMToolStripMenuItem1.Click += new System.EventHandler(this.aBMToolStripMenuItem1_Click);
             // 
+            // misComprasToolStripMenuItem
+            // 
+            this.misComprasToolStripMenuItem.Name = "misComprasToolStripMenuItem";
+            this.misComprasToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.misComprasToolStripMenuItem.Text = "Mis compras";
+            this.misComprasToolStripMenuItem.Click += new System.EventHandler(this.misComprasToolStripMenuItem_Click);
+            // 
             // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -232,5 +241,6 @@ namespace Views
         private System.Windows.Forms.ToolStripMenuItem permisosUsuarioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem idiomaToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem aBMToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem misComprasToolStripMenuItem;
     }
 }

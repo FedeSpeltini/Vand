@@ -1,4 +1,5 @@
 ﻿//using EjemploArquitectura.Services.Multiidioma;
+using Abstractions;
 using BE;
 using Services;
 using System;
@@ -11,10 +12,10 @@ namespace EjemploArquitectura.Services
 {
     public static class ManejadorDeSesion
     {
-        static UsuarioEntity _session;
+        static IUsuario _session;
 
         static IList<IIdiomaObserver> _observers = new List<IIdiomaObserver>();
-        public static UsuarioEntity Session
+        public static IUsuario Session
         {
             get
             {
@@ -49,14 +50,14 @@ namespace EjemploArquitectura.Services
             _observers.Remove(o);
         }
 
-        private static void Notificar(IdiomaEntity idioma)
+        private static void Notificar(IIdioma idioma)
         {
             foreach (var o in _observers)
             {
                 o.UpdateLanguage(idioma);
             }
         }
-        public static void CambiarIdioma(IdiomaEntity idioma)
+        public static void CambiarIdioma(IIdioma idioma)
         {
             if (_session != null)
             {

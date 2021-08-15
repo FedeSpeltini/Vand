@@ -94,6 +94,12 @@
     <Compile Include="FrmLogistica.Designer.cs">
       <DependentUpon>FrmLogistica.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmMisCompras.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMisCompras.Designer.cs">
+      <DependentUpon>FrmMisCompras.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmPermiso.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -162,6 +168,9 @@
     <EmbeddedResource Include="FrmLogistica.resx">
       <DependentUpon>FrmLogistica.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmMisCompras.resx">
+      <DependentUpon>FrmMisCompras.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmPermiso.resx">
       <DependentUpon>FrmPermiso.cs</DependentUpon>
     </EmbeddedResource>
@@ -206,6 +215,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Abstractions\Abstractions.csproj">
+      <Project>{ca0472f0-7863-4d54-ac57-dcdce98f0d75}</Project>
+      <Name>Abstractions</Name>
+    </ProjectReference>
     <ProjectReference Include="..\BE\BE.csproj">
       <Project>{e524e27c-2bf1-4f72-a3c0-dd0238466298}</Project>
       <Name>BE</Name>

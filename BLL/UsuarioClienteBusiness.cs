@@ -1,4 +1,5 @@
-﻿using BE;
+﻿using Abstractions;
+using BE;
 using DAL;
 using System;
 using System.Collections.Generic;
@@ -14,24 +15,17 @@ namespace BLL
         McCompra mcCompra = new McCompra();
         ComisionEntity comision = new ComisionEntity();
         McUsuarioCliente mcUsuario = new McUsuarioCliente();
-        public void Comprar(CopiaEntity copia, UsuarioClienteEntity comprador)
+        public void Comprar(ICopia copia, UsuarioClienteEntity comprador)
         {   
             CompraEntity compra = new CompraEntity();
 
             compra.Comprador = comprador;
 
-            compra.Vendedor = copia.Propetario;
+            compra.Vendedor = copia.Propietario;
             comision.Ganancia = copia.Precio * comision.Porcentaje;
             compra.ValorFinal = copia.Precio - (copia.Precio * comision.Porcentaje);
             compra.Producto = copia;
             compra.Comision = comision;
-           // UsuarioComercialBusiness ucb = new UsuarioComercialBusiness();
-
-            //comprador.Wallet = DescontarVandCoins(copia, comprador.Wallet);
-
-            //ucb.CargarVenta(copia, comprador, vendedor);
-
-            //ucb.DesprenderCopia(vendedor, copia);
 
             mcCompra.Agregar(compra);
 

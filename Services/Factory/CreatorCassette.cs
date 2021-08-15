@@ -6,10 +6,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Services
+namespace Service
 {
-   public interface IIdiomaObserver
+    public class CreatorCassette : Creator
     {
-        void UpdateLanguage(IIdioma idioma);
+        public override ICopia FactoryMethod()
+        {
+            return new Cassette();
+        }
     }
 }

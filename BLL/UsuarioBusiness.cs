@@ -1,4 +1,5 @@
-﻿using BE;
+﻿using Abstractions;
+using BE;
 using DAL;
 using Services;
 using System;
@@ -18,9 +19,6 @@ namespace BLL
 
         }
 
-        //McUsuario mc = new McUsuario();
-        McTraductor mcTraductor = new McTraductor();
-        McPermiso mcPermiso = new McPermiso();
         public static UsuarioEntity Login(UsuarioEntity usuario)
         {
             try
@@ -35,8 +33,7 @@ namespace BLL
                     usuario.Permisos = McPermiso.Listar(usuario);
 
                    // return GestionarTipoUsuario(usuario);
-                    //PREGUNTAR
-                    //No puedo convertir superclase en subclase
+
                 }
                 else
                 {
@@ -109,6 +106,11 @@ namespace BLL
             }
         }
 
+
+        public static List<ICopia> ListarCompras(UsuarioEntity usuario)
+        {
+            return McCopia.ListarCompradas(usuario);
+        }
 
 
     }

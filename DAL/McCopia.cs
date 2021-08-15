@@ -1,4 +1,5 @@
-﻿using BE;
+﻿using Abstractions;
+using BE;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -27,9 +28,10 @@ namespace DAL
                 copia.Nombre = registro["NombreCopia"].ToString();
                 copia.Precio = decimal.Parse(registro["Precio"].ToString());
                 copia.Year = Convert.ToDateTime(registro["Year"].ToString());
+                copia.UrlPortada = registro["urlPortada"].ToString();
                 UsuarioComercialEntity usuario = new UsuarioComercialEntity();
                 usuario.Nombre = registro["NombrePropietario"].ToString();
-                copia.Propetario = usuario;
+                copia.Propietario = usuario;
                 tablaCopia.Add(copia);
             }
 
@@ -48,7 +50,7 @@ namespace DAL
             //parameters.Add(Acceso.CrearParametro("@Id", id));
             parameters.Add(Acceso.CrearParametro("@Nombre", copia.Nombre));
             parameters.Add(Acceso.CrearParametro("@Precio", copia.Precio));
-            parameters.Add(Acceso.CrearParametro("@Propietario", copia.Propetario.Nombre));
+            parameters.Add(Acceso.CrearParametro("@Propietario", copia.Propietario.Nombre));
 
             Acceso.Escribir("spCrearCopia", parameters);
 
@@ -58,7 +60,27 @@ namespace DAL
 
         }
 
+        public static List<ICopia> ListarCompradas(UsuarioEntity cliente)
+        {
+            List<ICopia> tablaCopia = new List<ICopia>();
+            List<IDbDataParameter> parameters = new List<IDbDataParameter>();
 
+            parameters.Add(Acceso.CrearParametro("@NombreUsuario", cliente.Nombre));
+            Acceso.Abrir();
+            DataTable tabla = Acceso.Leer("spListarMisCompras", parameters);
+            Acceso.Cerrar();
+
+            foreach (DataRow registro in tabla.Rows)
+            {
+                CopiaEntity copia = new CopiaEntity();
+                copia.Nombre = registro["nombre"].ToString();                
+                copia.Year = Convert.ToDateTime(registro["Year"].ToString());
+                copia.UrlPortada = registro["urlPortada"].ToString();
+                tablaCopia.Add(copia);
+            }
+
+            return tablaCopia;
+        }
 
     }
 }

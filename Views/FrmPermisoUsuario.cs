@@ -1,4 +1,5 @@
-﻿using BE;
+﻿using Abstractions;
+using BE;
 using BLL;
 using EjemploArquitectura.Services;
 using Services;
@@ -24,10 +25,6 @@ namespace Views
             InitializeComponent();
         }
 
-        public void UpdateLanguage(IdiomaEntity idioma)
-        {
-            Traducir();
-        }
 
         private void FrmPermisoUsuario_Load(object sender, EventArgs e)
         {
@@ -137,7 +134,7 @@ namespace Views
 
         private void Traducir()
         {
-            IdiomaEntity idioma = null;
+            IIdioma idioma = null;
             if (ManejadorDeSesion.IsLogged())
                 idioma = ManejadorDeSesion.Session.Idioma;
 
@@ -198,6 +195,11 @@ namespace Views
                 PermisoBusiness.CrearPermisoHijo(txtObjeto.Text);
                 CargarDatos();
             }
+        }
+
+        public void UpdateLanguage(IIdioma idioma)
+        {
+            Traducir();
         }
     }
 }

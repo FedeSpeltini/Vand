@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Abstractions;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,17 +9,17 @@ namespace BE
 {
     public class CompraEntity
     {
-        private CopiaEntity producto;
+        private ICopia producto;
 
-        public CopiaEntity Producto
+        public ICopia Producto
         {
             get { return producto; }
             set { producto = value; }
         }
 
-        private UsuarioComercialEntity vendedor;
+        private IUsuario vendedor;
 
-        public UsuarioComercialEntity Vendedor
+        public IUsuario Vendedor
         {
             get { return vendedor; }
             set { vendedor = value; }
@@ -41,9 +42,9 @@ namespace BE
         }
 
 
-        private UsuarioClienteEntity comprador;
+        private IUsuario comprador;
 
-        public UsuarioClienteEntity Comprador
+        public IUsuario Comprador
         {
             get { return comprador; }
             set { comprador = value; }

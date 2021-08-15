@@ -1,4 +1,5 @@
-﻿using BE;
+﻿using Abstractions;
+using BE;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -43,7 +44,7 @@ namespace DAL
 
 
 
-        public static IDictionary<string, TraduccionEntity> ObtenerTraducciones(IdiomaEntity idioma = null)
+        public static IDictionary<string, TraduccionEntity> ObtenerTraducciones(IIdioma idioma = null)
         {
             if (idioma == null)
             {

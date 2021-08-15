@@ -1,4 +1,5 @@
-﻿using BE;
+﻿using Abstractions;
+using BE;
 using BLL;
 using System;
 using System.Collections.Generic;
@@ -29,7 +30,7 @@ namespace Views
             u.Nombre = txtUserName.Text;
             u.Password = ub.Encriptar(txtPwd.Text);
 
-            var usuarioLogueado = UsuarioBusiness.Login(u);
+            IUsuario usuarioLogueado = UsuarioBusiness.Login(u);
             if(usuarioLogueado.Nombre != "error")
             {
                 var traducciones = TraduccionBusiness.ObtenerTraducciones();

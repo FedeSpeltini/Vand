@@ -1,4 +1,5 @@
-﻿using BE;
+﻿using Abstractions;
+using BE;
 using BLL;
 using EjemploArquitectura.Services;
 using Services;
@@ -92,7 +93,7 @@ namespace Views
 
         private void Traducir()
         {
-            IdiomaEntity idioma = null;
+            IIdioma idioma = null;
             if (ManejadorDeSesion.IsLogged())
                 idioma = ManejadorDeSesion.Session.Idioma;
 
@@ -111,10 +112,6 @@ namespace Views
 
         }
 
-        public void UpdateLanguage(IdiomaEntity idioma)
-        {
-            Traducir();
-        }
 
         private void aBMToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -138,6 +135,19 @@ namespace Views
 
             frmTraducciones.MdiParent = this;
             frmTraducciones.Show();
+        }
+
+        public void UpdateLanguage(IIdioma idioma)
+        {
+            Traducir();
+        }
+
+        private void misComprasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmMisCompras frmMisCompras = new FrmMisCompras();
+
+            frmMisCompras.MdiParent = this;
+            frmMisCompras.Show();
         }
     }
 }

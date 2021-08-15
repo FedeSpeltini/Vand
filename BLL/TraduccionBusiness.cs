@@ -1,4 +1,5 @@
-﻿using BE;
+﻿using Abstractions;
+using BE;
 using DAL;
 using System;
 using System.Collections.Generic;
@@ -11,7 +12,7 @@ namespace BLL
     public static class TraduccionBusiness
     {
 
-        public static IDictionary<string, TraduccionEntity> ObtenerTraducciones(IdiomaEntity idioma = null)
+        public static IDictionary<string, TraduccionEntity> ObtenerTraducciones(IIdioma idioma = null)
         {
             return McTraductor.ObtenerTraducciones(idioma);
         }
