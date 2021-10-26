@@ -76,6 +76,9 @@ namespace DAL
                 copia.Nombre = registro["nombre"].ToString();                
                 copia.Year = Convert.ToDateTime(registro["Year"].ToString());
                 copia.UrlPortada = registro["urlPortada"].ToString();
+                copia.Banda = new Banda();
+                copia.Banda.Nombre = registro["NOmbreBanda"].ToString();
+                
                 tablaCopia.Add(copia);
             }
 

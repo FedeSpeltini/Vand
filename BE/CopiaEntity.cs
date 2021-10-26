@@ -21,7 +21,7 @@ namespace BE
         }
 
         public IUsuario Propietario { get; set; }
-        public string Banda { get; set; }
+        public IBanda Banda { get; set; }
         public DateTime Year { get; set; }
         public List<string> Musicos { get; set; }
 

@@ -26,7 +26,7 @@ namespace Views
 
         private void FrmDisco_Load(object sender, EventArgs e)
         {
-            ucVistaDisco1.CargarDatos(Copia);
+            ucVistaDisco1.CargarDatosCopia(Copia);
             Traducir();
         }
 

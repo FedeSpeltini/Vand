@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Abstractions;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace BE
 {
-    public class DiscoEntity
+    public class DiscoEntity : IDisco
     {
         private string nombre;
 
@@ -16,13 +17,6 @@ namespace BE
             set { nombre = value; }
         }
 
-        private string banda;
-
-        public string Banda
-        {
-            get { return banda; }
-            set { banda = value; }
-        }
 
         private DateTime year;
 
@@ -40,5 +34,7 @@ namespace BE
             set { musicos = value; }
         }
 
+        IBanda IDisco.Banda { get; set; }
+        public string UrlPortada { get; set; }
     }
 }

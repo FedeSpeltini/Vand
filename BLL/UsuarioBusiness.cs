@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace BLL
 {
-    public class UsuarioBusiness : IUSuario
+    public class UsuarioBusiness
     {
 
         public virtual  void CrearUsuario(UsuarioEntity usuario)

@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Globalization;
+using Abstractions;
 
 namespace DAL
 {
@@ -57,6 +58,32 @@ namespace DAL
             Acceso.Cerrar();
 
 
+        }
+
+        public List<IInversion> ObtenerUltimaFechaActualizada()
+        {
+            List<IInversion> inversiones = new List<IInversion>();
+
+            Acceso.Abrir();
+            List<IDbDataParameter> parameters = new List<IDbDataParameter>();
+
+
+            parameters.Add(Acceso.CrearParametro("@FecFin", DateTime.Today));
+            DataTable tabla = Acceso.Leer("spListarInversionesSinFinalizar", parameters);
+            Acceso.Cerrar();
+
+
+            foreach (DataRow registro in tabla.Rows)
+            {
+                IInversion inversion = new InversionPasiva
+                {
+                    FecCorriente = DateTime.Parse(registro["fecCorriente"].ToString()),
+                    Porcentaje = decimal.Parse(registro["porcentaje"].ToString())
+                };
+                inversiones.Add(inversion);
+            }
+
+            return inversiones;
         }
 
         public List<InversionEntity> ListarPendientes()

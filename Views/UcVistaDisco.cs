@@ -24,13 +24,30 @@ namespace Views
 
         }
 
-        public void CargarDatos(ICopia copia)
+        public void CargarDatosCopia(ICopia copia)
         {
             pbPortada.Load(copia.UrlPortada);
-            lblBanda.Text = copia.Banda;
-            lblDisco.Text = copia.Nombre;
-            lblYear.Text = copia.Year.ToString();
-            lblPrecio.Text = $"{copia.Precio.ToString()} VandCoins";
+            lbl2.Text = copia.Banda.Nombre;
+            lbl1.Text = copia.Nombre;
+            lbl3.Text = copia.Year.ToString();
+            lbl4.Text = $"{copia.Precio.ToString()} VandCoins";
+        }
+
+        public void CargarDatosBanda(ICopia copia)
+        {
+            pbPortada.Load(copia.UrlPortada);
+            lbl2.Text = copia.Banda.Nombre;
+            lbl1.Text = copia.Nombre;
+            lbl3.Text = copia.Year.ToString();
+            lbl4.Text = $"{copia.Precio.ToString()} VandCoins";
+        }
+
+        public void Mostrar()
+        {
+            textBox1.Visible = true;
+            textBox2.Visible = true;
+            textBox3.Visible = true;
+            textBox4.Visible = true;
         }
     }
 }

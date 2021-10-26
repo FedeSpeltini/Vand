@@ -22,9 +22,9 @@ namespace Views
         private void btnConfirmarCompra_Click(object sender, EventArgs e)
         {
 
-                CopiaEntity copia = new CopiaEntity();
-                CompraBusiness compraBs = new CompraBusiness();
-                compraBs.CompraRealizada += c_ThresholdReached;
+                //CopiaEntity copia = new CopiaEntity();
+                //CompraBusiness compraBs = new CompraBusiness();
+                //compraBs.CompraRealizada += c_ThresholdReached;
                // compraBs.CompraRealizada += new EventHandler((sender, e) => PlayMusicEvent(sender, e, copia));
                 // provide remaining implementation for the class
             

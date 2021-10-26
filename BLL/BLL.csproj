@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Application.cs" />
     <Compile Include="CompraBusiness.cs" />
     <Compile Include="CopiaBusiness.cs" />
     <Compile Include="EnvioBusiness.cs" />

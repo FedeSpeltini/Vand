@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Banda.cs" />
     <Compile Include="Cassette.cs" />
     <Compile Include="ComisionEntity.cs" />
     <Compile Include="CompraEntity.cs" />
@@ -51,6 +52,7 @@
     <Compile Include="GrupoEntity.cs" />
     <Compile Include="IdiomaEntity.cs" />
     <Compile Include="InversionEntity.cs" />
+    <Compile Include="InversionPasiva.cs" />
     <Compile Include="PermisoEntity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">

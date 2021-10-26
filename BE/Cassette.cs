@@ -12,9 +12,10 @@ namespace BE
         public decimal Precio { get; set; }
         public IUsuario Propietario { get; set; }
         public string Nombre { get; set; }
-        public string Banda { get; set; }
+        public IBanda Banda { get; set; }
         public DateTime Year { get; set; }
         public List<string> Musicos { get; set; }
         public string UrlPortada { get; set; }
+        public string UrlBanda { get; set; }
     }
 }

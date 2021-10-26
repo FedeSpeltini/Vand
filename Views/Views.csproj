@@ -52,6 +52,12 @@
     <Compile Include="FrmAltaCopia.Designer.cs">
       <DependentUpon>FrmAltaCopia.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmBanda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBanda.Designer.cs">
+      <DependentUpon>FrmBanda.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmCompra.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -146,6 +152,9 @@
     </Compile>
     <EmbeddedResource Include="FrmAltaCopia.resx">
       <DependentUpon>FrmAltaCopia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmBanda.resx">
+      <DependentUpon>FrmBanda.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmCompra.resx">
       <DependentUpon>FrmCompra.cs</DependentUpon>

@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Acceso.cs" />
+    <Compile Include="DbApplication.cs" />
     <Compile Include="McCompra.cs" />
     <Compile Include="McCopia.cs" />
     <Compile Include="McEnvio.cs" />

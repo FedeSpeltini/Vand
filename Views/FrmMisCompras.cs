@@ -36,7 +36,7 @@ namespace Views
                     
                 }
                 UcVistaDisco uc = new UcVistaDisco();
-                uc.CargarDatos(copia);
+                uc.CargarDatosCopia(copia);
 
                 uc.Location = new Point(5 + auxX, 5 + auxY);
                 //uc.Size = new System.Drawing.Size(300, 300);

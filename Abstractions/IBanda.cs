@@ -6,16 +6,14 @@ using System.Threading.Tasks;
 
 namespace Abstractions
 {
-    public interface IDisco 
+    public interface IBanda
     {
         string Nombre { get; set; }
 
-        IBanda Banda { get; set; }
+        DateTime Fundacion { get; set; }
 
-        DateTime Year { get; set; }
+        string Genero { get; set; }
 
-        List<string> Musicos { get; set; }
-
-        string UrlPortada { get; set; }
+        string UrlBanda { get; set; }
     }
 }

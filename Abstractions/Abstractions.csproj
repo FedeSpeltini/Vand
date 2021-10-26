@@ -41,11 +41,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IBanda.cs" />
     <Compile Include="ICopia.cs" />
+    <Compile Include="ICrud.cs" />
     <Compile Include="IDisco.cs" />
     <Compile Include="IEntity.cs" />
     <Compile Include="IEtiqueta.cs" />
     <Compile Include="IIdioma.cs" />
+    <Compile Include="IInversion.cs" />
     <Compile Include="ITraduccion.cs" />
     <Compile Include="IUsuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

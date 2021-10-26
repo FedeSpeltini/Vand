@@ -30,10 +30,14 @@ namespace Views
         private void InitializeComponent()
         {
             this.pbPortada = new System.Windows.Forms.PictureBox();
-            this.lblDisco = new System.Windows.Forms.Label();
-            this.lblBanda = new System.Windows.Forms.Label();
-            this.lblYear = new System.Windows.Forms.Label();
-            this.lblPrecio = new System.Windows.Forms.Label();
+            this.lbl1 = new System.Windows.Forms.Label();
+            this.lbl2 = new System.Windows.Forms.Label();
+            this.lbl3 = new System.Windows.Forms.Label();
+            this.lbl4 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbPortada)).BeginInit();
             this.SuspendLayout();
             // 
@@ -46,53 +50,89 @@ namespace Views
             this.pbPortada.TabIndex = 1;
             this.pbPortada.TabStop = false;
             // 
-            // lblDisco
+            // lbl1
             // 
-            this.lblDisco.AutoSize = true;
-            this.lblDisco.Location = new System.Drawing.Point(143, 275);
-            this.lblDisco.Name = "lblDisco";
-            this.lblDisco.Size = new System.Drawing.Size(41, 17);
-            this.lblDisco.TabIndex = 2;
-            this.lblDisco.Text = "disco";
+            this.lbl1.AutoSize = true;
+            this.lbl1.Location = new System.Drawing.Point(63, 292);
+            this.lbl1.Name = "lbl1";
+            this.lbl1.Size = new System.Drawing.Size(41, 17);
+            this.lbl1.TabIndex = 2;
+            this.lbl1.Text = "disco";
             // 
-            // lblBanda
+            // lbl2
             // 
-            this.lblBanda.AutoSize = true;
-            this.lblBanda.Location = new System.Drawing.Point(143, 301);
-            this.lblBanda.Name = "lblBanda";
-            this.lblBanda.Size = new System.Drawing.Size(48, 17);
-            this.lblBanda.TabIndex = 3;
-            this.lblBanda.Text = "banda";
+            this.lbl2.AutoSize = true;
+            this.lbl2.Location = new System.Drawing.Point(58, 323);
+            this.lbl2.Name = "lbl2";
+            this.lbl2.Size = new System.Drawing.Size(48, 17);
+            this.lbl2.TabIndex = 3;
+            this.lbl2.Text = "banda";
             // 
-            // lblYear
+            // lbl3
             // 
-            this.lblYear.AutoSize = true;
-            this.lblYear.Location = new System.Drawing.Point(143, 331);
-            this.lblYear.Name = "lblYear";
-            this.lblYear.Size = new System.Drawing.Size(36, 17);
-            this.lblYear.TabIndex = 4;
-            this.lblYear.Text = "year";
+            this.lbl3.AutoSize = true;
+            this.lbl3.Location = new System.Drawing.Point(63, 349);
+            this.lbl3.Name = "lbl3";
+            this.lbl3.Size = new System.Drawing.Size(36, 17);
+            this.lbl3.TabIndex = 4;
+            this.lbl3.Text = "year";
             // 
-            // lblPrecio
+            // lbl4
             // 
-            this.lblPrecio.AutoSize = true;
-            this.lblPrecio.Location = new System.Drawing.Point(143, 360);
-            this.lblPrecio.Name = "lblPrecio";
-            this.lblPrecio.Size = new System.Drawing.Size(47, 17);
-            this.lblPrecio.TabIndex = 5;
-            this.lblPrecio.Text = "precio";
+            this.lbl4.AutoSize = true;
+            this.lbl4.Location = new System.Drawing.Point(58, 381);
+            this.lbl4.Name = "lbl4";
+            this.lbl4.Size = new System.Drawing.Size(47, 17);
+            this.lbl4.TabIndex = 5;
+            this.lbl4.Text = "precio";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(177, 287);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 22);
+            this.textBox1.TabIndex = 6;
+            this.textBox1.Visible = false;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(177, 316);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(100, 22);
+            this.textBox2.TabIndex = 7;
+            this.textBox2.Visible = false;
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(177, 344);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(100, 22);
+            this.textBox3.TabIndex = 8;
+            this.textBox3.Visible = false;
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(177, 376);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(100, 22);
+            this.textBox4.TabIndex = 9;
+            this.textBox4.Visible = false;
             // 
             // UcVistaDisco
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.lblPrecio);
-            this.Controls.Add(this.lblYear);
-            this.Controls.Add(this.lblBanda);
-            this.Controls.Add(this.lblDisco);
+            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.lbl4);
+            this.Controls.Add(this.lbl3);
+            this.Controls.Add(this.lbl2);
+            this.Controls.Add(this.lbl1);
             this.Controls.Add(this.pbPortada);
             this.Name = "UcVistaDisco";
-            this.Size = new System.Drawing.Size(355, 390);
+            this.Size = new System.Drawing.Size(355, 427);
             this.Load += new System.EventHandler(this.UcVistaDisco_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbPortada)).EndInit();
             this.ResumeLayout(false);
@@ -102,9 +142,13 @@ namespace Views
 
         #endregion
         private System.Windows.Forms.PictureBox pbPortada;
-        private System.Windows.Forms.Label lblDisco;
-        private System.Windows.Forms.Label lblBanda;
-        private System.Windows.Forms.Label lblYear;
-        private System.Windows.Forms.Label lblPrecio;
+        private System.Windows.Forms.Label lbl1;
+        private System.Windows.Forms.Label lbl2;
+        private System.Windows.Forms.Label lbl3;
+        private System.Windows.Forms.Label lbl4;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBox4;
     }
 }

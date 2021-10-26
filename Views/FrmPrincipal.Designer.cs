@@ -39,6 +39,7 @@ namespace Views
             this.vinilosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.galeriaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.publicarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.misComprasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.inversiónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.plazoFijoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logísticaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -48,7 +49,10 @@ namespace Views
             this.permisosUsuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.idiomaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.aBMToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.misComprasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.músicaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.bandaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.discoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.copiaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -67,7 +71,8 @@ namespace Views
             this.inversiónToolStripMenuItem,
             this.logísticaToolStripMenuItem,
             this.permisosToolStripMenuItem,
-            this.idiomaToolStripMenuItem1});
+            this.idiomaToolStripMenuItem1,
+            this.músicaToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(800, 28);
@@ -87,21 +92,21 @@ namespace Views
             // loginToolStripMenuItem
             // 
             this.loginToolStripMenuItem.Name = "loginToolStripMenuItem";
-            this.loginToolStripMenuItem.Size = new System.Drawing.Size(83, 26);
+            this.loginToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.loginToolStripMenuItem.Tag = "Login";
             this.loginToolStripMenuItem.Click += new System.EventHandler(this.loginToolStripMenuItem_Click);
             // 
             // registroToolStripMenuItem
             // 
             this.registroToolStripMenuItem.Name = "registroToolStripMenuItem";
-            this.registroToolStripMenuItem.Size = new System.Drawing.Size(83, 26);
+            this.registroToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.registroToolStripMenuItem.Tag = "Register";
             this.registroToolStripMenuItem.Click += new System.EventHandler(this.registroToolStripMenuItem_Click);
             // 
             // idiomaToolStripMenuItem
             // 
             this.idiomaToolStripMenuItem.Name = "idiomaToolStripMenuItem";
-            this.idiomaToolStripMenuItem.Size = new System.Drawing.Size(83, 26);
+            this.idiomaToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.idiomaToolStripMenuItem.Tag = "Idiom";
             this.idiomaToolStripMenuItem.Click += new System.EventHandler(this.idiomaToolStripMenuItem_Click);
             // 
@@ -129,6 +134,13 @@ namespace Views
             this.publicarToolStripMenuItem.Text = "Publicar";
             this.publicarToolStripMenuItem.Click += new System.EventHandler(this.publicarToolStripMenuItem_Click);
             // 
+            // misComprasToolStripMenuItem
+            // 
+            this.misComprasToolStripMenuItem.Name = "misComprasToolStripMenuItem";
+            this.misComprasToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.misComprasToolStripMenuItem.Text = "Mis compras";
+            this.misComprasToolStripMenuItem.Click += new System.EventHandler(this.misComprasToolStripMenuItem_Click);
+            // 
             // inversiónToolStripMenuItem
             // 
             this.inversiónToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -140,7 +152,7 @@ namespace Views
             // plazoFijoToolStripMenuItem
             // 
             this.plazoFijoToolStripMenuItem.Name = "plazoFijoToolStripMenuItem";
-            this.plazoFijoToolStripMenuItem.Size = new System.Drawing.Size(156, 26);
+            this.plazoFijoToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.plazoFijoToolStripMenuItem.Text = "Plazo Fijo";
             // 
             // logísticaToolStripMenuItem
@@ -196,12 +208,33 @@ namespace Views
             this.aBMToolStripMenuItem1.Text = "ABM";
             this.aBMToolStripMenuItem1.Click += new System.EventHandler(this.aBMToolStripMenuItem1_Click);
             // 
-            // misComprasToolStripMenuItem
+            // músicaToolStripMenuItem
             // 
-            this.misComprasToolStripMenuItem.Name = "misComprasToolStripMenuItem";
-            this.misComprasToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.misComprasToolStripMenuItem.Text = "Mis compras";
-            this.misComprasToolStripMenuItem.Click += new System.EventHandler(this.misComprasToolStripMenuItem_Click);
+            this.músicaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.bandaToolStripMenuItem,
+            this.discoToolStripMenuItem,
+            this.copiaToolStripMenuItem});
+            this.músicaToolStripMenuItem.Name = "músicaToolStripMenuItem";
+            this.músicaToolStripMenuItem.Size = new System.Drawing.Size(69, 24);
+            this.músicaToolStripMenuItem.Text = "Música";
+            // 
+            // bandaToolStripMenuItem
+            // 
+            this.bandaToolStripMenuItem.Name = "bandaToolStripMenuItem";
+            this.bandaToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.bandaToolStripMenuItem.Text = "Banda";
+            // 
+            // discoToolStripMenuItem
+            // 
+            this.discoToolStripMenuItem.Name = "discoToolStripMenuItem";
+            this.discoToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.discoToolStripMenuItem.Text = " Disco";
+            // 
+            // copiaToolStripMenuItem
+            // 
+            this.copiaToolStripMenuItem.Name = "copiaToolStripMenuItem";
+            this.copiaToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.copiaToolStripMenuItem.Text = "Copia";
             // 
             // FrmPrincipal
             // 
@@ -242,5 +275,9 @@ namespace Views
         private System.Windows.Forms.ToolStripMenuItem idiomaToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem aBMToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem misComprasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem músicaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem bandaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem discoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem copiaToolStripMenuItem;
     }
 }
