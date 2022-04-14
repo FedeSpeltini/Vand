@@ -8,10 +8,10 @@ using System.Threading.Tasks;
 
 namespace DAL
 {
-    public class McWallet
+    public static class McWallet
     {
 
-        public int Agregar(int id)
+        public static int Agregar(int id)
         {
             Acceso.Abrir();
 
@@ -22,7 +22,7 @@ namespace DAL
 
         }
 
-        public int Descontar(UsuarioEntity usuario, decimal cantidad)
+        public static int Descontar(UsuarioEntity usuario, decimal cantidad)
         {
             Acceso.Abrir();
 
@@ -34,6 +34,17 @@ namespace DAL
 
         }
 
+        public static int AgregarVandCoin(WalletEntity wallet, int cantVandCoin)
+        {
+            Acceso.Abrir();
+
+            List<IDbDataParameter> parameters = new List<IDbDataParameter>();
+
+            parameters.Add(Acceso.CrearParametro("@Id", wallet.Id));
+            parameters.Add(Acceso.CrearParametro("@CantVandCoin", cantVandCoin));
+            return Acceso.Escribir("spAgregarVandCoin", parameters);
+
+        }
 
         //public int ProxId()
         //{

@@ -10,15 +10,23 @@ namespace BE
     {
         private VandCoinEntity vandCoins = new VandCoinEntity();
 
+        private int id;
+
+        public int Id
+        {
+            get { return id; }
+            set { id = value; }
+        }
+
         public VandCoinEntity VandCoins 
         {
             get { return vandCoins;  }
             set { vandCoins = value; }
         }
 
-        private decimal cantidad;
+        private int cantidad;
 
-        public decimal Cantidad
+        public int Cantidad
         {
             get { return cantidad; }
             set { cantidad = value; }

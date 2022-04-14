@@ -64,6 +64,12 @@
     <Compile Include="FrmCompra.Designer.cs">
       <DependentUpon>FrmCompra.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmComprarVandCoins.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmComprarVandCoins.Designer.cs">
+      <DependentUpon>FrmComprarVandCoins.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmDisco.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -158,6 +164,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmCompra.resx">
       <DependentUpon>FrmCompra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmComprarVandCoins.resx">
+      <DependentUpon>FrmComprarVandCoins.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmDisco.resx">
       <DependentUpon>FrmDisco.cs</DependentUpon>

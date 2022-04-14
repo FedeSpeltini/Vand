@@ -149,5 +149,13 @@ namespace Views
             frmMisCompras.MdiParent = this;
             frmMisCompras.Show();
         }
+
+        private void comprarVandCoinToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmComprarVandCoins frmComprarVandCoins = new FrmComprarVandCoins();
+
+            frmComprarVandCoins.MdiParent = this;
+            frmComprarVandCoins.Show();
+        }
     }
 }
