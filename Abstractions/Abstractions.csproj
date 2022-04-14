@@ -49,6 +49,7 @@
     <Compile Include="IEtiqueta.cs" />
     <Compile Include="IIdioma.cs" />
     <Compile Include="IInversion.cs" />
+    <Compile Include="ILog.cs" />
     <Compile Include="ITraduccion.cs" />
     <Compile Include="IUsuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
