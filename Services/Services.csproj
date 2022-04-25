@@ -44,7 +44,6 @@
     <Compile Include="Factory\Creator.cs" />
     <Compile Include="Factory\CreatorCassette.cs" />
     <Compile Include="Factory\CreatorVinyl.cs" />
-    <Compile Include="Login\Login.cs" />
     <Compile Include="Session\ManejadorDeSesion.cs" />
     <Compile Include="MultiIdioma\Etiqueta.cs" />
     <Compile Include="MultiIdioma\Idioma.cs" />
@@ -67,6 +66,9 @@
       <Project>{0401B909-E9C2-4F36-ACC5-FDD0CD9448C5}</Project>
       <Name>DAL</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Login\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

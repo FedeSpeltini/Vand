@@ -49,7 +49,6 @@
     <Compile Include="McEtiqueta.cs" />
     <Compile Include="McIdioma.cs" />
     <Compile Include="McInversion.cs" />
-    <Compile Include="McLog.cs" />
     <Compile Include="McPermiso.cs" />
     <Compile Include="McTraductor.cs" />
     <Compile Include="McUsuario.cs" />
