@@ -10,9 +10,9 @@ namespace BE
     {
         private VandCoinEntity vandCoins = new VandCoinEntity();
 
-        private int id;
+        private string id;
 
-        public int Id
+        public string Id
         {
             get { return id; }
             set { id = value; }

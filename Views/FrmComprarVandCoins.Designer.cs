@@ -146,7 +146,7 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(12, 167);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(104, 20);
+            this.label6.Size = new System.Drawing.Size(83, 16);
             this.label6.TabIndex = 12;
             this.label6.Text = "Vas a gastar";
             // 
@@ -163,7 +163,7 @@
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(234, 164);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(110, 20);
+            this.label7.Size = new System.Drawing.Size(88, 16);
             this.label7.TabIndex = 14;
             this.label7.Text = "para comprar";
             // 
@@ -188,7 +188,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(424, 225);
+            this.ClientSize = new System.Drawing.Size(571, 320);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.txtVandCoinAComprar);
             this.Controls.Add(this.label7);

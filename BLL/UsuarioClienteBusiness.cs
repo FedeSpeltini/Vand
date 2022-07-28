@@ -26,8 +26,8 @@ namespace BLL
             compra.ValorFinal = copia.Precio - (copia.Precio * comision.Porcentaje);
             compra.Producto = copia;
             compra.Comision = comision;
-
-            mcCompra.Agregar(compra);
+            if(SaldoSuficiente(comprador, copia.Precio + comision.Ganancia))
+                mcCompra.Agregar(compra);
 
 
 
