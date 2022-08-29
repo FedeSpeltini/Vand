@@ -8,6 +8,7 @@ namespace Abstractions
 {
     public interface IBanda
     {
+        int Id { get; set; }
         string Nombre { get; set; }
 
         DateTime Fundacion { get; set; }

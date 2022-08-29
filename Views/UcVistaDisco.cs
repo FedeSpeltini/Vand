@@ -26,7 +26,7 @@ namespace Views
 
         public void CargarDatosCopia(ICopia copia)
         {
-            pbPortada.Load(copia.UrlPortada);
+            pbPortada.LoadAsync(copia.UrlPortada);
             lbl2.Text = copia.Banda.Nombre;
             lbl1.Text = copia.Nombre;
             lbl3.Text = copia.Year.ToString();

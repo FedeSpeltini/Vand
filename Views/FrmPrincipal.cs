@@ -78,6 +78,10 @@ namespace Views
 
         private void publicarToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            FrmPublicar frmPublicar = new FrmPublicar();
+            frmPublicar.MdiParent = this;
+            frmPublicar.frmPrincipal = this;
+            frmPublicar.Show();
         }
 
 

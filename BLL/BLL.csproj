@@ -44,8 +44,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Application.cs" />
+    <Compile Include="BandaBusiness.cs" />
     <Compile Include="CompraBusiness.cs" />
     <Compile Include="CopiaBusiness.cs" />
+    <Compile Include="DiscoBusiness.cs" />
     <Compile Include="EnvioBusiness.cs" />
     <Compile Include="EtiquetaBusiness.cs" />
     <Compile Include="IdiomaBusiness.cs" />

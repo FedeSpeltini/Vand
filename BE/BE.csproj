@@ -42,7 +42,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Banda.cs" />
-    <Compile Include="Cassette.cs" />
     <Compile Include="ComisionEntity.cs" />
     <Compile Include="CompraEntity.cs" />
     <Compile Include="CopiaEntity.cs" />
@@ -68,7 +67,6 @@
     <Compile Include="UsuarioLogisticaEntity.cs" />
     <Compile Include="VandCoinEntity.cs" />
     <Compile Include="VentaEntity.cs" />
-    <Compile Include="Vinyl.cs" />
     <Compile Include="WalletEntity.cs" />
   </ItemGroup>
   <ItemGroup>

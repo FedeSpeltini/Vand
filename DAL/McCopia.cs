@@ -11,7 +11,7 @@ namespace DAL
 {
     public class McCopia
     {
-        
+
         public List<CopiaEntity> Listar(UsuarioEntity cliente)
         {
             List<CopiaEntity> tablaCopia = new List<CopiaEntity>();
@@ -73,12 +73,12 @@ namespace DAL
             foreach (DataRow registro in tabla.Rows)
             {
                 CopiaEntity copia = new CopiaEntity();
-                copia.Nombre = registro["nombre"].ToString();                
+                copia.Nombre = registro["nombre"].ToString();
                 copia.Year = Convert.ToDateTime(registro["Year"].ToString());
                 copia.UrlPortada = registro["urlPortada"].ToString();
                 copia.Banda = new Banda();
                 copia.Banda.Nombre = registro["NOmbreBanda"].ToString();
-                
+
                 tablaCopia.Add(copia);
             }
 

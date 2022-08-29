@@ -8,6 +8,7 @@ namespace Abstractions
 {
     public interface IDisco 
     {
+        int Id { get; set; }
         string Nombre { get; set; }
 
         IBanda Banda { get; set; }

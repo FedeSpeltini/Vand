@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace BE
 {
-    public class CopiaEntity: ICopia
+    public class CopiaEntity : ICopia
     {
 
         public string Nombre { get; set; }
@@ -24,7 +24,8 @@ namespace BE
         public IBanda Banda { get; set; }
         public DateTime Year { get; set; }
         public List<string> Musicos { get; set; }
-
+        public string UrlPortada { get; set; }
+        public int Id { get; set; }
 
         /// <summary>
         /// //////////////////////////////////////////
@@ -37,6 +38,6 @@ namespace BE
             set { propietario2 = value; }
         }
 
-        public string UrlPortada { get; set; }
+
     }
 }

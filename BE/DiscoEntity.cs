@@ -7,8 +7,9 @@ using System.Threading.Tasks;
 
 namespace BE
 {
-    public class DiscoEntity : IDisco
+    public class DiscoEntity //: IDisco
     {
+        public int Id {get; set; }
         private string nombre;
 
         public string Nombre
@@ -18,23 +19,23 @@ namespace BE
         }
 
 
-        private DateTime year;
+        private DateTime fundacion;
 
-        public DateTime Year
+        public DateTime Fundacion
         {
-            get { return year; }
-            set { year = value; }
+            get { return fundacion; }
+            set { fundacion = value; }
         }
 
-        private List<string> musicos;
+        //private List<string> musicos;
 
-        public List<string> Musicos
-        {
-            get { return musicos; }
-            set { musicos = value; }
-        }
+        //public List<string> Musicos
+        //{
+        //    get { return musicos; }
+        //    set { musicos = value; }
+        //}
 
-        IBanda IDisco.Banda { get; set; }
+        public Banda Banda { get; set; }
         public string UrlPortada { get; set; }
     }
 }

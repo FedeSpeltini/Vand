@@ -7,8 +7,9 @@ using System.Threading.Tasks;
 
 namespace BE
 {
-    public class Banda : IBanda
+    public class Banda : Abstractions.IBanda
     {
+        public int Id { get; set; }
         public string Nombre { get; set; }
         public DateTime Fundacion { get; set; }
         public string Genero { get; set; }
