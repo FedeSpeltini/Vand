@@ -42,13 +42,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Acceso.cs" />
-    <Compile Include="DbApplication.cs" />
+    <Compile Include="Comando.cs" />
+    <Compile Include="McBackupRestore.cs" />
     <Compile Include="McBanda.cs" />
     <Compile Include="McCompra.cs" />
     <Compile Include="McCopia.cs" />
     <Compile Include="McDisco.cs" />
     <Compile Include="McEnvio.cs" />
     <Compile Include="McEtiqueta.cs" />
+    <Compile Include="McGestorBitacora.cs" />
     <Compile Include="McIdioma.cs" />
     <Compile Include="McInversion.cs" />
     <Compile Include="McPermiso.cs" />

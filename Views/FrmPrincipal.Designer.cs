@@ -42,6 +42,7 @@ namespace Views
             this.misComprasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.inversiónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.plazoFijoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.comprarVandCoinToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logísticaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.controlToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.permisosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -53,7 +54,9 @@ namespace Views
             this.bandaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.discoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.copiaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.comprarVandCoinToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.adminToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dVVToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.bitacoraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -73,7 +76,8 @@ namespace Views
             this.logísticaToolStripMenuItem,
             this.permisosToolStripMenuItem,
             this.idiomaToolStripMenuItem1,
-            this.músicaToolStripMenuItem});
+            this.músicaToolStripMenuItem,
+            this.adminToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(800, 28);
@@ -93,21 +97,21 @@ namespace Views
             // loginToolStripMenuItem
             // 
             this.loginToolStripMenuItem.Name = "loginToolStripMenuItem";
-            this.loginToolStripMenuItem.Size = new System.Drawing.Size(83, 26);
+            this.loginToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.loginToolStripMenuItem.Tag = "Login";
             this.loginToolStripMenuItem.Click += new System.EventHandler(this.loginToolStripMenuItem_Click);
             // 
             // registroToolStripMenuItem
             // 
             this.registroToolStripMenuItem.Name = "registroToolStripMenuItem";
-            this.registroToolStripMenuItem.Size = new System.Drawing.Size(83, 26);
+            this.registroToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.registroToolStripMenuItem.Tag = "Register";
             this.registroToolStripMenuItem.Click += new System.EventHandler(this.registroToolStripMenuItem_Click);
             // 
             // idiomaToolStripMenuItem
             // 
             this.idiomaToolStripMenuItem.Name = "idiomaToolStripMenuItem";
-            this.idiomaToolStripMenuItem.Size = new System.Drawing.Size(83, 26);
+            this.idiomaToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.idiomaToolStripMenuItem.Tag = "Idiom";
             this.idiomaToolStripMenuItem.Click += new System.EventHandler(this.idiomaToolStripMenuItem_Click);
             // 
@@ -124,21 +128,21 @@ namespace Views
             // galeriaToolStripMenuItem
             // 
             this.galeriaToolStripMenuItem.Name = "galeriaToolStripMenuItem";
-            this.galeriaToolStripMenuItem.Size = new System.Drawing.Size(176, 26);
+            this.galeriaToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.galeriaToolStripMenuItem.Text = "Galeria";
             this.galeriaToolStripMenuItem.Click += new System.EventHandler(this.galeriaToolStripMenuItem_Click);
             // 
             // publicarToolStripMenuItem
             // 
             this.publicarToolStripMenuItem.Name = "publicarToolStripMenuItem";
-            this.publicarToolStripMenuItem.Size = new System.Drawing.Size(176, 26);
+            this.publicarToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.publicarToolStripMenuItem.Text = "Publicar";
             this.publicarToolStripMenuItem.Click += new System.EventHandler(this.publicarToolStripMenuItem_Click);
             // 
             // misComprasToolStripMenuItem
             // 
             this.misComprasToolStripMenuItem.Name = "misComprasToolStripMenuItem";
-            this.misComprasToolStripMenuItem.Size = new System.Drawing.Size(176, 26);
+            this.misComprasToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.misComprasToolStripMenuItem.Text = "Mis compras";
             this.misComprasToolStripMenuItem.Click += new System.EventHandler(this.misComprasToolStripMenuItem_Click);
             // 
@@ -157,6 +161,13 @@ namespace Views
             this.plazoFijoToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.plazoFijoToolStripMenuItem.Text = "Plazo Fijo";
             // 
+            // comprarVandCoinToolStripMenuItem
+            // 
+            this.comprarVandCoinToolStripMenuItem.Name = "comprarVandCoinToolStripMenuItem";
+            this.comprarVandCoinToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.comprarVandCoinToolStripMenuItem.Text = "Comprar VandCoin";
+            this.comprarVandCoinToolStripMenuItem.Click += new System.EventHandler(this.comprarVandCoinToolStripMenuItem_Click);
+            // 
             // logísticaToolStripMenuItem
             // 
             this.logísticaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -168,7 +179,7 @@ namespace Views
             // controlToolStripMenuItem
             // 
             this.controlToolStripMenuItem.Name = "controlToolStripMenuItem";
-            this.controlToolStripMenuItem.Size = new System.Drawing.Size(141, 26);
+            this.controlToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.controlToolStripMenuItem.Text = "Control";
             this.controlToolStripMenuItem.Click += new System.EventHandler(this.controlToolStripMenuItem_Click);
             // 
@@ -206,7 +217,7 @@ namespace Views
             // aBMToolStripMenuItem1
             // 
             this.aBMToolStripMenuItem1.Name = "aBMToolStripMenuItem1";
-            this.aBMToolStripMenuItem1.Size = new System.Drawing.Size(124, 26);
+            this.aBMToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
             this.aBMToolStripMenuItem1.Text = "ABM";
             this.aBMToolStripMenuItem1.Click += new System.EventHandler(this.aBMToolStripMenuItem1_Click);
             // 
@@ -223,27 +234,42 @@ namespace Views
             // bandaToolStripMenuItem
             // 
             this.bandaToolStripMenuItem.Name = "bandaToolStripMenuItem";
-            this.bandaToolStripMenuItem.Size = new System.Drawing.Size(134, 26);
+            this.bandaToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.bandaToolStripMenuItem.Text = "Banda";
             // 
             // discoToolStripMenuItem
             // 
             this.discoToolStripMenuItem.Name = "discoToolStripMenuItem";
-            this.discoToolStripMenuItem.Size = new System.Drawing.Size(134, 26);
+            this.discoToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.discoToolStripMenuItem.Text = " Disco";
             // 
             // copiaToolStripMenuItem
             // 
             this.copiaToolStripMenuItem.Name = "copiaToolStripMenuItem";
-            this.copiaToolStripMenuItem.Size = new System.Drawing.Size(134, 26);
+            this.copiaToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.copiaToolStripMenuItem.Text = "Copia";
             // 
-            // comprarVandCoinToolStripMenuItem
+            // adminToolStripMenuItem
             // 
-            this.comprarVandCoinToolStripMenuItem.Name = "comprarVandCoinToolStripMenuItem";
-            this.comprarVandCoinToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.comprarVandCoinToolStripMenuItem.Text = "Comprar VandCoin";
-            this.comprarVandCoinToolStripMenuItem.Click += new System.EventHandler(this.comprarVandCoinToolStripMenuItem_Click);
+            this.adminToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.dVVToolStripMenuItem,
+            this.bitacoraToolStripMenuItem});
+            this.adminToolStripMenuItem.Name = "adminToolStripMenuItem";
+            this.adminToolStripMenuItem.Size = new System.Drawing.Size(67, 24);
+            this.adminToolStripMenuItem.Text = "Admin";
+            // 
+            // dVVToolStripMenuItem
+            // 
+            this.dVVToolStripMenuItem.Name = "dVVToolStripMenuItem";
+            this.dVVToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.dVVToolStripMenuItem.Text = "DVV";
+            // 
+            // bitacoraToolStripMenuItem
+            // 
+            this.bitacoraToolStripMenuItem.Name = "bitacoraToolStripMenuItem";
+            this.bitacoraToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.bitacoraToolStripMenuItem.Text = "Bitacora";
+            this.bitacoraToolStripMenuItem.Click += new System.EventHandler(this.bitacoraToolStripMenuItem_Click);
             // 
             // FrmPrincipal
             // 
@@ -289,5 +315,8 @@ namespace Views
         private System.Windows.Forms.ToolStripMenuItem discoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem copiaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem comprarVandCoinToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem adminToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem dVVToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem bitacoraToolStripMenuItem;
     }
 }

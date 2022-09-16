@@ -18,6 +18,11 @@ namespace DAL
             cn = new SqlConnection("Initial Catalog=Vand; Data Source=DESKTOP-G3FMERO; Integrated Security=SSPI");
             cn.Open();
         }
+        public static SqlConnection ObtenerConexionSql()
+        {
+            Abrir();
+            return cn;
+        }
 
         public static void Cerrar()
         {

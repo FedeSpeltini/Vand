@@ -161,5 +161,13 @@ namespace Views
             frmComprarVandCoins.MdiParent = this;
             frmComprarVandCoins.Show();
         }
+
+        private void bitacoraToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmBitacora frmBitacora = new FrmBitacora();
+
+            frmBitacora.MdiParent = this;
+            frmBitacora.Show();
+        }
     }
 }
